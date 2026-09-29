@@ -306,7 +306,7 @@ export default function MockupBView() {
                 <span className="chip">Tự quản lý sản phẩm, giá, đơn dễ dàng</span>
                 <span className="chip">SSL, SEO, tải trang &lt; 1s</span>
               </div>
-              <div className="svc-tech">TECH — .NET 8 / Java Clean Arch · PostgreSQL · VietQR Webhook</div>
+              <div className="svc-tech">TECH — thanh toán tự khớp · dữ liệu an toàn · chịu tải cao</div>
             </div>
             <div className="svc-time">4–8 tuần</div>
           </div>
@@ -322,7 +322,7 @@ export default function MockupBView() {
                 <span className="chip">Phễu lead tự phân luồng theo độ nóng</span>
                 <span className="chip">Báo cáo doanh thu tự động</span>
               </div>
-              <div className="svc-tech">TECH — RabbitMQ DLQ · API Gateway · Redis · Docker</div>
+              <div className="svc-tech">TECH — thông báo &lt; 30s · tự đối soát · không mất dữ liệu</div>
             </div>
             <div className="svc-time">3–6 tuần</div>
           </div>
@@ -338,7 +338,7 @@ export default function MockupBView() {
                 <span className="chip">Dữ liệu chạy riêng, không ra ngoài</span>
                 <span className="chip">API AI tốc độ cao</span>
               </div>
-              <div className="svc-tech">TECH — RAG · FastAPI · LLM Fine-tune · DeepSeek / Gemini</div>
+              <div className="svc-tech">TECH — AI học dữ liệu riêng · trả lời đúng · chạy tại máy bạn</div>
             </div>
             <div className="svc-time">2–5 tuần</div>
           </div>
@@ -354,7 +354,7 @@ export default function MockupBView() {
                 <span className="chip">Agile/Scrum — báo tiến độ từng task</span>
                 <span className="chip">Deploy production + bàn giao source &amp; tài liệu</span>
               </div>
-              <div className="svc-tech">TECH — Full-stack · Agile/Scrum · Cloud Deploy</div>
+              <div className="svc-tech">TECH — làm từ đầu tới cuối · báo tiến độ · bàn giao đầy đủ</div>
             </div>
             <div className="svc-time">30–60 ngày</div>
           </div>
