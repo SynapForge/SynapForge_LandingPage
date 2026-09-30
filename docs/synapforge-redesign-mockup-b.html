@@ -1,0 +1,727 @@
+<title>SynapForge Mockup B</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --white: #FFFFFF;
+  --paper: #FBF8F2;
+  --orange: #FF5500;
+  --orange-deep: #E04B00;
+  --amber: #FFB24D;
+  --ink: #1D1510;
+  --ink-soft: #6E5F52;
+  --line: #E4DAC6;
+  --grid: #F4EFE4;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1180px; margin-inline: auto; padding-inline: 24px; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+
+/* grid nền kỹ thuật */
+.gridbg {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ===== badge ===== */
+.mock-badge {
+  position: fixed; top: 12px; left: 12px; z-index: 90;
+  background: var(--ink); color: var(--white);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  padding: 6px 10px; letter-spacing: .08em;
+  border: 1px solid var(--orange); border-radius: 2px;
+}
+
+/* ===== top bar ===== */
+.topbar { position: sticky; top: 0; z-index: 50; background: var(--white); border-bottom: 1px solid var(--ink); }
+.topbar-in { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-mark {
+  width: 34px; height: 34px; border: 2px solid var(--ink); background: var(--white);
+  display: grid; place-items: center; border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 14px; color: var(--orange);
+}
+.brand-name { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 17px; letter-spacing: -.02em; }
+.brand-name em { font-style: normal; color: var(--orange); }
+.top-nav { display: flex; gap: 26px; align-items: center; }
+.top-nav a {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-soft); text-decoration: none;
+}
+.top-nav a:hover { color: var(--orange); }
+.lang-pill { display: flex; border: 1px solid var(--ink); border-radius: 2px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; }
+.lang-pill span { padding: 5px 10px; }
+.lang-pill .on { background: var(--ink); color: var(--white); }
+.top-cta {
+  background: var(--orange); color: var(--white); text-decoration: none;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: .1em;
+  padding: 9px 16px; border-radius: 2px; text-transform: uppercase;
+}
+.top-cta:hover { background: var(--orange-deep); }
+@media (max-width: 900px) { .top-nav, .top-cta { display: none; } }
+
+/* ===== rail ===== */
+.rail {
+  position: fixed; right: 22px; top: 50%; transform: translateY(-50%); z-index: 40;
+  display: flex; flex-direction: column; gap: 14px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+}
+.rail a { color: var(--ink-soft); text-decoration: none; display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.rail a .n { color: var(--orange); font-weight: 700; }
+.rail a .l { opacity: 0; transition: opacity .15s; }
+.rail a:hover .l { opacity: 1; }
+.rail a.on { color: var(--ink); }
+@media (max-width: 1100px) { .rail { display: none; } }
+
+/* ===== hero ===== */
+.hero { background: var(--white); border-bottom: 1px solid var(--ink); }
+.hero-in { padding-block: 84px 72px; }
+.hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+.hero-eyebrow .sq { width: 10px; height: 10px; background: var(--orange); }
+.hero-eyebrow .mono { color: var(--ink-soft); }
+.hero h1 {
+  font-family: 'JetBrains Mono', monospace; font-weight: 800;
+  font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: -.03em;
+}
+.hero h1 .blk { display: block; }
+.hero h1 .curs { color: var(--orange); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+.hero-sub { margin-top: 24px; max-width: 50ch; font-size: 16.5px; color: var(--ink-soft); }
+.hero-sub b { color: var(--ink); }
+.hero-ctas { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; text-decoration: none;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; padding: 14px 22px; border-radius: 2px;
+}
+.btn-solid { background: var(--orange); color: var(--white); }
+.btn-solid:hover { background: var(--orange-deep); }
+.btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--white); }
+.hero-dual { margin-top: 28px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .06em; display: flex; gap: 18px; flex-wrap: wrap; color: var(--ink-soft); }
+.hero-dual b { color: var(--orange); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--ink); margin-top: 56px;
+}
+.hero-stat { padding: 20px 16px 0 0; border-right: 1px solid var(--line); }
+.hero-stat:last-child { border-right: 0; }
+.hero-stat .v { font-family: 'JetBrains Mono', monospace; font-size: 30px; font-weight: 800; letter-spacing: -.03em; }
+.hero-stat .l { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-top: 6px; }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat { border-right: 0; }
+}
+
+/* ===== figure với corner ticks ===== */
+.fig { position: relative; background: var(--white); border: 1px solid var(--ink); padding: 10px; }
+.fig::before, .fig::after, .fig .tk {
+  content: '+'; position: absolute; font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; color: var(--orange); line-height: 1;
+}
+.fig::before { top: -5px; left: -6px; }
+.fig::after { bottom: -6px; right: -6px; }
+.fig .tk { top: -5px; right: -6px; }
+.fig .tk2 { position: absolute; bottom: -6px; left: -6px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--orange); line-height: 1; content: '+'; }
+.fig img { width: 100%; }
+.figcap {
+  font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; margin-top: 10px; display: flex; justify-content: space-between; gap: 10px;
+  color: var(--ink-soft);
+}
+
+/* ===== ticker ===== */
+.ticker { background: var(--white); border-block: 1px solid var(--ink); overflow: hidden; }
+.ticker-track { display: flex; width: max-content; animation: tick 28s linear infinite; }
+.ticker-track span {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; padding: 14px 28px; white-space: nowrap; color: var(--ink);
+}
+.ticker-track span::after { content: '◆'; color: var(--orange); margin-left: 56px; }
+@keyframes tick { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+/* ===== sections ===== */
+.section { padding-block: 92px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 56px; gap: 20px; }
+.sec-label { display: flex; align-items: center; gap: 12px; }
+.sec-label .sq { width: 10px; height: 10px; background: var(--orange); }
+.sec-label .mono { color: var(--orange-deep); font-weight: 700; }
+.sec-head h2 { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(24px, 3.4vw, 36px); letter-spacing: -.02em; }
+.sec-note { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-soft); letter-spacing: .06em; text-transform: uppercase; text-align: right; }
+
+/* ===== etymology ===== */
+.ety { padding-block: 56px; border-bottom: 1px solid var(--ink); background: var(--paper); }
+.ety-grid { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 40px; align-items: start; }
+.ety h3 { font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.ety h3 em { font-style: normal; color: var(--orange); }
+.ety p { font-size: 14px; color: var(--ink-soft); }
+@media (max-width: 900px) { .ety-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* ===== ventures ===== */
+.case { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; }
+.case + .case { margin-top: 110px; }
+.case.rev { grid-template-columns: 1.05fr 1fr; }
+.case.rev .case-img { order: 1; }
+.case.rev .case-txt { order: 2; }
+.case-kicker { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: var(--orange-deep); font-weight: 700; text-transform: uppercase; }
+.case h3 { font-family: 'JetBrains Mono', monospace; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; letter-spacing: -.02em; margin-top: 10px; }
+.case-tag { margin-top: 8px; font-size: 15px; color: var(--ink-soft); }
+.case-desc { margin-top: 18px; font-size: 15px; color: var(--ink); }
+.case-feats { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+.case-feats div { display: flex; gap: 12px; align-items: baseline; font-size: 14px; }
+.case-feats .sq { width: 7px; height: 7px; background: var(--orange); flex: none; transform: translateY(-1px); }
+.case-stats { margin-top: 26px; display: flex; gap: 26px; flex-wrap: wrap; border-top: 1px solid var(--ink); padding-top: 18px; }
+.case-stats .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+.case-stats .l { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .05em;
+  border: 1px solid var(--line); padding: 4px 9px; border-radius: 2px; color: var(--ink-soft); background: var(--white);
+}
+@media (max-width: 900px) {
+  .case, .case.rev { grid-template-columns: 1fr; gap: 32px; }
+  .case.rev .case-img { order: 0; }
+  .case + .case { margin-top: 80px; }
+}
+
+/* ===== services ===== */
+.sec-paper { background: var(--paper); }
+.svc-row { display: grid; grid-template-columns: 56px 1fr auto; gap: 28px; padding-block: 34px; border-top: 1px solid #D9CCB4; align-items: start; }
+.svc-row:last-child { border-bottom: 1px solid #D9CCB4; }
+.svc-num { font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 800; color: var(--orange); }
+.svc h3 { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+.svc-sub { margin-top: 6px; font-size: 14.5px; color: var(--ink-soft); }
+.svc-deliv { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.svc-tech {
+  margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft);
+  border-top: 1px dashed #D9CCB4; padding-top: 8px;
+}
+.svc-time { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--orange-deep); text-align: right; white-space: nowrap; padding-top: 4px; }
+@media (max-width: 900px) { .svc-row { grid-template-columns: 44px 1fr; } .svc-time { grid-column: 2; text-align: left; } }
+
+/* ===== process ===== */
+.process { margin-top: 72px; border-top: 2px solid var(--ink); padding-top: 30px; }
+.process-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--orange-deep); font-weight: 700; display: flex; align-items: center; gap: 12px; margin-bottom: 30px; }
+.process-label .sq { width: 10px; height: 10px; background: var(--orange); }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.process-step { border: 1px solid var(--line); padding: 20px; border-radius: 2px; background: var(--white); }
+.process-step .pnum { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; color: var(--orange); }
+.process-step h4 { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; margin-top: 8px; }
+.process-step p { font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+@media (max-width: 900px) { .process-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+
+/* ===== pricing ===== */
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.pkg { background: var(--white); border: 1px solid var(--ink); border-radius: 2px; padding: 30px 26px; display: flex; flex-direction: column; }
+.pkg .tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: .12em; color: var(--orange-deep); }
+.pkg h3 { font-family: 'JetBrains Mono', monospace; font-size: 21px; font-weight: 700; letter-spacing: -.01em; margin-top: 10px; }
+.pkg .price { font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 800; margin-top: 18px; letter-spacing: -.03em; }
+.pkg .price small { font-size: 13px; font-weight: 500; letter-spacing: .04em; }
+.pkg .meta { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .05em; color: var(--ink-soft); }
+.pkg .desc { margin-top: 16px; font-size: 13.5px; color: var(--ink-soft); }
+.pkg ul { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.pkg li { font-size: 13.5px; display: flex; gap: 10px; align-items: baseline; }
+.pkg li .sq { width: 6px; height: 6px; background: var(--orange); flex: none; }
+.pkg .more { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-soft); margin-top: 12px; }
+.pkg .cta { margin-top: 24px; display: block; text-align: center; }
+.pkg.feat { border: 2px solid var(--orange); position: relative; }
+.pkg.feat::before {
+  content: 'ĐỀ XUẤT • 2 KỸ SƯ'; position: absolute; top: -12px; left: 24px;
+  background: var(--orange); color: var(--white);
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  padding: 4px 10px; border-radius: 2px;
+}
+.pkg.feat .tag { visibility: hidden; }
+.pkg.feat .cta { background: var(--orange); color: var(--white); }
+.pkg.feat .cta:hover { background: var(--orange-deep); }
+.policy {
+  margin-top: 36px; border: 1px dashed var(--orange); border-radius: 2px;
+  padding: 18px 24px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
+  display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;
+}
+.policy b { color: var(--orange-deep); }
+@media (max-width: 900px) { .price-grid { grid-template-columns: 1fr; } }
+
+/* ===== team ===== */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 28px; }
+.member { border: 1px solid var(--line); background: var(--white); padding: 22px; border-radius: 2px; }
+.member .av {
+  width: 52px; height: 52px; background: var(--white); border: 2px solid var(--orange); color: var(--orange);
+  display: grid; place-items: center; border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; margin-bottom: 14px;
+}
+.member .name { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; }
+.member .role { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--orange-deep); margin-top: 6px; font-weight: 700; }
+.member .bio { font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
+.member .skills { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ===== faq ===== */
+.faq-item { border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-item summary {
+  padding: 20px 0; cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '[+]'; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--orange); font-weight: 700; }
+.faq-item[open] summary::after { content: '[−]'; }
+.faq-item p { padding-bottom: 22px; font-size: 14.5px; color: var(--ink-soft); max-width: 70ch; }
+
+/* ===== contact ===== */
+.contact { border-block: 2px solid var(--ink); }
+.contact .sec-head { border-color: var(--ink); }
+.contact h2 { font-size: clamp(28px, 4vw, 44px); }
+.contact-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+.contact-info { display: flex; flex-direction: column; gap: 12px; }
+.contact-info .row { display: flex; gap: 18px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 12px; }
+.contact-info .k { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); min-width: 110px; }
+.contact-info .v { font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 600; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* ===== footer ===== */
+footer { border-top: 1px solid var(--ink); padding-block: 34px; background: var(--paper); }
+.foot-in { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--ink-soft); text-transform: uppercase; }
+footer .brand-name { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; text-transform: none; letter-spacing: 0; color: var(--ink); }
+</style>
+
+<div class="mock-badge">MOCKUP v0.3 — PHONG CÁCH B: TECHNICAL SPEC</div>
+
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="brand">
+      <div class="brand-mark">SF</div>
+      <div class="brand-name">Synap<em>Forge</em></div>
+    </div>
+    <nav class="top-nav">
+      <a href="#ventures">Ventures</a>
+      <a href="#services">Dịch vụ</a>
+      <a href="#pricing">Báo giá</a>
+      <a href="#team">Đội ngũ</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+    <div class="lang-pill"><span class="on">VI</span><span>EN</span></div>
+    <a class="top-cta" href="#contact">Bắt đầu dự án</a>
+  </div>
+</header>
+
+<!-- ===== RAIL ===== -->
+<nav class="rail">
+  <a class="on" href="#top"><span class="l">Hero</span><span class="n">01</span></a>
+  <a href="#ventures"><span class="l">Ventures</span><span class="n">02</span></a>
+  <a href="#services"><span class="l">Dịch vụ</span><span class="n">03</span></a>
+  <a href="#pricing"><span class="l">Báo giá</span><span class="n">04</span></a>
+  <a href="#team"><span class="l">Đội ngũ</span><span class="n">05</span></a>
+  <a href="#contact"><span class="l">Liên hệ</span><span class="n">06</span></a>
+</nav>
+
+<!-- ===== HERO A/01 ===== -->
+<section class="hero gridbg" id="top">
+  <div class="wrap hero-in">
+    <div class="hero-eyebrow">
+      <span class="sq"></span>
+      <span class="mono">// A/01 — VENTURE STUDIO &amp; SOFTWARE FACTORY — ĐÀ NẴNG, VN</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1><span class="blk">forging_intelligence<span class="curs">();</span></span>engineering_scale<span class="curs">();</span></h1>
+        <p class="hero-sub"><b>Chuyển đổi số cho doanh nghiệp vừa &amp; nhỏ.</b> Thiết kế website bán hàng, tự động hóa đơn hàng &amp; thanh toán, AI chăm sóc khách 24/7.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="#ventures">Xem dự án thật</a>
+          <a class="btn btn-ghost" href="#contact">Báo giá trong 24h →</a>
+        </div>
+        <div class="hero-dual">
+          <span><b>02 động cơ:</b></span>
+          <span>■ Sản phẩm riêng — BrandHub, BienSoVip</span>
+          <span>■ Gia công chuẩn doanh nghiệp</span>
+        </div>
+      </div>
+      <div>
+        <figure class="fig" style="margin:0">
+          <span class="tk">+</span><span class="tk2">+</span>
+          <img src="img/biensovip_marketplace.png" alt="BienSoVip marketplace">
+          <figcaption class="figcap"><span>FIG. 01 — BienSoVip Marketplace</span><span>Production</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="v">05+</div><div class="l">Kỹ sư FPT / FSoft<br>100% thực chiến</div></div>
+      <div class="hero-stat"><div class="v">02</div><div class="l">Sản phẩm lõi<br>BrandHub &amp; BienSoVip</div></div>
+      <div class="hero-stat"><div class="v">0%</div><div class="l">Mất tin nhắn<br>RabbitMQ DLQ</div></div>
+      <div class="hero-stat"><div class="v">30–60</div><div class="l">Ngày bàn giao<br>MVP ra thị trường</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Website bán hàng</span><span>Thanh toán tự động</span><span>AI chăm khách 24/7</span><span>Quản lý đơn hàng</span><span>Báo cáo tự động</span><span>0đ phí cổng</span><span>&lt;30s thông báo</span><span>0% mất dữ liệu</span>
+    <span>Website bán hàng</span><span>Thanh toán tự động</span><span>AI chăm khách 24/7</span><span>Quản lý đơn hàng</span><span>Báo cáo tự động</span><span>0đ phí cổng</span><span>&lt;30s thông báo</span><span>0% mất dữ liệu</span>
+  </div>
+</div>
+
+<!-- ===== ETYMOLOGY ===== -->
+<section class="ety">
+  <div class="wrap ety-grid">
+    <div>
+      <h3><em>Syn</em>apse</h3>
+      <p>Khớp thần kinh &amp; mạng nơ-ron — AI/ML, tư duy thuật toán, luồng dữ liệu phân tán.</p>
+    </div>
+    <div>
+      <h3><em>Forge</em></h3>
+      <p>Lò rèn &amp; kỹ nghệ tôi luyện — bền bỉ, kỷ luật Clean Architecture, ý tưởng thành cỗ máy.</p>
+    </div>
+    <div>
+      <p style="font-family:'JetBrains Mono',monospace; font-size:16px; font-weight:600; color:var(--ink); line-height:1.5">// tư duy như mạng nơ-ron, kiến tạo như xưởng rèn</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VENTURES B/02 ===== -->
+<section class="section" id="ventures">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><span class="sq"></span><span class="mono">// B/02 — VENTURES</span></div>
+      <h2>sản_phẩm_tự_xây()</h2>
+      <div class="sec-note">In-house products</div>
+    </div>
+
+    <div class="case">
+      <div class="case-txt">
+        <div class="case-kicker">CASE 01 — AI MARTECH &amp; PUBLISHER</div>
+        <h3>BrandHub</h3>
+        <div class="case-tag">Nền tảng trí tuệ thương hiệu &amp; xuất bản nội dung tự động đa kênh</div>
+        <p class="case-desc">Hệ thống học giọng điệu thương hiệu của bạn từ bài viết cũ, tự sinh nội dung và đăng lên 5 nền tảng mạng xã hội — một người làm việc của cả đội content.</p>
+        <div class="case-feats">
+          <div><span class="sq"></span><span>Tự học Brand Voice — nội dung sinh ra không bao giờ trùng lặp</span></div>
+          <div><span class="sq"></span><span>Lập lịch đăng tự động Facebook, TikTok, Instagram, Threads, Zalo</span></div>
+          <div><span class="sq"></span><span>Lỗi thì tự gửi lại — không bao giờ mất bài đăng</span></div>
+        </div>
+        <div class="case-stats">
+          <div><div class="v">07</div><div class="l">Microservices</div></div>
+          <div><div class="v">0%</div><div class="l">Mất bài</div></div>
+          <div><div class="v">05</div><div class="l">Nền tảng</div></div>
+        </div>
+        <div class="chips">
+          <span class="chip">Java 21</span><span class="chip">Spring Cloud Gateway</span><span class="chip">RabbitMQ DLQ</span><span class="chip">Neo4j GraphRAG</span><span class="chip">Python FastAPI</span><span class="chip">React 18</span>
+        </div>
+      </div>
+      <div class="case-img">
+        <figure class="fig" style="margin:0">
+          <span class="tk">+</span><span class="tk2">+</span>
+          <img src="img/DA-D19-12.png" alt="BrandHub dashboard">
+          <figcaption class="figcap"><span>FIG. 02 — BrandHub</span><span>Dashboard</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="case rev">
+      <div class="case-txt">
+        <div class="case-kicker">CASE 02 — LUXURY MARKETPLACE</div>
+        <h3>BienSoVip</h3>
+        <div class="case-tag">Sàn giao dịch, đấu giá &amp; phân tích biển số xe định danh cao cấp</div>
+        <p class="case-desc">Khách gửi cọc lúc 2 giờ sáng, hệ thống tự khớp VietQR trong 0.5 giây — bạn ngủ, máy bán hàng. Trợ lý AI tư vấn phong thủy trả lời khách 24/7.</p>
+        <div class="case-feats">
+          <div><span class="sq"></span><span>Khớp cọc tự động &lt; 0.5s — 0đ phí cổng trung gian</span></div>
+          <div><span class="sq"></span><span>Khóa chống bán trùng — 2 khách không bao giờ mua cùng 1 biển</span></div>
+          <div><span class="sq"></span><span>AI tư vấn phong thủy theo 4 trụ — trả lời khách 24/7</span></div>
+        </div>
+        <div class="case-stats">
+          <div><div class="v">61</div><div class="l">Bảng dữ liệu</div></div>
+          <div><div class="v">&lt;8ms</div><div class="l">Truy vấn</div></div>
+          <div><div class="v">&lt;0.5s</div><div class="l">Khớp cọc</div></div>
+        </div>
+        <div class="chips">
+          <span class="chip">.NET 8 Clean Arch</span><span class="chip">PostgreSQL GIN</span><span class="chip">Redis Lock</span><span class="chip">React 19</span><span class="chip">VietQR Webhook</span><span class="chip">DeepSeek AI</span>
+        </div>
+      </div>
+      <div class="case-img">
+        <figure class="fig" style="margin:0">
+          <span class="tk">+</span><span class="tk2">+</span>
+          <img src="img/biensovip_real_dashboard.png" alt="BienSoVip dashboard">
+          <figcaption class="figcap"><span>FIG. 03 — BienSoVip</span><span>Admin</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES C/03 ===== -->
+<section class="section sec-paper" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><span class="sq"></span><span class="mono">// C/03 — SERVICES</span></div>
+      <h2>dịch_vụ_chuyển_đổi_số()</h2>
+      <div class="sec-note">Cho doanh nghiệp vừa &amp; nhỏ</div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-num">01</div>
+      <div class="svc">
+        <h3>Website bán hàng &amp; Marketplace</h3>
+        <p class="svc-sub">Bán online chuyên nghiệp — khách tự đặt, tự thanh toán, không cần nhân viên chốt đơn.</p>
+        <div class="svc-deliv">
+          <span class="chip">Giỏ hàng, đơn hàng, tồn kho real-time</span><span class="chip">Thanh toán VietQR tự khớp + VNPay/MoMo</span><span class="chip">Admin CMS quản lý sản phẩm, giá, đơn</span><span class="chip">SSL, SEO, tải trang &lt; 1s</span>
+        </div>
+        <div class="svc-tech">TECH — .NET 8 / Java Clean Arch · PostgreSQL · VietQR Webhook</div>
+      </div>
+      <div class="svc-time">4–8 tuần</div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-num">02</div>
+      <div class="svc">
+        <h3>Tự động hóa vận hành</h3>
+        <p class="svc-sub">Đơn hàng tự đối soát, thông báo &lt; 30s, báo cáo không cần làm tay.</p>
+        <div class="svc-deliv">
+          <span class="chip">Thông báo Telegram/Zalo Webhook &lt; 30s</span><span class="chip">Đối soát VietQR tự động 0đ phí</span><span class="chip">Phễu lead tự phân luồng theo độ nóng</span><span class="chip">Báo cáo doanh thu tự động</span>
+        </div>
+        <div class="svc-tech">TECH — RabbitMQ DLQ · API Gateway · Redis · Docker</div>
+      </div>
+      <div class="svc-time">3–6 tuần</div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-num">03</div>
+      <div class="svc">
+        <h3>AI chăm sóc khách hàng 24/7</h3>
+        <p class="svc-sub">AI trả lời theo dữ liệu riêng của bạn — không ảo giác, tiết kiệm 80% chi phí.</p>
+        <div class="svc-deliv">
+          <span class="chip">Tư vấn sản phẩm tự động 24/7</span><span class="chip">RAG học tài liệu nội bộ — trả lời có nguồn</span><span class="chip">Mô hình chạy riêng on-premise, dữ liệu không ra ngoài</span><span class="chip">API AI tốc độ cao</span>
+        </div>
+        <div class="svc-tech">TECH — RAG · FastAPI · LLM Fine-tune · DeepSeek / Gemini</div>
+      </div>
+      <div class="svc-time">2–5 tuần</div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-num">04</div>
+      <div class="svc">
+        <h3>Chuyển đổi số trọn gói</h3>
+        <p class="svc-sub">Từ ý tưởng trên giấy đến sản phẩm ra mắt trong 30–60 ngày.</p>
+        <div class="svc-deliv">
+          <span class="chip">Đặc tả kỹ thuật &amp; thiết kế dữ liệu trước khi code</span><span class="chip">UI/UX chuẩn quốc tế</span><span class="chip">Agile/Scrum — báo tiến độ từng task</span><span class="chip">Deploy production + bàn giao source &amp; tài liệu</span>
+        </div>
+        <div class="svc-tech">TECH — Full-stack · Agile/Scrum · Cloud Deploy</div>
+      </div>
+      <div class="svc-time">30–60 ngày</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING D/04 ===== -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><span class="sq"></span><span class="mono">// D/04 — PRICING</span></div>
+      <h2>báo_giá_minh_bạch()</h2>
+      <div class="sec-note">Trợ giá −50% dev</div>
+    </div>
+
+    <div class="price-grid">
+      <div class="pkg">
+        <div class="tag">Gói 1 Dev</div>
+        <h3>Gói MVP Khởi Nghiệp</h3>
+        <div class="price">11.500.000<small>₫</small></div>
+        <div class="meta"><span>~1.5–2 tháng (1 Dev)</span><span>Bảo hành 6 tháng</span><span>−50% Trợ giá Dev</span></div>
+        <p class="desc">Cá nhân, shop mới mở — ra mắt web nhanh, chi phí tiết kiệm nhất.</p>
+        <ul>
+          <li><span class="sq"></span>Giao diện theo yêu cầu, chuẩn nhận diện thương hiệu</li>
+          <li><span class="sq"></span>Responsive 100% điện thoại / iPad / máy tính</li>
+          <li><span class="sq"></span>Hotline, chat Zalo, Messenger nổi</li>
+          <li><span class="sq"></span>SEO cơ bản + SSL trọn đời</li>
+        </ul>
+        <div class="more">+ 3 tiện ích khác</div>
+        <a class="btn btn-ghost cta" href="#contact">Bắt đầu →</a>
+      </div>
+
+      <div class="pkg feat">
+        <div class="tag">Đề xuất • 2 Kỹ sư</div>
+        <h3>Gói MVP Tốc Hành</h3>
+        <div class="price">18.500.000<small>₫</small></div>
+        <div class="meta"><span>~1.5–2 tháng (2 Devs)</span><span>Hỗ trợ vận hành 8 tháng</span><span>−50% Trợ giá Dev</span></div>
+        <p class="desc">Shop cần ra mắt chuyên nghiệp — 2 kỹ sư song song Frontend &amp; Backend.</p>
+        <ul>
+          <li><span class="sq"></span>Toàn bộ tính năng gói Khởi Nghiệp</li>
+          <li><span class="sq"></span>VietQR động tự điền số tiền + đối soát tự động</li>
+          <li><span class="sq"></span>Quản lý đơn hàng + thông báo Telegram/Zalo &lt; 30s</li>
+          <li><span class="sq"></span>Admin CMS dễ dùng + VPS &amp; SSL miễn phí</li>
+        </ul>
+        <div class="more">+ 3 tiện ích khác</div>
+        <a class="btn cta" href="#contact">Bắt đầu →</a>
+      </div>
+
+      <div class="pkg">
+        <div class="tag">Full Scope • 5 Devs</div>
+        <h3>Gói Chuyên Nghiệp Toàn Diện</h3>
+        <div class="price">33.000.000<small>₫</small></div>
+        <div class="meta"><span>~2–2.5 tháng (Team 5)</span><span>Ưu tiên 12 tháng + 24/7</span><span>−50% Trợ giá Dev</span></div>
+        <p class="desc">Thương hiệu, sàn giao dịch, cửa hàng lớn — thanh toán tự động + trợ lý AI.</p>
+        <ul>
+          <li><span class="sq"></span>Marketplace: giỏ hàng, đơn hàng, tồn kho real-time</li>
+          <li><span class="sq"></span>VietQR Webhook 0.5s + VNPay/MoMo</li>
+          <li><span class="sq"></span>Trợ lý AI DeepSeek tư vấn &amp; phong thủy 24/7</li>
+          <li><span class="sq"></span>Bàn giao full source + tài liệu kỹ thuật</li>
+        </ul>
+        <div class="more">+ 3 tiện ích khác</div>
+        <a class="btn btn-ghost cta" href="#contact">Bắt đầu →</a>
+      </div>
+    </div>
+
+    <div class="policy">
+      <span><b>Hợp đồng:</b> 40% khi ký hợp đồng dân sự — 60% chỉ thanh toán khi nghiệm thu môi trường thật.</span>
+      <span><b>Thưởng:</b> bàn giao sớm được thưởng theo ngày.</span>
+      <span><b>Phạt:</b> trễ hẹn do lỗi Dev — trừ vào đợt cuối.</span>
+    </div>
+
+    <div class="process">
+      <div class="process-label"><span class="sq"></span>// QUY TRÌNH LÀM VIỆC</div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="pnum">01</div>
+          <h4>Gửi mô tả ý tưởng</h4>
+          <p>2–3 dòng về sản phẩm là đủ — chúng tôi đọc và phản hồi.</p>
+        </div>
+        <div class="process-step">
+          <div class="pnum">02</div>
+          <h4>Báo giá &amp; chốt phạm vi</h4>
+          <p>Trong 24h có báo giá, liệt kê rõ từng hạng mục được/nghĩa làm.</p>
+        </div>
+        <div class="process-step">
+          <div class="pnum">03</div>
+          <h4>Ký hợp đồng — đóng 40%</h4>
+          <p>Hợp đồng dân sự, tiến độ từng task Jira, commit Git công khai.</p>
+        </div>
+        <div class="process-step">
+          <div class="pnum">04</div>
+          <h4>Bàn giao &amp; nghiệm thu</h4>
+          <p>Chạy thử môi trường thật, thanh toán 60% — bảo hành tiếp sau bàn giao.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM E/05 ===== -->
+<section class="section sec-paper" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><span class="sq"></span><span class="mono">// E/05 — TEAM</span></div>
+      <h2>đội_ngũ_thực_chiến()</h2>
+      <div class="sec-note">05 kỹ sư FPT / FSoft</div>
+    </div>
+
+    <div class="team-grid">
+      <div class="member">
+        <div class="av">T</div>
+        <div class="name">Lê Trí Trung</div>
+        <div class="role">Founder &amp; Tech Lead</div>
+        <p class="bio">Tổng đạo diễn kiến trúc hệ thống — tự tay thiết kế các sàn giao dịch lớn và EdTech hàng chục ngàn người dùng.</p>
+        <div class="skills"><span class="chip">Java Spring Boot</span><span class="chip">.NET 8</span><span class="chip">System Design</span></div>
+      </div>
+      <div class="member">
+        <div class="av">A</div>
+        <div class="name">Hà Văn Ân</div>
+        <div class="role">Full-Stack &amp; AI Integrator</div>
+        <p class="bio">Next.js tốc độ cao + RAG pipelines loại trừ hallucination.</p>
+        <div class="skills"><span class="chip">Next.js 16</span><span class="chip">RAG</span><span class="chip">Gemini API</span></div>
+      </div>
+      <div class="member">
+        <div class="av">L</div>
+        <div class="name">Nguyễn Thành Lộc</div>
+        <div class="role">Backend Architect &amp; AI Lead</div>
+        <p class="bio">Clean Architecture, di chuyển legacy sang microservices, GraphRAG.</p>
+        <div class="skills"><span class="chip">.NET 8</span><span class="chip">Neo4j</span><span class="chip">FastAPI</span></div>
+      </div>
+      <div class="member">
+        <div class="av">P</div>
+        <div class="name">Nguyễn Chơn Phước</div>
+        <div class="role">Java Core &amp; Cloud DevOps</div>
+        <p class="bio">Hạ tầng chịu tải, Docker, vận hành 24/7 độ trễ tối thiểu.</p>
+        <div class="skills"><span class="chip">Java 21</span><span class="chip">Docker</span><span class="chip">Nginx</span></div>
+      </div>
+      <div class="member">
+        <div class="av">T</div>
+        <div class="name">Nguyễn Minh Tuấn</div>
+        <div class="role">Enterprise .NET Backend</div>
+        <p class="bio">Giải pháp chuẩn Microsoft, tích hợp dịch vụ công, tự động hóa kiểm duyệt.</p>
+        <div class="skills"><span class="chip">.NET 8</span><span class="chip">SQL Server</span><span class="chip">Gov APIs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><span class="sq"></span><span class="mono">// FAQ</span></div>
+      <h2>câu_hỏi_thường_gặp()</h2>
+      <div class="sec-note">4 câu phổ biến nhất</div>
+    </div>
+
+    <details class="faq-item" open>
+      <summary>Bàn giao trong bao lâu?</summary>
+      <p>Website bán hàng 4–8 tuần, tự động hóa vận hành 3–6 tuần, AI 2–5 tuần. Gói trọn gói: ra mắt trong 30–60 ngày. Tiến độ được cập nhật từng task — bạn luôn biết đang làm tới đâu.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Bảo hành thế nào?</summary>
+      <p>Sửa lỗi miễn phí 6–12 tháng tùy gói (ghi rõ trong hợp đồng). Gói Chuyên Nghiệp hỗ trợ ưu tiên 12 tháng + trực 24/7.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Source code thuộc về ai?</summary>
+      <p>Thuộc về bạn. Bàn giao toàn bộ mã nguồn + tài liệu kỹ thuật sau khi nghiệm thu, quy định rõ trong hợp đồng.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Sau này muốn nâng cấp được không?</summary>
+      <p>Được. Có lộ trình nâng cấp từ MVP lên sàn lớn (phụ phí +20% Live Upgrade) — không phải làm lại từ đầu.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===== CONTACT F/06 ===== -->
+<section class="section contact gridbg" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><span class="sq"></span><span class="mono">// F/06 — CONTACT</span></div>
+      <h2>bắt_đầu_dự_án()</h2>
+      <div class="sec-note">Phản hồi trong 24h</div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="row"><span class="k">Email</span><span class="v">contact@synapforge.dev</span></div>
+        <div class="row"><span class="k">Điện thoại</span><span class="v">(+84) 912 158 715</span></div>
+        <div class="row"><span class="k">Trụ sở</span><span class="v">Hải Châu, TP. Đà Nẵng, Việt Nam</span></div>
+      </div>
+      <a class="btn btn-solid" href="mailto:contact@synapforge.dev">Gửi mô tả ý tưởng →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot-in">
+    <span class="brand-name">Synap<em style="color:var(--orange)">Forge</em></span>
+    <span>© 2026 — Venture Studio &amp; Software Factory</span>
+    <span>Đà Nẵng, Việt Nam</span>
+  </div>
+</footer>

@@ -1,17 +1,42 @@
 <!doctype html>
-<html lang="vi" class="dark scroll-smooth">
+<html lang="vi" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SynapForge — Venture Studio & Software Engineering Factory</title>
-    <meta name="description" content="SynapForge là Venture Studio & Đối tác Kỹ nghệ Phần mềm Đẳng cấp tại Đà Nẵng. Chuyên gia công Web App, Microservices, RAG/AI và kiến trúc chịu tải cao." />
+    <title>SynapForge — Thiết kế Website Bán Hàng, AI & Chuyển Đổi Số cho Doanh Nghiệp | Đà Nẵng</title>
+    <meta name="description" content="SynapForge thiết kế website bán hàng, tự động hóa đơn hàng & thanh toán, AI chăm khách 24/7 cho doanh nghiệp vừa & nhỏ tại Đà Nẵng. Báo giá 24h, bàn giao 30–60 ngày." />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "SynapForge",
+          "url": "https://synapforge.dev/",
+          "email": "contact@synapforge.dev",
+          "telephone": "+84912158715",
+          "description": "Venture Studio & Software Factory tại Đà Nẵng — thiết kế website bán hàng, tự động hóa đơn hàng & thanh toán, AI chăm sóc khách 24/7 cho doanh nghiệp vừa và nhỏ.",
+          "address": { "@type": "PostalAddress", "addressLocality": "Hải Châu, Đà Nẵng", "addressCountry": "VN" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "SynapForge bàn giao dự án trong bao lâu?", "acceptedAnswer": { "@type": "Answer", "text": "Website bán hàng 4–8 tuần, tự động hóa 3–6 tuần, AI 2–5 tuần; gói trọn gói ra mắt trong 30–60 ngày." } },
+            { "@type": "Question", "name": "Chính sách bảo hành của SynapForge thế nào?", "acceptedAnswer": { "@type": "Answer", "text": "Sửa lỗi miễn phí 6–12 tháng tùy gói; gói Chuyên Nghiệp hỗ trợ ưu tiên 12 tháng và trực 24/7." } },
+            { "@type": "Question", "name": "Source code thuộc về ai?", "acceptedAnswer": { "@type": "Answer", "text": "Thuộc về khách hàng — bàn giao toàn bộ mã nguồn và tài liệu kỹ thuật sau nghiệm thu." } },
+            { "@type": "Question", "name": "Sau này có nâng cấp được không?", "acceptedAnswer": { "@type": "Answer", "text": "Được — có lộ trình nâng cấp từ MVP lên sàn lớn, không phải làm lại từ đầu." } }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
-  <body class="bg-[#0B0F17] text-white selection:bg-[#FF5500] selection:text-white antialiased min-h-screen">
+  <body class="selection:bg-[#FF5500] selection:text-white antialiased min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
