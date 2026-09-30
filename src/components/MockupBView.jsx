@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SynapseCanvas from './SynapseCanvas';
 import SideStreams from './SideStreams';
+import Lenis from 'lenis';
 
 export default function MockupBView() {
   const [lang, setLang] = useState('vi');
@@ -9,7 +10,7 @@ export default function MockupBView() {
   // Track active section for rail navigation
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['top', 'ventures', 'services', 'pricing', 'team', 'contact'];
+      const sections = ['top', 'ventures', 'services', 'team', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -29,6 +30,32 @@ export default function MockupBView() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Smooth scroll (Lenis) + anchor handling
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 1.2 });
+    let rafId;
+    const raf = (time) => { lenis.raf(time); rafId = requestAnimationFrame(raf); };
+    rafId = requestAnimationFrame(raf);
+
+    const onClick = (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      const el = document.querySelector(href);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -80 });
+    };
+    document.addEventListener('click', onClick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      document.removeEventListener('click', onClick);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className="font-space bg-white text-[#1D1510] min-h-screen relative antialiased selection:bg-[#FF5500] selection:text-white">
       {/* Side Streams HUD for Ultra-Wide Displays */}
@@ -44,7 +71,6 @@ export default function MockupBView() {
           <nav className="top-nav">
             <a href="#ventures">Ventures</a>
             <a href="#services">Dịch vụ</a>
-            <a href="#pricing">Báo giá</a>
             <a href="#team">Đội ngũ</a>
             <a href="#contact">Liên hệ</a>
           </nav>
@@ -75,17 +101,13 @@ export default function MockupBView() {
           <span className="l">Dịch vụ</span>
           <span className="n">03</span>
         </a>
-        <a className={activeSection === 'pricing' ? 'on' : ''} href="#pricing">
-          <span className="l">Báo giá</span>
-          <span className="n">04</span>
-        </a>
         <a className={activeSection === 'team' ? 'on' : ''} href="#team">
           <span className="l">Đội ngũ</span>
-          <span className="n">05</span>
+          <span className="n">04</span>
         </a>
         <a className={activeSection === 'contact' ? 'on' : ''} href="#contact">
           <span className="l">Liên hệ</span>
-          <span className="n">06</span>
+          <span className="n">05</span>
         </a>
       </nav>
 
@@ -104,9 +126,11 @@ export default function MockupBView() {
             <div>
               <h1>
                 <span className="blk">
-                  forging_intelligence<span className="curs">();</span>
+                  Thiết kế website bán hàng,
                 </span>
-                engineering_scale<span className="curs">();</span>
+                <span className="blk">
+                  tự động hóa &amp; AI chăm khách<span className="curs"> 24/7</span>
+                </span>
               </h1>
               <p className="hero-sub">
                 <b>Website bán hàng, thanh toán tự động, AI chăm khách 24/7.</b> Chúng tôi làm trọn gói cho doanh nghiệp vừa &amp; nhỏ — bạn lo bán, công nghệ lo phần còn lại.
@@ -195,7 +219,7 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// B/02 — VENTURES</span>
             </div>
-            <h2>sản_phẩm_tự_xây()</h2>
+            <h2>Sản phẩm tự xây</h2>
             <div className="sec-note">In-house products</div>
           </div>
 
@@ -204,9 +228,9 @@ export default function MockupBView() {
             <div className="case-txt">
               <div className="case-kicker">CASE 01 — AI MARTECH &amp; PUBLISHER</div>
               <h3>BrandHub</h3>
-              <div className="case-tag">Nền tảng trí tuệ thương hiệu &amp; xuất bản nội dung tự động đa kênh</div>
+              <div className="case-tag">Tự động viết &amp; đăng nội dung lên 5 nền tảng MXH</div>
               <p className="case-desc">
-                Hệ thống học giọng điệu thương hiệu của bạn từ bài viết cũ, tự sinh nội dung và đăng lên 5 nền tảng mạng xã hội — một người làm việc của cả đội content.
+                Học giọng điệu thương hiệu từ bài cũ, tự sinh nội dung, đăng 5 MXH — một người làm việc của cả đội content.
               </p>
               <div className="case-feats">
                 <div><span className="sq"></span><span>Tự học Brand Voice — nội dung sinh ra không bao giờ trùng lặp</span></div>
@@ -245,9 +269,9 @@ export default function MockupBView() {
             <div className="case-txt">
               <div className="case-kicker">CASE 02 — LUXURY MARKETPLACE</div>
               <h3>BienSoVip</h3>
-              <div className="case-tag">Sàn giao dịch, đấu giá &amp; phân tích biển số xe định danh cao cấp</div>
+              <div className="case-tag">Sàn giao dịch &amp; đấu giá biển số xe cao cấp</div>
               <p className="case-desc">
-                Khách gửi cọc lúc 2 giờ sáng, hệ thống tự khớp VietQR trong 0.5 giây — bạn ngủ, máy bán hàng. Trợ lý AI tư vấn phong thủy trả lời khách 24/7.
+                Khách cọc lúc 2h sáng, máy tự khớp VietQR trong 0.5s — bạn ngủ, máy bán. AI tư vấn phong thủy trả lời 24/7.
               </p>
               <div className="case-feats">
                 <div><span className="sq"></span><span>Khớp cọc tự động &lt; 0.5s — 0đ phí cổng trung gian</span></div>
@@ -291,7 +315,7 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// C/03 — SERVICES</span>
             </div>
-            <h2>dịch_vụ_chuyển_đổi_số()</h2>
+            <h2>Dịch vụ chuyển đổi số</h2>
             <div className="sec-note">Cho doanh nghiệp vừa &amp; nhỏ</div>
           </div>
 
@@ -361,125 +385,15 @@ export default function MockupBView() {
         </div>
       </section>
 
-      {/* ===== PRICING D/04 ===== */}
-      <section className="section" id="pricing">
-        <div className="wrap">
-          <div className="sec-head">
-            <div className="sec-label">
-              <span className="sq"></span>
-              <span className="mono">// D/04 — PRICING</span>
-            </div>
-            <h2>báo_giá_minh_bạch()</h2>
-            <div className="sec-note">Trợ giá −50% dev</div>
-          </div>
-
-          <div className="price-grid">
-            <div className="pkg">
-              <div className="tag">Gói 1 Dev</div>
-              <h3>Gói MVP Khởi Nghiệp</h3>
-              <div className="price">11.500.000<small>₫</small></div>
-              <div className="meta">
-                <span>~1.5–2 tháng (1 Dev)</span>
-                <span>Bảo hành 6 tháng</span>
-                <span>−50% Trợ giá Dev</span>
-              </div>
-              <p className="desc">Cá nhân, shop mới mở — ra mắt web nhanh, chi phí tiết kiệm nhất.</p>
-              <ul>
-                <li><span className="sq"></span>Giao diện theo yêu cầu, chuẩn nhận diện thương hiệu</li>
-                <li><span className="sq"></span>Responsive 100% điện thoại / iPad / máy tính</li>
-                <li><span className="sq"></span>Hotline, chat Zalo, Messenger nổi</li>
-                <li><span className="sq"></span>SEO cơ bản + SSL trọn đời</li>
-              </ul>
-              <div className="more">+ 3 tiện ích khác</div>
-              <a className="btn-spec btn-ghost cta" href="#contact">Bắt đầu →</a>
-            </div>
-
-            <div className="pkg feat">
-              <div className="tag">Đề xuất • 2 Kỹ sư</div>
-              <h3>Gói MVP Tốc Hành</h3>
-              <div className="price">18.500.000<small>₫</small></div>
-              <div className="meta">
-                <span>~1.5–2 tháng (2 Devs)</span>
-                <span>Hỗ trợ vận hành 8 tháng</span>
-                <span>−50% Trợ giá Dev</span>
-              </div>
-              <p className="desc">Shop cần ra mắt chuyên nghiệp — 2 kỹ sư song song Frontend &amp; Backend.</p>
-              <ul>
-                <li><span className="sq"></span>Toàn bộ tính năng gói Khởi Nghiệp</li>
-                <li><span className="sq"></span>VietQR động tự điền số tiền + đối soát tự động</li>
-                <li><span className="sq"></span>Quản lý đơn hàng + thông báo Telegram/Zalo &lt; 30s</li>
-                <li><span className="sq"></span>Admin CMS dễ dùng + VPS &amp; SSL miễn phí</li>
-              </ul>
-              <div className="more">+ 3 tiện ích khác</div>
-              <a className="btn-spec btn-solid cta" href="#contact">Bắt đầu →</a>
-            </div>
-
-            <div className="pkg">
-              <div className="tag">Full Scope • 5 Devs</div>
-              <h3>Gói Chuyên Nghiệp Toàn Diện</h3>
-              <div className="price">33.000.000<small>₫</small></div>
-              <div className="meta">
-                <span>~2–2.5 tháng (Team 5)</span>
-                <span>Ưu tiên 12 tháng + 24/7</span>
-                <span>−50% Trợ giá Dev</span>
-              </div>
-              <p className="desc">Thương hiệu, sàn giao dịch, cửa hàng lớn — thanh toán tự động + trợ lý AI.</p>
-              <ul>
-                <li><span className="sq"></span>Marketplace: giỏ hàng, đơn hàng, tồn kho real-time</li>
-                <li><span className="sq"></span>VietQR Webhook 0.5s + VNPay/MoMo</li>
-                <li><span className="sq"></span>Trợ lý AI DeepSeek tư vấn &amp; phong thủy 24/7</li>
-                <li><span className="sq"></span>Bàn giao full source + tài liệu kỹ thuật</li>
-              </ul>
-              <div className="more">+ 3 tiện ích khác</div>
-              <a className="btn-spec btn-ghost cta" href="#contact">Bắt đầu →</a>
-            </div>
-          </div>
-
-          <div className="policy">
-            <span><b>Hợp đồng:</b> 40% khi ký hợp đồng dân sự — 60% chỉ thanh toán khi nghiệm thu môi trường thật.</span>
-            <span><b>Thưởng:</b> bàn giao sớm được thưởng theo ngày.</span>
-            <span><b>Phạt:</b> trễ hẹn do lỗi Dev — trừ vào đợt cuối.</span>
-          </div>
-
-          <div className="process">
-            <div className="process-label">
-              <span className="sq"></span>// QUY TRÌNH LÀM VIỆC
-            </div>
-            <div className="process-grid">
-              <div className="process-step">
-                <div className="pnum">01</div>
-                <h4>Gửi mô tả ý tưởng</h4>
-                <p>2–3 dòng về sản phẩm là đủ — chúng tôi đọc và phản hồi.</p>
-              </div>
-              <div className="process-step">
-                <div className="pnum">02</div>
-                <h4>Báo giá &amp; chốt phạm vi</h4>
-                <p>Trong 24h có báo giá, liệt kê rõ từng hạng mục được/nghĩa làm.</p>
-              </div>
-              <div className="process-step">
-                <div className="pnum">03</div>
-                <h4>Ký hợp đồng — đóng 40%</h4>
-                <p>Hợp đồng dân sự, tiến độ từng task Jira, commit Git công khai.</p>
-              </div>
-              <div className="process-step">
-                <div className="pnum">04</div>
-                <h4>Bàn giao &amp; nghiệm thu</h4>
-                <p>Chạy thử môi trường thật, thanh toán 60% — bảo hành tiếp sau bàn giao.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== TEAM E/05 ===== */}
+      {/* ===== TEAM D/04 ===== */}
       <section className="section sec-paper" id="team">
         <div className="wrap">
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>
-              <span className="mono">// E/05 — TEAM</span>
+              <span className="mono">// D/04 — TEAM</span>
             </div>
-            <h2>đội_ngũ_thực_chiến()</h2>
+            <h2>Đội ngũ thực chiến</h2>
             <div className="sec-note">05 kỹ sư FPT / FSoft</div>
           </div>
 
@@ -555,7 +469,7 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// FAQ</span>
             </div>
-            <h2>câu_hỏi_thường_gặp()</h2>
+            <h2>Câu hỏi thường gặp</h2>
             <div className="sec-note">4 câu phổ biến nhất</div>
           </div>
 
@@ -581,15 +495,15 @@ export default function MockupBView() {
         </div>
       </section>
 
-      {/* ===== CONTACT F/06 ===== */}
+      {/* ===== CONTACT E/05 ===== */}
       <section className="contact-spec gridbg" id="contact">
         <div className="wrap">
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>
-              <span className="mono">// F/06 — CONTACT</span>
+              <span className="mono">// E/05 — CONTACT</span>
             </div>
-            <h2>bắt_đầu_dự_án()</h2>
+            <h2>Bắt đầu dự án</h2>
             <div className="sec-note">Phản hồi trong 24h</div>
           </div>
 

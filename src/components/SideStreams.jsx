@@ -72,7 +72,7 @@ export default function SideStreams({ t, theme = 'dark' }) {
       desc: "Web chuẩn nhận diện, 100% mobile, SEO & bảo hành 6 tháng",
       price: "11.500.000₫",
       badge: "Tiết kiệm",
-      href: "#pricing"
+      href: "#contact"
     },
     {
       id: "fast_mvp",
@@ -81,7 +81,7 @@ export default function SideStreams({ t, theme = 'dark' }) {
       desc: "Frontend + Backend, VietQR 0.5s, Telegram Webhook <30s",
       price: "18.500.000₫",
       badge: "Đề xuất HOT",
-      href: "#pricing"
+      href: "#contact"
     },
     {
       id: "enterprise_full",
@@ -90,7 +90,7 @@ export default function SideStreams({ t, theme = 'dark' }) {
       desc: "Sàn TMĐT lớn, Trợ lý AI DeepSeek, Source Code & BH 24/7",
       price: "33.000.000₫",
       badge: "Full Power",
-      href: "#pricing"
+      href: "#contact"
     },
     {
       id: "saas_vietqr",
@@ -99,7 +99,7 @@ export default function SideStreams({ t, theme = 'dark' }) {
       desc: "Webhook ngân hàng đối soát tức thì 0đ phí trung gian",
       price: "+2.5M Module",
       badge: "#1 Best",
-      href: "#pricing"
+      href: "#contact"
     },
     {
       id: "saas_redis",
@@ -108,7 +108,7 @@ export default function SideStreams({ t, theme = 'dark' }) {
       desc: "Khóa giữ chỗ 15 phút chống bán trùng sản phẩm độc bản",
       price: "+2.0M Module",
       badge: "High-Load",
-      href: "#pricing"
+      href: "#contact"
     },
     {
       id: "saas_omni",
@@ -117,7 +117,7 @@ export default function SideStreams({ t, theme = 'dark' }) {
       desc: "FB, TikTok, IG, Threads, Zalo qua RabbitMQ DLQ",
       price: "+4.5M Module",
       badge: "MarTech",
-      href: "#pricing"
+      href: "#contact"
     }
   ];
 

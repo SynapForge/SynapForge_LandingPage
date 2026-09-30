@@ -5,12 +5,12 @@
 
 export const UI = {
   meta_title: {
-    vi: 'SynapForge — Venture Studio & Software Engineering Factory',
-    en: 'SynapForge — Venture Studio & Software Engineering Factory',
+    vi: 'SynapForge — Thiết kế Website Bán Hàng, AI & Chuyển Đổi Số cho Doanh Nghiệp | Đà Nẵng',
+    en: 'SynapForge — Web Design, Automation & AI for SMEs | Da Nang, Vietnam',
   },
   meta_desc: {
-    vi: 'SynapForge là Venture Studio & Đối tác Kỹ nghệ Phần mềm Đẳng cấp tại Đà Nẵng. Chuyên gia công Web App, Microservices, RAG/AI và kiến trúc chịu tải cao.',
-    en: 'SynapForge is a Venture Studio & high-end software engineering partner in Da Nang, Vietnam. Specialized in web apps, microservices, RAG/AI and high-load architecture.',
+    vi: 'SynapForge thiết kế website bán hàng, tự động hóa đơn hàng & thanh toán, AI chăm khách 24/7 cho doanh nghiệp vừa & nhỏ tại Đà Nẵng. Báo giá 24h, bàn giao 30–60 ngày.',
+    en: 'SynapForge builds e-commerce websites, order & payment automation, and 24/7 AI customer support for SMEs in Da Nang, Vietnam. Quote in 24h, delivery in 30–60 days.',
   },
   nav_model: { vi: 'Mô Hình Kép', en: 'Dual Engine' },
   nav_ventures: { vi: 'Sản Phẩm Lõi', en: 'Core Ventures' },
