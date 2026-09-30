@@ -351,7 +351,8 @@ body {
 @media (max-width: 900px) { .price-grid { grid-template-columns: 1fr; } }
 
 /* Team */
-.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 28px; }
+#team { padding-bottom: 10px; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 28px; margin:5px }
 .member { border: 1px solid var(--line); background: var(--white); padding: 22px; border-radius: 2px; }
 .member .av {
   width: 52px; height: 52px; background: var(--white); border: 2px solid var(--orange); color: var(--orange);
@@ -391,4 +392,27 @@ body {
 footer.footer-spec { border-top: 1px solid var(--ink); padding-block: 34px; background: var(--paper); }
 .foot-in { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--ink-soft); text-transform: uppercase; }
 footer.footer-spec .brand-name { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; text-transform: none; letter-spacing: 0; color: var(--ink); }
+
+/* Tekmium-style scroll reveal */
+.case { opacity: 0; transform: scale(.9) translateY(24px); filter: blur(8px); transition: opacity .7s ease, transform .7s cubic-bezier(.22, .61, .36, 1), filter .7s ease; }
+.case.is-in { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+.sec-head, .svc-row, .member, .faq-item { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.22, .61, .36, 1); }
+.sec-head.is-in, .svc-row.is-in, .member.is-in, .faq-item.is-in { opacity: 1; transform: none; }
+.member:hover { transform: scale(1.045); z-index: 2; transition: transform .25s cubic-bezier(.22,.61,.36,1), opacity .25s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .case, .sec-head, .svc-row, .member, .faq-item { opacity: 1; transform: none; filter: none; transition: none; }
+}
+
+/* ===== RESPONSIVE: MOBILE (<640px) ===== */
+@media (max-width: 640px) {
+  .wrap { padding-inline: 18px; }
+  .hero-in { padding-block: 56px 48px; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn-spec { width: 100%; text-align: center; }
+  .sec-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .sec-note { text-align: left; }
+  .contact-info .row { flex-direction: column; gap: 4px; }
+  .contact-info .k { min-width: 0; }
+  .contact-spec { padding-block: 60px; }
+}
 
