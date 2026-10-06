@@ -1041,12 +1041,13 @@ body {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   display: block;
   border: 1px solid var(--line);
   border-radius: 2px;
   margin-bottom: 14px;
   background: var(--paper);
+  image-rendering: -webkit-optimize-contrast;
 }
 .member .name {
   font-family: "JetBrains Mono", monospace;
@@ -1220,10 +1221,10 @@ footer.footer-spec .brand-name {
   will-change: transform, opacity;
 }
 
-/* Base Pop-out state for images when out of viewport */
-.fig:not(.is-in),
+/* Base Pop-out state for images on scroll (only applies inside tracked sections) */
 .case:not(.is-in) .fig,
-.member:not(.is-in) .ph {
+.member:not(.is-in) .ph,
+.collage .pol:not(.is-in) {
   opacity: 0.15;
   transform: scale(0.88) translateY(18px);
   filter: blur(4px);
@@ -1232,7 +1233,8 @@ footer.footer-spec .brand-name {
 /* Pop-in state when in viewport */
 .fig.is-in,
 .case.is-in .fig,
-.member.is-in .ph {
+.member.is-in .ph,
+.collage .pol.is-in {
   opacity: 1;
   transform: scale(1) translateY(0);
   filter: blur(0);
@@ -1501,9 +1503,14 @@ a.pd-more:hover,
   align-items: start;
 }
 .cv-fig img {
+  width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
+  background: var(--paper);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: contrast(1.03) brightness(0.98);
 }
 .cv-name {
   font-family: "JetBrains Mono", monospace;
