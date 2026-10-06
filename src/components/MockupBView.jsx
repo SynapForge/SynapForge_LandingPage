@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SynapseCanvas from './SynapseCanvas';
 import SideStreams from './SideStreams';
 import Lenis from 'lenis';
-import { pick, t, HERO_STATS, TICKER, CASES, SERVICES, TEAM, FAQ } from '../data/i18n';
-
+import { pick, t, HERO_STATS, TICKER, CASES, SERVICES, TEAM, FAQ, ZALO_URL } from '../data/i18n';
+// Random-glyph reveal; replays whenever the mouse enters the text
 function Scramble({ text }) {
   const [out, setOut] = useState(' '.repeat(text.length));
+  const [run, setRun] = useState(0);
   useEffect(() => {
     const glyphs = '!<>-_\\/[]{}—=+*^?#ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let frame = 0;
@@ -23,30 +24,80 @@ function Scramble({ text }) {
       if (reveal >= text.length) clearInterval(id);
     }, 26);
     return () => clearInterval(id);
-  }, [text]);
-  return <>{out}</>;
+  }, [text, run]);
+  return <span onMouseEnter={() => setRun((n) => n + 1)}>{out}</span>;
 }
 
-function detectLang() {
-  try {
-    const saved = localStorage.getItem('sf-lang');
-    if (saved === 'vi' || saved === 'en') return saved;
-  } catch {}
-  return (navigator.language || 'vi').toLowerCase().startsWith('vi') ? 'vi' : 'en';
-}
-
-export default function MockupBView() {
-  const [lang, setLang] = useState(detectLang);
-  const [activeSection, setActiveSection] = useState('top');
-
-  // Persist lang + sync <html lang>, title, meta description
+// Counts the leading number up when it scrolls into view ("05+" → 00+ … 05+)
+function CountUp({ v }) {
+  const m = v.match(/^(\d+)(.*)$/);
+  const [n, setN] = useState(0);
+  const ref = useRef(null);
   useEffect(() => {
-    try { localStorage.setItem('sf-lang', lang); } catch {}
-    document.documentElement.lang = lang;
-    document.title = t(lang, 'meta_title');
-    const m = document.querySelector('meta[name="description"]');
-    if (m) m.setAttribute('content', t(lang, 'meta_desc'));
-  }, [lang]);
+    if (!m || !ref.current) return;
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const end = +m[1], t0 = performance.now();
+      const tick = (now) => {
+        const k = Math.min(1, (now - t0) / 1200);
+        setN(Math.round(end * (1 - (1 - k) ** 3)));
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    io.observe(ref.current);
+    return () => io.disconnect();
+  }, [v]);
+  if (!m) return v;
+  return <span ref={ref}>{String(n).padStart(m[1].length, '0')}{m[2]}</span>;
+}
+
+const COLLAGE = [
+  { src: '/stream/brandhub.jpg', title: 'BrandHub', meta: 'SaaS · AI MarTech', cls: 'c1' },
+  { src: '/stream/pkg-mvp.jpg', title: 'E-commerce', meta: 'Web · Mobile', cls: 'c2' },
+  { src: '/stream/pkg-fast.jpg', title: 'BienSoVip', meta: 'Admin · Dashboard', cls: 'c3' },
+];
+
+// Hero: main figure + polaroids scattered on top (photo-collage look)
+function HeroCollage() {
+  return (
+    <div className="collage">
+      <figure className="fig main" style={{ margin: 0 }}>
+        <span className="tk">+</span>
+        <span className="tk2">+</span>
+        <img src="/products/hero-marketplace.jpg" alt="BienSoVip marketplace" />
+        <figcaption className="figcap">
+          <span>FIG. 01 — BienSoVip Marketplace</span>
+          <span>Production</span>
+        </figcaption>
+      </figure>
+      {COLLAGE.map((c) => (
+        <figure className={`pol ${c.cls}`} key={c.cls}>
+          <img src={c.src} alt={c.title} />
+          <figcaption><b>{c.title}</b><span>{c.meta}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+// Tekmium-style scroll reveal: adds .is-in once each element enters the viewport
+export function useReveal(selector) {
+  useEffect(() => {
+    const els = document.querySelectorAll(selector);
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [selector]);
+}
+
+export default function MockupBView({ lang, setLang }) {
+  const [activeSection, setActiveSection] = useState('top');
 
   // Track active section for rail navigation
   useEffect(() => {
@@ -82,7 +133,7 @@ export default function MockupBView() {
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
       const href = a.getAttribute('href');
-      if (!href || href === '#') return;
+      if (!href || href === '#' || href.startsWith('#/')) return; // #/... = page route, let hashchange handle it
       const el = document.querySelector(href);
       if (!el) return;
       e.preventDefault();
@@ -90,29 +141,41 @@ export default function MockupBView() {
     };
     document.addEventListener('click', onClick);
 
+    // Scroll progress bar (--sp) + gentle parallax on case images
+    const figs = document.querySelectorAll('.case-img .fig');
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    lenis.on('scroll', (l) => {
+      document.documentElement.style.setProperty('--sp', l.progress);
+      if (still) return;
+      const vh = window.innerHeight;
+      figs.forEach((f) => {
+        const r = f.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        f.style.transform = `translateY(${((r.top + r.height / 2 - vh / 2) / vh) * -40}px)`;
+      });
+    });
+
+    // Arrived with a section anchor (e.g. back from a CV page → #team): jump there
+    const h = window.location.hash;
+    if (h.length > 1 && !h.startsWith('#/')) {
+      const el = document.querySelector(h);
+      if (el) lenis.scrollTo(el, { offset: -80, immediate: true });
+    }
+
     return () => {
       cancelAnimationFrame(rafId);
       document.removeEventListener('click', onClick);
+      document.documentElement.style.removeProperty('--sp');
       lenis.destroy();
     };
   }, []);
 
-  // Tekmium-style scroll reveal (zoom on .case, fade/slide on section blocks)
-  useEffect(() => {
-    const els = document.querySelectorAll('.case, .sec-head, .svc-row, .member, .faq-item');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.15 });
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
+  useReveal('.case, .sec-head, .svc-row, .member, .faq-item');
 
   return (
     <div className="font-space bg-white text-[#1D1510] min-h-screen relative antialiased selection:bg-[#FF5500] selection:text-white">
       {/* Side Streams HUD for Ultra-Wide Displays */}
-      <SideStreams theme="light" />
+      <SideStreams lang={lang} />
 
       {/* ===== TOP BAR ===== */}
       <header className="topbar">
@@ -122,7 +185,7 @@ export default function MockupBView() {
           </a>
 
           <nav className="top-nav">
-            <a href="#ventures">Ventures</a>
+            <a href="#ventures">{t(lang, 'nav_ventures')}</a>
             <a href="#services">{t(lang, 'nav_services')}</a>
             <a href="#team">{t(lang, 'nav_team')}</a>
             <a href="#contact">{t(lang, 'nav_contact')}</a>
@@ -143,11 +206,11 @@ export default function MockupBView() {
       {/* ===== RAIL NAVIGATOR ===== */}
       <nav className="rail">
         <a className={activeSection === 'top' ? 'on' : ''} href="#top">
-          <span className="l">Hero</span>
+          <span className="l">{t(lang, 'rail_intro')}</span>
           <span className="n">01</span>
         </a>
         <a className={activeSection === 'ventures' ? 'on' : ''} href="#ventures">
-          <span className="l">Ventures</span>
+          <span className="l">{t(lang, 'nav_ventures')}</span>
           <span className="n">02</span>
         </a>
         <a className={activeSection === 'services' ? 'on' : ''} href="#services">
@@ -204,22 +267,14 @@ export default function MockupBView() {
             </div>
 
             <div>
-              <figure className="fig" style={{ margin: 0 }}>
-                <span className="tk">+</span>
-                <span className="tk2">+</span>
-                <img src="/mockup/img/biensovip_marketplace.png" alt="BienSoVip marketplace" />
-                <figcaption className="figcap">
-                  <span>FIG. 01 — BienSoVip Marketplace</span>
-                  <span>Production</span>
-                </figcaption>
-              </figure>
+              <HeroCollage />
             </div>
           </div>
 
           <div className="hero-stats">
             {HERO_STATS.map((s) => (
               <div className="hero-stat" key={s.v}>
-                <div className="v">{s.v}</div>
+                <div className="v"><CountUp v={s.v} /></div>
                 <div className="l">{pick(lang, s.l1.vi, s.l1.en)}<br />{pick(lang, s.l2.vi, s.l2.en)}</div>
               </div>
             ))}
@@ -263,8 +318,8 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// B/02 — VENTURES</span>
             </div>
-            <h2>{t(lang, 'ven_title')}</h2>
-            <div className="sec-note">In-house products</div>
+            <h2><Scramble text={t(lang, 'ven_title')} /></h2>
+            <div className="sec-note">{t(lang, 'ven_note')}</div>
           </div>
 
           {CASES.map((c) => (
@@ -287,6 +342,7 @@ export default function MockupBView() {
                 <div className="chips">
                   {c.chips.map((ch) => <span className="chip" key={ch}>{ch}</span>)}
                 </div>
+                <a className="pd-more" href={`#/san-pham/${c.id}`}>{t(lang, 'pd_detail')}</a>
               </div>
               <div className="case-img">
                 <figure className="fig" style={{ margin: 0 }}>
@@ -301,6 +357,10 @@ export default function MockupBView() {
               </div>
             </div>
           ))}
+
+          <div className="ven-more">
+            <a className="btn-spec btn-ghost" href="#/san-pham">{t(lang, 'ven_more')}</a>
+          </div>
         </div>
       </section>
 
@@ -312,7 +372,7 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// C/03 — SERVICES</span>
             </div>
-            <h2>{t(lang, 'svc_title')}</h2>
+            <h2><Scramble text={t(lang, 'svc_title')} /></h2>
             <div className="sec-note">{t(lang, 'svc_note')}</div>
           </div>
 
@@ -343,14 +403,17 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// D/04 — TEAM</span>
             </div>
-            <h2>{t(lang, 'team_title')}</h2>
+            <h2><Scramble text={t(lang, 'team_title')} /></h2>
             <div className="sec-note">{t(lang, 'team_note')}</div>
           </div>
 
           <div className="team-grid">
             {TEAM.map((m) => (
               <div className="member" key={m.name}>
-                <div className="av">{m.av}</div>
+                <a className="ph-link" href={`#/doi-ngu/${m.id}`} aria-label={`${t(lang, 'cv_open')} — ${m.name}`}>
+                  <img className="ph" src={m.photo} alt={m.name} loading="lazy" />
+                  <span className="ph-cta">{t(lang, 'cv_open')} →</span>
+                </a>
                 <div className="name">{m.name}</div>
                 <div className="role">{m.role}</div>
                 <p className="bio">{pick(lang, m.bio.vi, m.bio.en)}</p>
@@ -371,7 +434,7 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// FAQ</span>
             </div>
-            <h2>{t(lang, 'faq_title')}</h2>
+            <h2><Scramble text={t(lang, 'faq_title')} /></h2>
             <div className="sec-note">{t(lang, 'faq_note')}</div>
           </div>
 
@@ -392,7 +455,7 @@ export default function MockupBView() {
               <span className="sq"></span>
               <span className="mono">// E/05 — CONTACT</span>
             </div>
-            <h2>{t(lang, 'contact_title')}</h2>
+            <h2><Scramble text={t(lang, 'contact_title')} /></h2>
             <div className="sec-note">{t(lang, 'contact_note')}</div>
           </div>
 
@@ -404,7 +467,7 @@ export default function MockupBView() {
               </div>
               <div className="row">
                 <span className="k">{t(lang, 'contact_phone')}</span>
-                <span className="v">(+84) 912 158 715</span>
+                <a className="v" href="tel:+84912158715">(+84) 912 158 715</a>
               </div>
               <div className="row">
                 <span className="k">{t(lang, 'contact_hq')}</span>
@@ -412,7 +475,7 @@ export default function MockupBView() {
               </div>
             </div>
 
-            <a className="btn-spec btn-solid" href="mailto:contact@synapforge.dev">
+            <a className="btn-spec btn-solid" href={ZALO_URL} target="_blank" rel="noopener noreferrer">
               {t(lang, 'contact_cta')}
             </a>
           </div>

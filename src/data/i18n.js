@@ -15,7 +15,10 @@ export const T = {
     en: 'SynapForge builds e-commerce websites, order & payment automation, and 24/7 AI customer support for SMEs in Da Nang, Vietnam. Quote in 24h, delivery in 30–60 days.',
   },
 
+  nav_ventures: { vi: 'Sản phẩm', en: 'Products' },
   nav_services: { vi: 'Dịch vụ', en: 'Services' },
+  rail_intro: { vi: 'Giới thiệu', en: 'Intro' },
+  ven_note: { vi: 'Đội ngũ tự xây', en: 'Built in-house' },
   nav_team: { vi: 'Đội ngũ', en: 'Team' },
   nav_contact: { vi: 'Liên hệ', en: 'Contact' },
   nav_cta: { vi: 'Bắt đầu dự án', en: 'Start a project' },
@@ -39,10 +42,32 @@ export const T = {
   ety_forge: { vi: 'Lò rèn — kỷ luật kỹ thuật, ý tưởng thành sản phẩm bền vững.', en: 'Forge — engineering discipline, turning ideas into durable products.' },
   ety_motto: { vi: '// tư duy như mạng nơ-ron, kiến tạo như xưởng rèn', en: '// think like a neural network, build like a forge' },
 
-  ven_title: { vi: 'Sản phẩm tự xây', en: 'Products we built' },
+  ven_title: { vi: 'Sản phẩm', en: 'Products' },
+  ven_more: { vi: 'Xem thêm sản phẩm →', en: 'See all products →' },
+
+  pp_back: { vi: '← Trang chủ', en: '← Home' },
+  pp_title: { vi: 'Toàn bộ sản phẩm', en: 'All products' },
+  pp_note: { vi: 'Đã xây & sắp ra mắt', en: 'Built & upcoming' },
+  pp_built: { vi: 'Đã xây', en: 'Built' },
+  pp_next: { vi: 'Sắp ra mắt', en: 'Upcoming' },
+  pp_next_empty: { vi: 'Lộ trình sản phẩm mới đang được cập nhật.', en: 'New product roadmap is being updated.' },
+  pd_back: { vi: '← Sản phẩm', en: '← Products' },
+  pd_detail: { vi: 'Xem chi tiết →', en: 'View details →' },
+  pd_visit: { vi: 'Truy cập sản phẩm ↗', en: 'Visit product ↗' },
+  pd_demo: { vi: 'Xin demo qua Zalo →', en: 'Request a demo on Zalo →' },
+  pd_gallery: { vi: 'Hình ảnh sản phẩm', en: 'Screenshots' },
+  pp_cta: { vi: 'Bạn có ý tưởng sản phẩm? Làm cùng chúng tôi →', en: 'Have a product idea? Build it with us →' },
   svc_title: { vi: 'Dịch vụ chuyển đổi số', en: 'Digital transformation services' },
   svc_note: { vi: 'Cho doanh nghiệp vừa & nhỏ', en: 'For SMEs' },
-  team_title: { vi: 'Đội ngũ thực chiến', en: 'Hands-on team' },
+  team_title: { vi: 'Đội ngũ', en: 'Team' },
+  cv_back: { vi: '← Đội ngũ', en: '← Team' },
+  cv_about: { vi: 'Giới thiệu', en: 'About' },
+  cv_edu: { vi: 'Học vấn', en: 'Education' },
+  cv_exp: { vi: 'Kinh nghiệm', en: 'Experience' },
+  cv_skills: { vi: 'Kỹ năng', en: 'Skills' },
+  cv_prev: { vi: '← Trước', en: '← Prev' },
+  cv_next: { vi: 'Tiếp →', en: 'Next →' },
+  cv_open: { vi: 'Xem CV', en: 'View CV' },
   team_note: { vi: '05 kỹ sư FPT / FSoft', en: '05 FPT / FSoft engineers' },
   faq_title: { vi: 'Câu hỏi thường gặp', en: 'Frequently asked questions' },
   faq_note: { vi: '4 câu phổ biến nhất', en: '4 most common questions' },
@@ -51,7 +76,7 @@ export const T = {
   contact_phone: { vi: 'Điện thoại', en: 'Phone' },
   contact_hq: { vi: 'Trụ sở', en: 'Headquarters' },
   contact_addr: { vi: 'Hải Châu, TP. Đà Nẵng, Việt Nam', en: 'Hai Chau, Da Nang, Vietnam' },
-  contact_cta: { vi: 'Gửi mô tả ý tưởng →', en: 'Send your idea brief →' },
+  contact_cta: { vi: 'Gửi mô tả dự án qua Zalo →', en: 'Send your project brief via Zalo →' },
   footer_addr: { vi: 'Đà Nẵng, Việt Nam', en: 'Da Nang, Vietnam' },
 };
 
@@ -97,6 +122,7 @@ export const CASES = [
     img: '/mockup/img/DA-D19-12.png',
     alt: 'BrandHub dashboard',
     fig: ['FIG. 02 — BrandHub', 'Dashboard'],
+    gallery: ['/products/brandhub/01.jpg', '/products/brandhub/02.jpg', '/products/brandhub/03.jpg', '/products/brandhub/04.jpg'],
   },
   {
     id: 'biensovip',
@@ -119,6 +145,8 @@ export const CASES = [
     img: '/mockup/img/biensovip_real_dashboard.png',
     alt: 'BienSoVip dashboard',
     fig: ['FIG. 03 — BienSoVip', 'Admin'],
+    url: 'https://biensovip.com',
+    gallery: ['/products/biensovip/01.jpg', '/products/biensovip/02.jpg', '/products/biensovip/03.jpg', '/products/biensovip/04.jpg'],
   },
 ];
 
@@ -178,11 +206,11 @@ export const SERVICES = [
 ];
 
 export const TEAM = [
-  { av: 'T', name: 'Lê Trí Trung', role: 'Founder & Tech Lead', bio: { vi: 'Tổng đạo diễn kiến trúc hệ thống — tự tay thiết kế các sàn giao dịch lớn và EdTech hàng chục ngàn người dùng.', en: 'Chief system architect — personally designs large marketplaces and EdTech platforms serving tens of thousands of users.' }, skills: ['Java Spring Boot', '.NET 8', 'System Design'] },
-  { av: 'A', name: 'Hà Văn Ân', role: 'Full-Stack & AI Integrator', bio: { vi: 'Xây web nhanh + AI trả lời chính xác, không bịa.', en: 'Builds fast web apps + accurate AI answers, no hallucination.' }, skills: ['Next.js 16', 'RAG', 'Gemini API'] },
-  { av: 'L', name: 'Nguyễn Thành Lộc', role: 'Backend Architect & AI Lead', bio: { vi: 'Kiến trúc sạch, nâng cấp hệ thống cũ, AI hiểu dữ liệu lớn.', en: 'Clean architecture, legacy system upgrades, AI that understands big data.' }, skills: ['.NET 8', 'Neo4j', 'FastAPI'] },
-  { av: 'P', name: 'Nguyễn Chơn Phước', role: 'Java Core & Cloud DevOps', bio: { vi: 'Hạ tầng chịu tải, Docker, vận hành 24/7 độ trễ tối thiểu.', en: 'High-load infrastructure, Docker, 24/7 ops with minimal latency.' }, skills: ['Java 21', 'Docker', 'Nginx'] },
-  { av: 'T', name: 'Nguyễn Minh Tuấn', role: 'Enterprise .NET Backend', bio: { vi: 'Giải pháp chuẩn Microsoft, tích hợp dịch vụ công, tự động hóa kiểm duyệt.', en: 'Microsoft-standard solutions, government service integration, review automation.' }, skills: ['.NET 8', 'SQL Server', 'Gov APIs'] },
+  { id: 'le-tri-trung', photo: '/team/le-tri-trung.jpg', name: 'Lê Trí Trung', role: 'Founder & Tech Lead', bio: { vi: 'Tổng đạo diễn kiến trúc hệ thống — tự tay thiết kế các sàn giao dịch lớn và EdTech hàng chục ngàn người dùng.', en: 'Chief system architect — personally designs large marketplaces and EdTech platforms serving tens of thousands of users.' }, skills: ['Java Spring Boot', '.NET 8', 'System Design'] },
+  { id: 'ha-van-an', photo: '/team/ha-van-an.png', name: 'Hà Văn Ân', role: 'Full-Stack & AI Integrator', bio: { vi: 'Xây web nhanh + AI trả lời chính xác, không bịa.', en: 'Builds fast web apps + accurate AI answers, no hallucination.' }, skills: ['Next.js 16', 'RAG', 'Gemini API'] },
+  { id: 'nguyen-thanh-loc', photo: '/team/nguyen-thanh-loc.jpg', name: 'Nguyễn Thành Lộc', role: 'Backend Architect & AI Lead', bio: { vi: 'Kiến trúc sạch, nâng cấp hệ thống cũ, AI hiểu dữ liệu lớn.', en: 'Clean architecture, legacy system upgrades, AI that understands big data.' }, skills: ['.NET 8', 'Neo4j', 'FastAPI'] },
+  { id: 'nguyen-chon-phuoc', photo: '/team/nguyen-chon-phuoc.jpg', name: 'Nguyễn Chơn Phước', role: 'Java Core & Cloud DevOps', bio: { vi: 'Hạ tầng chịu tải, Docker, vận hành 24/7 độ trễ tối thiểu.', en: 'High-load infrastructure, Docker, 24/7 ops with minimal latency.' }, skills: ['Java 21', 'Docker', 'Nginx'] },
+  { id: 'nguyen-minh-tuan', photo: '/team/nguyen-minh-tuan.jpg', name: 'Nguyễn Minh Tuấn', role: 'Enterprise .NET Backend', bio: { vi: 'Giải pháp chuẩn Microsoft, tích hợp dịch vụ công, tự động hóa kiểm duyệt.', en: 'Microsoft-standard solutions, government service integration, review automation.' }, skills: ['.NET 8', 'SQL Server', 'Gov APIs'] },
 ];
 
 export const FAQ = [
@@ -190,4 +218,93 @@ export const FAQ = [
   { q: { vi: 'Bảo hành thế nào?', en: "What's the warranty?" }, a: { vi: 'Sửa lỗi miễn phí 6–12 tháng tùy gói (ghi rõ trong hợp đồng). Gói Chuyên Nghiệp hỗ trợ ưu tiên 12 tháng + trực 24/7.', en: 'Free bug fixes 6–12 months depending on package (stated in contract). Pro package: 12-month priority support + 24/7 on-call.' } },
   { q: { vi: 'Source code thuộc về ai?', en: 'Who owns the source code?' }, a: { vi: 'Thuộc về bạn. Bàn giao toàn bộ mã nguồn + tài liệu kỹ thuật sau khi nghiệm thu, quy định rõ trong hợp đồng.', en: 'You do. Full source + technical docs handed over after acceptance, stated clearly in the contract.' } },
   { q: { vi: 'Sau này muốn nâng cấp được không?', en: 'Can I upgrade later?' }, a: { vi: 'Được. Có lộ trình nâng cấp từ MVP lên sàn lớn (phụ phí +20% Live Upgrade) — không phải làm lại từ đầu.', en: "Yes. There's a clear path from MVP to large marketplace (+20% Live Upgrade fee) — no rebuild from scratch." } },
+];
+
+// Products page: other built products (content mirrors SideStreams rail — nothing new invented)
+export const MORE_PRODUCTS = [
+  {
+    id: 'the-mc-hub',
+    kicker: 'EDTECH',
+    title: 'The MC Hub Academy',
+    tag: { vi: 'Nền tảng đào tạo MC & Diễn thuyết', en: 'MC & public speaking training platform' },
+    stat: { vi: '10,000+ học viên online', en: '10,000+ online learners' },
+    chips: ['React 19', 'Node.js', 'Live Stream'],
+  },
+  {
+    id: 'threadlearn',
+    kicker: 'RESEARCH',
+    title: 'ThreadLearn',
+    tag: { vi: 'LLM tự phát hiện & sửa lỗi concurrency trong JavaScript', en: 'Fine-tuned LLM that detects & repairs JavaScript concurrency bugs' },
+    desc: { vi: 'Pipeline end-to-end tự phát hiện và sửa lỗi concurrency (data race, atomicity, order violation) trong Node.js bất đồng bộ — chỉ dùng model 1.5B tham số, trong khi công cụ hiện có hoặc chỉ phát hiện mà không sửa được, hoặc cần model 7B–32B.', en: 'End-to-end pipeline that detects and fixes concurrency bugs (data races, atomicity and order violations) in async Node.js — with a 1.5B-parameter model, where existing tools either only detect or need 7B–32B models.' },
+    feats: [
+      { vi: 'Bộ phát hiện race tĩnh phủ 5 pattern concurrency phổ biến', en: 'Static race detector covering 5 common concurrency patterns' },
+      { vi: 'Fine-tune Qwen2.5-Coder-1.5B bằng QLoRA trên 783 ví dụ Chain-of-Thought', en: 'Qwen2.5-Coder-1.5B fine-tuned with QLoRA on 783 Chain-of-Thought examples' },
+      { vi: 'RAG BM25 trên kho tri thức JavaScript 2,055 tài liệu', en: 'BM25 RAG over a 2,055-document JavaScript knowledge base' },
+      { vi: 'Vượt GPT-3.5-turbo (65.0%) trên benchmark 30 bug npm thật', en: 'Beats GPT-3.5-turbo (65.0%) on a benchmark of 30 real npm bugs' },
+    ],
+    stats: [
+      { v: '73.3%', l: { vi: 'Pass rate', en: 'Pass rate' } },
+      { v: '~125×', l: { vi: 'Nhỏ hơn GPT-3.5', en: 'Smaller than GPT-3.5' } },
+      { v: '1.5B', l: { vi: 'Tham số', en: 'Parameters' } },
+    ],
+    chips: ['Python', 'PyTorch', 'QLoRA', 'Qwen2.5-Coder-1.5B', 'BM25', 'FastAPI'],
+    img: '/products/threadlearn/01.jpg',
+    gallery: ['/products/threadlearn/01.jpg'],
+  },
+];
+
+// Upcoming products — fill in real entries: { id, title, tag: {vi,en}, eta }
+export const ROADMAP = [];
+
+// Founder Lê Trí Trung's Zalo (company hotline)
+export const ZALO_URL = 'https://zalo.me/0912158715';
+
+// Member CV pages (#/doi-ngu/<id>) — content from companyData.CORE_TEAM, EN added
+export const TEAM_CV = {
+  'le-tri-trung': {
+    title: 'Tech Lead & System Architect',
+    edu: { vi: 'Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.3/4.0 – 8.2/10)', en: 'Software Engineering — FPT University Da Nang (GPA 3.3/4.0 – 8.2/10)' },
+    exp: ['FPT Software Intern', 'Solo Architect Biensovip.com', 'CEO The MC Hub', { vi: 'Quán quân Hackathon CV 2026', en: 'Champion, Hackathon CV 2026' }, { vi: 'Đồng tác giả nghiên cứu ICTA 2026', en: 'Co-author, ICTA 2026 research' }],
+    about: { vi: 'Tổng đạo diễn kiến trúc hệ thống và chiến lược kỹ thuật. Tự tay thiết kế các sàn giao dịch thương mại lớn và hệ thống EdTech phục vụ hàng chục ngàn người dùng.', en: 'Leads system architecture and technical strategy. Personally designed large commerce marketplaces and EdTech systems serving tens of thousands of users.' },
+    skills: ['Java Spring Boot', '.NET 8 Clean Arch', 'Python FastAPI', 'React 19', 'PostgreSQL', 'Docker', 'System Design'],
+  },
+  'ha-van-an': {
+    title: 'Full-stack Web Developer',
+    edu: { vi: 'Kỹ thuật phần mềm — FPT University (2022–2026), GPA 3.0/4.0', en: 'Software Engineering — FPT University (2022–2026), GPA 3.0/4.0' },
+    exp: [
+      { vi: 'STEMGO.net — Full-stack Developer (05/2026–nay): nền tảng học STEM với 34 mini-game, gia sư AI Gemini, 50 người dùng đăng ký', en: 'STEMGO.net — Full-stack Developer (05/2026–present): STEM micro-learning platform with 34 mini-games, Gemini AI tutor, 50 registered users' },
+      { vi: 'FPT Software — Full-stack Developer Intern (08/2025–02/2026): hệ thống quản lý kho, WebSocket tính tồn kho real-time, unit test API xuất kho', en: 'FPT Software — Full-stack Developer Intern (08/2025–02/2026): inventory management system, real-time stock via WebSockets, unit tests for outbound transfer API' },
+      { vi: 'TVK House — Full-stack Developer (07/2025): landing page tự đồng bộ lead qua Google Sheets API & Telegram Bot', en: 'TVK House — Full-stack Developer (07/2025): landing page auto-syncing leads via Google Sheets API & Telegram Bot' },
+      { vi: 'Đồng tác giả ThreadLearn — fine-tune Qwen2.5-Coder-1.5B (QLoRA) + RAG BM25 sửa lỗi concurrency JavaScript, 73.3% pass rate', en: 'Co-author, ThreadLearn — fine-tuned Qwen2.5-Coder-1.5B (QLoRA) + BM25 RAG repairing JavaScript concurrency bugs, 73.3% pass rate' },
+    ],
+    about: { vi: 'Sinh viên Kỹ thuật phần mềm FPT University với 7 tháng thực tập chuyên nghiệp. Xây web app có khả năng mở rộng bằng React, Next.js, Node.js; thiết kế RESTful API, tính năng real-time và tích hợp AI (Gemini, RAG, fine-tune QLoRA).', en: 'Software Engineering student at FPT University with 7 months of professional internship. Builds scalable web apps with React, Next.js and Node.js; designs RESTful APIs, real-time features and AI integrations (Gemini, RAG, QLoRA fine-tuning).' },
+    skills: ['Next.js', 'React', 'TypeScript', 'Node.js (Express)', 'MongoDB', 'MySQL', 'FastAPI', 'QLoRA', 'RAG', 'Gemini API', 'Docker'],
+  },
+  'nguyen-thanh-loc': {
+    title: 'Microservices & GraphRAG Specialist',
+    edu: { vi: 'Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.5/4.0), TOEIC 650', en: 'Software Engineering — FPT University Da Nang (GPA 3.5/4.0), TOEIC 650' },
+    exp: ['FPT Software Intern (C# Migration)', 'Team Lead UniNest', 'AI Team Lead BrandHub Platform'],
+    about: { vi: 'Chuyên sâu kiến trúc sạch Clean Architecture, chuyển hệ thống legacy sang microservices hiện đại và phân tích mạng dữ liệu phức tạp với GraphRAG.', en: 'Deep expertise in Clean Architecture, migrating legacy systems to modern microservices, and analyzing complex data networks with GraphRAG.' },
+    skills: ['.NET 8', 'ASP.NET Core', 'FastAPI', 'Neo4j GraphRAG', 'ChromaDB', 'Clean Architecture', 'PostgreSQL'],
+  },
+  'nguyen-chon-phuoc': {
+    title: 'Distributed Systems & Infra Engineer',
+    edu: { vi: 'Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.2/4.0), IELTS 5.5', en: 'Software Engineering — FPT University Da Nang (GPA 3.2/4.0), IELTS 5.5' },
+    exp: ['Acronic Solutions (Anti-DDoS Dashboard 24/7)', 'Danatour Backend', 'V-Try 3D Web & Computer Vision'],
+    about: { vi: 'Phụ trách hạ tầng chịu tải, container hóa Docker, tối ưu database indexing và đảm bảo hệ thống vận hành 24/7 với độ trễ tối thiểu.', en: 'Owns high-load infrastructure, Docker containerization and database index tuning, keeping systems running 24/7 with minimal latency.' },
+    skills: ['Java 21', 'Spring Boot 3', 'Docker', 'Nginx', 'Linux Ops', 'Socket.IO', 'Realtime IPC'],
+  },
+  'nguyen-minh-tuan': {
+    title: 'Gov & Enterprise Integration Specialist',
+    edu: { vi: 'Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 7.8/10), Microsoft Certified Back-End Pro', en: 'Software Engineering — FPT University Da Nang (GPA 7.8/10), Microsoft Certified Back-End Pro' },
+    exp: ['FPT Software Intern (C# & SQL Stored Procedures)', { vi: 'Team Lead VivuCar (thuê xe tự lái & API Bộ Công An)', en: 'Team Lead VivuCar (self-drive car rental & Ministry of Public Security API)' }],
+    about: { vi: 'Chuyên giải pháp doanh nghiệp chuẩn Microsoft, tích hợp cổng dịch vụ công và tự động hóa quy trình kiểm duyệt.', en: 'Specialist in Microsoft-standard enterprise solutions, government portal integration and review-process automation.' },
+    skills: ['.NET 8', 'C#', 'Entity Framework Core', 'SQL Server', 'Gov Portal APIs', 'Hive AI', 'Docker'],
+  },
+};
+
+// One card shape for products list + detail pages (#/san-pham, #/san-pham/<id>)
+export const ALL_PRODUCTS = [
+  ...CASES.map(({ rev, fig, ...c }) => c),
+  ...MORE_PRODUCTS.map((p) => ({ ...p, stats: p.stats || [] })),
 ];
