@@ -269,11 +269,16 @@ export const TEAM_CV = {
     skills: ['Java Spring Boot', '.NET 8 Clean Arch', 'Python FastAPI', 'React 19', 'PostgreSQL', 'Docker', 'System Design'],
   },
   'ha-van-an': {
-    title: 'AI Pipeline & Modern Web Lead',
-    edu: { vi: 'Kỹ thuật phần mềm — FPT University Đà Nẵng', en: 'Software Engineering — FPT University Da Nang' },
-    exp: ['FPT Software Intern (Inventory System)', 'Lead Dev STEMGO.net', { vi: 'Đồng tác giả nghiên cứu AI ThreadLearn (ICTA 2026)', en: 'Co-author, ThreadLearn AI research (ICTA 2026)' }],
-    about: { vi: 'Chuyên phát triển ứng dụng Next.js tốc độ cao và tích hợp mô hình ngôn ngữ lớn (LLM), xây dựng RAG pipeline loại trừ hallucination.', en: 'Specializes in high-performance Next.js apps and LLM integration, building RAG pipelines that eliminate hallucination.' },
-    skills: ['Next.js 16', 'React', 'TypeScript', 'Node.js', 'FastAPI', 'QLoRA', 'RAG Pipelines', 'Gemini API'],
+    title: 'Full-stack Web Developer',
+    edu: { vi: 'Kỹ thuật phần mềm — FPT University (2022–2026), GPA 3.0/4.0', en: 'Software Engineering — FPT University (2022–2026), GPA 3.0/4.0' },
+    exp: [
+      { vi: 'STEMGO.net — Full-stack Developer (05/2026–nay): nền tảng học STEM với 34 mini-game, gia sư AI Gemini, 50 người dùng đăng ký', en: 'STEMGO.net — Full-stack Developer (05/2026–present): STEM micro-learning platform with 34 mini-games, Gemini AI tutor, 50 registered users' },
+      { vi: 'FPT Software — Full-stack Developer Intern (08/2025–02/2026): hệ thống quản lý kho, WebSocket tính tồn kho real-time, unit test API xuất kho', en: 'FPT Software — Full-stack Developer Intern (08/2025–02/2026): inventory management system, real-time stock via WebSockets, unit tests for outbound transfer API' },
+      { vi: 'TVK House — Full-stack Developer (07/2025): landing page tự đồng bộ lead qua Google Sheets API & Telegram Bot', en: 'TVK House — Full-stack Developer (07/2025): landing page auto-syncing leads via Google Sheets API & Telegram Bot' },
+      { vi: 'Đồng tác giả ThreadLearn — fine-tune Qwen2.5-Coder-1.5B (QLoRA) + RAG BM25 sửa lỗi concurrency JavaScript, 73.3% pass rate', en: 'Co-author, ThreadLearn — fine-tuned Qwen2.5-Coder-1.5B (QLoRA) + BM25 RAG repairing JavaScript concurrency bugs, 73.3% pass rate' },
+    ],
+    about: { vi: 'Sinh viên Kỹ thuật phần mềm FPT University với 7 tháng thực tập chuyên nghiệp. Xây web app có khả năng mở rộng bằng React, Next.js, Node.js; thiết kế RESTful API, tính năng real-time và tích hợp AI (Gemini, RAG, fine-tune QLoRA).', en: 'Software Engineering student at FPT University with 7 months of professional internship. Builds scalable web apps with React, Next.js and Node.js; designs RESTful APIs, real-time features and AI integrations (Gemini, RAG, QLoRA fine-tuning).' },
+    skills: ['Next.js', 'React', 'TypeScript', 'Node.js (Express)', 'MongoDB', 'MySQL', 'FastAPI', 'QLoRA', 'RAG', 'Gemini API', 'Docker'],
   },
   'nguyen-thanh-loc': {
     title: 'Microservices & GraphRAG Specialist',
