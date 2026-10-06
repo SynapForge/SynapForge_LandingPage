@@ -24,9 +24,9 @@ const leftProjects = [
     stat: { vi: 'Truy vấn < 8ms', en: 'Queries < 8ms' },
   },
   {
-    id: 'threadlearn', tag: 'RESEARCH', title: 'ThreadLearn AI', img: '/stream/threadlearn.jpg',
-    line: { vi: 'AI tự tìm & sửa lỗi code', en: 'AI that finds & fixes code bugs' },
-    stat: { vi: 'Nghiên cứu ICTA 2026', en: 'ICTA 2026 research' },
+    id: 'threadlearn', tag: 'RESEARCH', title: 'ThreadLearn', img: '/stream/threadlearn.jpg',
+    line: { vi: 'LLM tự sửa lỗi concurrency JavaScript', en: 'LLM that repairs JavaScript concurrency bugs' },
+    stat: { vi: '73.3% pass — vượt GPT-3.5', en: '73.3% pass — beats GPT-3.5' },
   },
 ];
 

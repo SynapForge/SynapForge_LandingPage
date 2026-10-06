@@ -233,10 +233,21 @@ export const MORE_PRODUCTS = [
   {
     id: 'threadlearn',
     kicker: 'RESEARCH',
-    title: 'ThreadLearn AI Engine',
-    tag: { vi: 'Học tập thích ứng cá nhân hóa bằng AI', en: 'AI-personalized adaptive learning' },
-    stat: { vi: 'Nghiên cứu ICTA 2026', en: 'ICTA 2026 research' },
-    chips: ['FastAPI', 'QLoRA', 'Deep RAG'],
+    title: 'ThreadLearn',
+    tag: { vi: 'LLM tự phát hiện & sửa lỗi concurrency trong JavaScript', en: 'Fine-tuned LLM that detects & repairs JavaScript concurrency bugs' },
+    desc: { vi: 'Pipeline end-to-end tự phát hiện và sửa lỗi concurrency (data race, atomicity, order violation) trong Node.js bất đồng bộ — chỉ dùng model 1.5B tham số, trong khi công cụ hiện có hoặc chỉ phát hiện mà không sửa được, hoặc cần model 7B–32B.', en: 'End-to-end pipeline that detects and fixes concurrency bugs (data races, atomicity and order violations) in async Node.js — with a 1.5B-parameter model, where existing tools either only detect or need 7B–32B models.' },
+    feats: [
+      { vi: 'Bộ phát hiện race tĩnh phủ 5 pattern concurrency phổ biến', en: 'Static race detector covering 5 common concurrency patterns' },
+      { vi: 'Fine-tune Qwen2.5-Coder-1.5B bằng QLoRA trên 783 ví dụ Chain-of-Thought', en: 'Qwen2.5-Coder-1.5B fine-tuned with QLoRA on 783 Chain-of-Thought examples' },
+      { vi: 'RAG BM25 trên kho tri thức JavaScript 2,055 tài liệu', en: 'BM25 RAG over a 2,055-document JavaScript knowledge base' },
+      { vi: 'Vượt GPT-3.5-turbo (65.0%) trên benchmark 30 bug npm thật', en: 'Beats GPT-3.5-turbo (65.0%) on a benchmark of 30 real npm bugs' },
+    ],
+    stats: [
+      { v: '73.3%', l: { vi: 'Pass rate', en: 'Pass rate' } },
+      { v: '~125×', l: { vi: 'Nhỏ hơn GPT-3.5', en: 'Smaller than GPT-3.5' } },
+      { v: '1.5B', l: { vi: 'Tham số', en: 'Parameters' } },
+    ],
+    chips: ['Python', 'PyTorch', 'QLoRA', 'Qwen2.5-Coder-1.5B', 'BM25', 'FastAPI'],
     img: '/products/threadlearn/01.jpg',
     gallery: ['/products/threadlearn/01.jpg'],
   },
@@ -290,5 +301,5 @@ export const TEAM_CV = {
 // One card shape for products list + detail pages (#/san-pham, #/san-pham/<id>)
 export const ALL_PRODUCTS = [
   ...CASES.map(({ rev, fig, ...c }) => c),
-  ...MORE_PRODUCTS.map((p) => ({ ...p, stats: [] })),
+  ...MORE_PRODUCTS.map((p) => ({ ...p, stats: p.stats || [] })),
 ];
