@@ -34,10 +34,10 @@ export default function Navbar({ theme, toggleTheme, lang, setLang, t }) {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 bg-[#FBF8F2] dark:bg-[#15120E] ${
         scrolled
-          ? "py-3 bg-white/90 dark:bg-[#0B0F17]/90 backdrop-blur-xl border-b border-black/10 dark:border-white/10 shadow-lg shadow-black/10 dark:shadow-black/30"
-          : "py-4 bg-transparent border-b border-black/5 dark:border-white/5"
+          ? "py-3 border-b border-[#E4DAC6] dark:border-white/10 shadow-md shadow-black/5"
+          : "py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -129,7 +129,7 @@ export default function Navbar({ theme, toggleTheme, lang, setLang, t }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden px-6 pt-4 pb-6 bg-white/95 dark:bg-[#0B0F17]/95 border-b border-black/10 dark:border-white/10 backdrop-blur-2xl space-y-3 font-mono text-xs shadow-xl">
+        <div className="xl:hidden px-6 pt-4 pb-6 bg-[#FBF8F2] dark:bg-[#15120E] border-b border-[#E4DAC6] dark:border-white/10 space-y-3 font-mono text-xs shadow-xl">
           {navLinks.map((link, idx) => (
             <a
               key={idx}
