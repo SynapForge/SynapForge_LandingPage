@@ -1,5 +1,6 @@
 import React from 'react';
 import { useReveal } from './MockupBView';
+import Breadcrumb from './Breadcrumb';
 import { pick, t, ALL_PRODUCTS, ROADMAP, ZALO_URL } from '../data/i18n';
 
 export default function ProductsPage({ lang, setLang }) {
@@ -26,6 +27,12 @@ export default function ProductsPage({ lang, setLang }) {
 
       <section className="section gridbg pp-sec">
         <div className="wrap">
+          <Breadcrumb
+            items={[
+              { label: t(lang, 'nav_home'), href: '#/' },
+              { label: t(lang, 'nav_products') },
+            ]}
+          />
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>

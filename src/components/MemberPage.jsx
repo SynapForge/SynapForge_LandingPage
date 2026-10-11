@@ -1,4 +1,5 @@
 import React from "react";
+import Breadcrumb from "./Breadcrumb";
 import { pick, t, TEAM, TEAM_CV } from "../data/i18n";
 
 const tx = (lang, v) => (typeof v === "string" ? v : pick(lang, v.vi, v.en));
@@ -42,6 +43,13 @@ export default function MemberPage({ id, lang, setLang }) {
 
       <section className="gridbg pp-sec">
         <div className="wrap">
+          <Breadcrumb
+            items={[
+              { label: t(lang, "nav_home"), href: "#/" },
+              { label: t(lang, "team_title"), href: "#team" },
+              { label: m.name },
+            ]}
+          />
           <div className="sec-label cv-label">
             <span className="sq"></span>
             <span className="mono">
@@ -65,11 +73,99 @@ export default function MemberPage({ id, lang, setLang }) {
               <div className="cv-role">{m.role}</div>
               <div className="case-tag">{cv.title}</div>
 
+              {cv.links && (
+                <div className="cv-links">
+                  {cv.links.portfolio && (
+                    <a
+                      className="cv-link-btn"
+                      href={cv.links.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>↗ Portfolio</span>
+                    </a>
+                  )}
+                  {cv.links.github && (
+                    <a
+                      className="cv-link-btn"
+                      href={cv.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>↗ GitHub</span>
+                    </a>
+                  )}
+                  {cv.links.linkedin && (
+                    <a
+                      className="cv-link-btn"
+                      href={cv.links.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>↗ LinkedIn</span>
+                    </a>
+                  )}
+                  {cv.links.email && (
+                    <a className="cv-link-btn" href={`mailto:${cv.links.email}`}>
+                      <span>✉ {cv.links.email}</span>
+                    </a>
+                  )}
+                </div>
+              )}
+
               <h2 className="cv-h">{t(lang, "cv_about")}</h2>
               <p className="case-desc">{tx(lang, cv.about)}</p>
 
               <h2 className="cv-h">{t(lang, "cv_edu")}</h2>
               <p className="case-desc">{tx(lang, cv.edu)}</p>
+
+              {cv.certs && (
+                <>
+                  <h2 className="cv-h">{t(lang, "cv_certs")}</h2>
+                  <p className="case-desc">{tx(lang, cv.certs)}</p>
+                </>
+              )}
+
+              {cv.awards && cv.awards.length > 0 && (
+                <>
+                  <h2 className="cv-h">{t(lang, "cv_awards")}</h2>
+                  <div className="case-feats">
+                    {cv.awards.map((a, k) => (
+                      <div key={k}>
+                        <span className="sq"></span>
+                        <span>{tx(lang, a)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {cv.projects && cv.projects.length > 0 && (
+                <>
+                  <h2 className="cv-h">{t(lang, "cv_projects")}</h2>
+                  <div className="cv-projects-list">
+                    {cv.projects.map((p, k) => (
+                      <div className="cv-proj-card" key={k}>
+                        <div className="cv-proj-head">
+                          <span className="cv-proj-name">{p.name}</span>
+                          {p.time && <span className="cv-proj-time">{p.time}</span>}
+                        </div>
+                        {p.role && <div className="cv-proj-role">{tx(lang, p.role)}</div>}
+                        {p.desc && <p className="cv-proj-desc">{tx(lang, p.desc)}</p>}
+                        {p.tech && p.tech.length > 0 && (
+                          <div className="chips cv-proj-chips">
+                            {p.tech.map((tc) => (
+                              <span className="chip" key={tc}>
+                                {tc}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
 
               <h2 className="cv-h">{t(lang, "cv_exp")}</h2>
               <div className="case-feats">
