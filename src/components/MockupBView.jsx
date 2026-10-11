@@ -148,7 +148,7 @@ export default function MockupBView({ lang, setLang }) {
   // Track active section for rail navigation
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["top", "ventures", "services", "team", "contact"];
+      const sections = ["top", "model", "ventures", "services", "team", "contact"];
       const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -227,7 +227,7 @@ export default function MockupBView({ lang, setLang }) {
   }, []);
 
   useReveal(
-    ".case, .sec-head, .svc-row, .member, .faq-item, .process-step, .pkg, .hero-stat, .contact-grid, .fig, .pol, .ph",
+    ".case, .sec-head, .svc-row, .member, .faq-item, .process-step, .pkg, .hero-stat, .contact-grid, .fig, .pol, .ph, .flywheel-card, .flywheel-loop",
   );
 
   return (
@@ -247,6 +247,7 @@ export default function MockupBView({ lang, setLang }) {
           </a>
 
           <nav className="top-nav">
+            <a href="#model">{t(lang, "nav_model")}</a>
             <a href="#ventures">{t(lang, "nav_ventures")}</a>
             <a href="#services">{t(lang, "nav_services")}</a>
             <a href="#team">{t(lang, "nav_team")}</a>
@@ -256,7 +257,16 @@ export default function MockupBView({ lang, setLang }) {
           <div className="flex items-center gap-3">
             <div
               className="lang-pill"
+              role="button"
+              tabIndex={0}
+              aria-label={lang === "vi" ? "Chuyển sang tiếng Anh (EN)" : "Switch to Vietnamese (VI)"}
               onClick={() => setLang(lang === "vi" ? "en" : "vi")}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setLang(lang === "vi" ? "en" : "vi");
+                }
+              }}
             >
               <span className={lang === "vi" ? "on" : ""}>VI</span>
               <span className={lang === "en" ? "on" : ""}>EN</span>
@@ -274,27 +284,31 @@ export default function MockupBView({ lang, setLang }) {
           <span className="l">{t(lang, "rail_intro")}</span>
           <span className="n">01</span>
         </a>
+        <a className={activeSection === "model" ? "on" : ""} href="#model">
+          <span className="l">{t(lang, "rail_model")}</span>
+          <span className="n">02</span>
+        </a>
         <a
           className={activeSection === "ventures" ? "on" : ""}
           href="#ventures"
         >
           <span className="l">{t(lang, "nav_ventures")}</span>
-          <span className="n">02</span>
+          <span className="n">03</span>
         </a>
         <a
           className={activeSection === "services" ? "on" : ""}
           href="#services"
         >
           <span className="l">{t(lang, "rail_services")}</span>
-          <span className="n">03</span>
+          <span className="n">04</span>
         </a>
         <a className={activeSection === "team" ? "on" : ""} href="#team">
           <span className="l">{t(lang, "rail_team")}</span>
-          <span className="n">04</span>
+          <span className="n">05</span>
         </a>
         <a className={activeSection === "contact" ? "on" : ""} href="#contact">
           <span className="l">{t(lang, "rail_contact")}</span>
-          <span className="n">05</span>
+          <span className="n">06</span>
         </a>
       </nav>
 
@@ -405,13 +419,113 @@ export default function MockupBView({ lang, setLang }) {
         </div>
       </section>
 
-      {/* ===== VENTURES B/02 ===== */}
+      {/* ===== DUAL-ENGINE FLYWHEEL B/02 ===== */}
+      <section className="flywheel-section" id="model">
+        <div className="wrap">
+          <div className="sec-head">
+            <div className="sec-label">
+              <span className="sq"></span>
+              <span className="mono">{t(lang, "flywheel_label")}</span>
+            </div>
+            <h2>
+              <Scramble text={t(lang, "flywheel_title")} />
+            </h2>
+            <div className="sec-note">{t(lang, "flywheel_note")}</div>
+          </div>
+
+          <p className="flywheel-intro">{t(lang, "flywheel_sub")}</p>
+
+          <div className="flywheel-grid">
+            {/* Engine 1 */}
+            <div className="flywheel-card">
+              <div>
+                <span className="flywheel-badge">
+                  {t(lang, "engine1_badge")}
+                </span>
+                <h3>{t(lang, "engine1_title")}</h3>
+                <div className="flywheel-sub-label">
+                  {t(lang, "engine1_sub")}
+                </div>
+                <p className="flywheel-desc">{t(lang, "engine1_desc")}</p>
+              </div>
+
+              <div className="flywheel-list">
+                <div className="flywheel-item">
+                  <span className="sq"></span>
+                  <span>{t(lang, "engine1_item1")}</span>
+                </div>
+                <div className="flywheel-item">
+                  <span className="sq"></span>
+                  <span>{t(lang, "engine1_item2")}</span>
+                </div>
+                <div className="flywheel-item">
+                  <span className="sq"></span>
+                  <span>{t(lang, "engine1_item3")}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Engine 2 */}
+            <div className="flywheel-card">
+              <div>
+                <span className="flywheel-badge client">
+                  {t(lang, "engine2_badge")}
+                </span>
+                <h3>{t(lang, "engine2_title")}</h3>
+                <div className="flywheel-sub-label">
+                  {t(lang, "engine2_sub")}
+                </div>
+                <p className="flywheel-desc">{t(lang, "engine2_desc")}</p>
+              </div>
+
+              <div className="flywheel-list">
+                <div className="flywheel-item">
+                  <span className="sq"></span>
+                  <span>{t(lang, "engine2_item1")}</span>
+                </div>
+                <div className="flywheel-item">
+                  <span className="sq"></span>
+                  <span>{t(lang, "engine2_item2")}</span>
+                </div>
+                <div className="flywheel-item">
+                  <span className="sq"></span>
+                  <span>{t(lang, "engine2_item3")}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Loop Cycle Bar */}
+          <div className="flywheel-loop">
+            <div className="flywheel-loop-head">
+              <b>{t(lang, "loop_title")}</b>
+              <span className="sec-note">{t(lang, "loop_badge")}</span>
+            </div>
+            <div className="flywheel-loop-steps">
+              <div className="flywheel-step">
+                <div className="num">{t(lang, "loop_s1_num")}</div>
+                <p className="txt">{t(lang, "loop_s1_txt")}</p>
+              </div>
+              <div className="flywheel-step">
+                <div className="num">{t(lang, "loop_s2_num")}</div>
+                <p className="txt">{t(lang, "loop_s2_txt")}</p>
+              </div>
+              <div className="flywheel-step">
+                <div className="num">{t(lang, "loop_s3_num")}</div>
+                <p className="txt">{t(lang, "loop_s3_txt")}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== VENTURES C/03 ===== */}
       <section className="section" id="ventures">
         <div className="wrap">
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>
-              <span className="mono">// B/02 — VENTURES</span>
+              <span className="mono">// C/03 — VENTURES</span>
             </div>
             <h2>
               <Scramble text={t(lang, "ven_title")} />
@@ -475,13 +589,13 @@ export default function MockupBView({ lang, setLang }) {
         </div>
       </section>
 
-      {/* ===== SERVICES C/03 ===== */}
+      {/* ===== SERVICES D/04 ===== */}
       <section className="section sec-paper" id="services">
         <div className="wrap">
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>
-              <span className="mono">// C/03 — SERVICES</span>
+              <span className="mono">// D/04 — SERVICES</span>
             </div>
             <h2>
               <Scramble text={t(lang, "svc_title")} />
@@ -512,13 +626,13 @@ export default function MockupBView({ lang, setLang }) {
         </div>
       </section>
 
-      {/* ===== TEAM D/04 ===== */}
+      {/* ===== TEAM E/05 ===== */}
       <section className="section sec-paper" id="team">
         <div className="wrap">
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>
-              <span className="mono">// D/04 — TEAM</span>
+              <span className="mono">// E/05 — TEAM</span>
             </div>
             <h2>
               <Scramble text={t(lang, "team_title")} />
@@ -581,13 +695,13 @@ export default function MockupBView({ lang, setLang }) {
         </div>
       </section>
 
-      {/* ===== CONTACT E/05 ===== */}
+      {/* ===== CONTACT F/06 ===== */}
       <section className="contact-spec gridbg" id="contact">
         <div className="wrap">
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>
-              <span className="mono">// E/05 — CONTACT</span>
+              <span className="mono">// F/06 — CONTACT</span>
             </div>
             <h2>
               <Scramble text={t(lang, "contact_title")} />
