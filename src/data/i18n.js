@@ -15,6 +15,8 @@ export const T = {
     en: "SynapForge builds e-commerce websites, order & payment automation, and 24/7 AI customer support for SMEs in Da Nang, Vietnam. Quote in 24h, delivery in 30–60 days.",
   },
 
+  nav_model: { vi: "Mô hình song cơ", en: "Dual Engine" },
+  rail_model: { vi: "Mô hình", en: "Model" },
   nav_ventures: { vi: "Sản phẩm", en: "Products" },
   nav_services: { vi: "Dịch vụ", en: "Services" },
   rail_intro: { vi: "Giới thiệu", en: "Intro" },
@@ -27,33 +29,114 @@ export const T = {
   rail_team: { vi: "Đội ngũ", en: "Team" },
   rail_contact: { vi: "Liên hệ", en: "Contact" },
 
+  flywheel_label: {
+    vi: "// B/02 — MÔ HÌNH SONG CƠ (DUAL-ENGINE)",
+    en: "// B/02 — DUAL-ENGINE FLYWHEEL",
+  },
+  flywheel_title: {
+    vi: "Chủ động làm sản phẩm để gia công vững tay",
+    en: "Building in-house to engineer client scale",
+  },
+  flywheel_note: {
+    vi: "Kiểm thử thực tế, giảm thiểu rủi ro",
+    en: "Battle-tested workflows, minimizing risks",
+  },
+  flywheel_sub: {
+    vi: "Thay vì thử nghiệm trực tiếp trên dự án của đối tác, chúng tôi chủ động kiểm chứng công nghệ trên các sản phẩm do chính mình phát triển, mang những module đã vận hành ổn định để áp dụng vào hệ thống của bạn.",
+    en: "Instead of experimenting on client budgets, we validate architectures on our own platforms first, bringing stable, proven modules to your deployment.",
+  },
+  engine1_badge: { vi: "50% IN-HOUSE · PRODUCE", en: "50% IN-HOUSE · PRODUCE" },
+  engine1_title: { vi: "Động cơ 1: Sản phẩm riêng", en: "Engine 1: In-House Ventures" },
+  engine1_sub: {
+    vi: "BrandHub, BienSoVip, AI Film Streaming...",
+    en: "BrandHub, BienSoVip, AI Film Streaming...",
+  },
+  engine1_desc: {
+    vi: "Tự xây dựng các sàn thương mại và nền tảng AI phục vụ lượng người dùng thực tế. Trực tiếp giải quyết các bài toán kỹ thuật: đối soát tiền cọc, khóa chống bán trùng, lưu lượng cao và an toàn dữ liệu.",
+    en: "Building our own high-traffic platforms to master real-world challenges: automated reconciliations, race condition locks, high concurrency, and data security.",
+  },
+  engine1_item1: {
+    vi: "Chủ động nghiên cứu R&D, không để khách hàng gánh chịu rủi ro thử nghiệm",
+    en: "We absorb R&D learning curves ourselves, protecting client budgets",
+  },
+  engine1_item2: {
+    vi: "Làm chủ công nghệ thực tế: RAG dẫn nguồn dữ liệu, Microservices, Event Streams",
+    en: "Mastering practical tech: Sourced RAG, Microservices, Event Streams",
+  },
+  engine1_item3: {
+    vi: "Đóng gói sẵn các module: Đối soát VietQR Webhook, khóa phân tán Redis, bộ lọc CSDL",
+    en: "Packaged production-ready modules: Zero-fee VietQR webhook, Redis Distributed Lock, optimized DB filters",
+  },
+  engine2_badge: { vi: "50% CLIENT · OUTSOURCE", en: "50% CLIENT · OUTSOURCE" },
+  engine2_title: { vi: "Động cơ 2: Gia công chuyển đổi số", en: "Engine 2: Client Engineering" },
+  engine2_sub: {
+    vi: "Web bán hàng, Sàn TMĐT, Tự động hoá, Trợ lý AI",
+    en: "E-commerce, Marketplaces, Automation, AI Support",
+  },
+  engine2_desc: {
+    vi: "Mang các module và quy trình thực chiến đã được tôi luyện để phát triển hệ thống cho bạn. Lắp ráp nhanh, vận hành ổn định, đồng hành hỗ trợ kỹ thuật lâu dài.",
+    en: "Deploying battle-tested modules and proven engineering practices to deliver client systems. Fast assembly, reliable operations, dedicated long-term support.",
+  },
+  engine2_item1: {
+    vi: "Rút ngắn thời gian triển khai: Bàn giao hệ thống hoàn chỉnh trong 30–60 ngày",
+    en: "Accelerated turnaround: Full production delivery in 30–60 days",
+  },
+  engine2_item2: {
+    vi: "Độ tin cậy cao: Hàng đợi chống thất lạc dữ liệu, tốc độ tải trang nhanh, bảo mật đa tầng",
+    en: "High reliability: Queue architecture preventing data loss, fast load times, layered security",
+  },
+  engine2_item3: {
+    vi: "Bàn giao 100% mã nguồn, tài liệu hướng dẫn và đồng hành bảo hành tận tâm",
+    en: "100% source code handover, full technical docs, and reliable warranty",
+  },
+  loop_badge: { vi: "// BÁNH ĐÀ TUẦN HOÀN", en: "// THE VALUE FLYWHEEL" },
+  loop_title: {
+    vi: "Vòng lặp giá trị song cơ khép kín",
+    en: "Closed-Loop Dual-Engine Value Cycle",
+  },
+  loop_s1_num: { vi: "01 / TÔI LUYỆN", en: "01 / FORGE" },
+  loop_s1_txt: {
+    vi: "Sản phẩm riêng rèn giũa kỹ nghệ & minh chứng năng lực thật.",
+    en: "In-house ventures prove engineering rigor & build real credibility.",
+  },
+  loop_s2_num: { vi: "02 / TÁI SỬ DỤNG", en: "02 / REUSE" },
+  loop_s2_txt: {
+    vi: "Module có sẵn giúp bàn giao dự án khách hàng nhanh chóng với chi phí tối ưu.",
+    en: "Proven modules enable rapid delivery and lower costs for clients.",
+  },
+  loop_s3_num: { vi: "03 / TÁI ĐẦU TƯ", en: "03 / REINVEST" },
+  loop_s3_txt: {
+    vi: "Dòng tiền gia công quay lại nuôi dưỡng R&D, không phụ thuộc vốn vay.",
+    en: "Outsourcing revenue reinvests into continuous in-house product R&D.",
+  },
+
   hero_eyebrow: {
     vi: "// A/01 — VENTURE STUDIO & SOFTWARE FACTORY — ĐÀ NẴNG, VN",
     en: "// A/01 — VENTURE STUDIO & SOFTWARE FACTORY — DA NANG, VN",
   },
   h1_a: { vi: "Thiết kế website bán hàng,", en: "E-commerce websites," },
   h1_b: {
-    vi: "tự động hóa & AI chăm khách",
-    en: "automation & AI customer care",
+    vi: "tự động hóa & trợ lý AI 24/7",
+    en: "automation & 24/7 AI assistants",
   },
   sub_b: {
-    vi: "Website bán hàng, thanh toán tự động, AI chăm khách 24/7.",
-    en: "E-commerce website, auto payments, 24/7 AI customer care.",
+    vi: "Website bán hàng, thanh toán tự động, trợ lý AI hỗ trợ 24/7.",
+    en: "E-commerce websites, automated payments, 24/7 AI customer assistance.",
   },
   sub_r: {
-    vi: "Chúng tôi làm trọn gói cho doanh nghiệp vừa & nhỏ — bạn lo bán, công nghệ lo phần còn lại.",
-    en: "We deliver end-to-end for SMEs — you focus on selling, we handle the rest of the stack.",
+    vi: "Giải pháp bài bản cho doanh nghiệp vừa & nhỏ — tối ưu quy trình vận hành và tiết kiệm chi phí công nghệ.",
+    en: "End-to-end solutions for SMEs — streamlining operations and saving technology costs.",
   },
   cta_ventures: { vi: "Xem dự án thật", en: "See real projects" },
   cta_contact: { vi: "Báo giá trong 24h →", en: "Quote in 24h →" },
   dual_label: { vi: "02 động cơ:", en: "02 engines:" },
   dual_1: {
-    vi: "■ Sản phẩm riêng — BrandHub, BienSoVip",
-    en: "■ Own products — BrandHub, BienSoVip",
+    vi: "■ Sản phẩm tự phát triển — BrandHub, BienSoVip",
+    en: "■ In-house ventures — BrandHub, BienSoVip",
   },
   dual_2: {
-    vi: "■ Gia công chuẩn doanh nghiệp",
-    en: "■ Enterprise outsourcing",
+    vi: "■ Gia công kỹ nghệ cho khách hàng",
+    en: "■ Enterprise client engineering",
   },
 
   ety_syn: {
@@ -138,7 +221,7 @@ export const HERO_STATS = [
   },
   {
     v: "0%",
-    l1: { vi: "Mất tin nhắn", en: "Lost messages" },
+    l1: { vi: "Mất tin nhắn", en: "Message loss" },
     l2: { vi: "RabbitMQ DLQ", en: "RabbitMQ DLQ" },
   },
   {
@@ -154,7 +237,7 @@ export const TICKER = [
   { vi: "AI chăm khách 24/7", en: "24/7 AI support" },
   { vi: "Quản lý đơn hàng", en: "Order management" },
   { vi: "Báo cáo tự động", en: "Auto reports" },
-  { vi: "0đ phí cổng", en: "0đ gateway fees" },
+  { vi: "0đ phí cổng", en: "Zero gateway fees" },
   { vi: "<30s thông báo", en: "<30s notifications" },
   { vi: "0% mất dữ liệu", en: "0% data loss" },
 ];
@@ -166,31 +249,31 @@ export const CASES = [
     kicker: "CASE 01 — AI MARTECH & PUBLISHER",
     title: "BrandHub",
     tag: {
-      vi: "Tự động viết & đăng nội dung lên 5 nền tảng MXH",
-      en: "Auto-writes & publishes content to 5 social platforms",
+      vi: "Hỗ trợ viết & lập lịch đăng nội dung lên 5 nền tảng MXH",
+      en: "Automated content drafts & multi-platform scheduling",
     },
     desc: {
-      vi: "Học giọng điệu thương hiệu từ bài cũ, tự sinh nội dung, đăng 5 MXH — một người làm việc của cả đội content.",
-      en: "Learns your brand's voice from past posts, generates content, publishes to 5 platforms — one person does a whole content team's work.",
+      vi: "Học phong cách thương hiệu từ bài viết cũ, hỗ trợ tạo nội dung và xuất bản lên 5 MXH — tối ưu đáng kể nguồn lực cho đội ngũ marketing.",
+      en: "Analyzes brand tone to generate content drafts and schedule posts across 5 platforms — significantly reducing manual overhead for marketing teams.",
     },
     feats: [
       {
-        vi: "Tự học Brand Voice — nội dung sinh ra không bao giờ trùng lặp",
-        en: "Learns Brand Voice — generated content never repeats",
+        vi: "Học Brand Voice từ bài mẫu — nội dung đa dạng, bám sát định hướng",
+        en: "Learns Brand Voice from existing posts — diverse copy aligned with brand guidelines",
       },
       {
-        vi: "Lập lịch đăng tự động Facebook, TikTok, Instagram, Threads, Zalo",
-        en: "Auto-schedules posts to Facebook, TikTok, Instagram, Threads, Zalo",
+        vi: "Lập lịch đăng tự động lên Facebook, TikTok, Instagram, Threads, Zalo",
+        en: "Automated post scheduling to Facebook, TikTok, Instagram, Threads, Zalo",
       },
       {
-        vi: "Lỗi thì tự gửi lại — không bao giờ mất bài đăng",
-        en: "Auto-retries on failure — never loses a post",
+        vi: "Hàng đợi RabbitMQ DLQ — tự động retry khi lỗi mạng, giảm thiểu tối đa thất lạc bài",
+        en: "RabbitMQ Dead Letter Queue (DLQ) — automated retries to prevent dropped posts",
       },
     ],
     stats: [
       { v: "07", l: { vi: "Microservices", en: "Microservices" } },
-      { v: "0%", l: { vi: "Mất bài", en: "Lost posts" } },
-      { v: "05", l: { vi: "Nền tảng", en: "Platforms" } },
+      { v: "DLQ", l: { vi: "Hàng đợi chống rớt", en: "Queue DLQ" } },
+      { v: "05", l: { vi: "Nền tảng MXH", en: "Social platforms" } },
     ],
     chips: [
       "Java 21",
@@ -216,31 +299,31 @@ export const CASES = [
     kicker: "CASE 02 — LUXURY MARKETPLACE",
     title: "BienSoVip",
     tag: {
-      vi: "Sàn giao dịch & đấu giá biển số xe cao cấp",
-      en: "Premium license-plate marketplace & auction",
+      vi: "Sàn giao dịch & đấu giá biển số xe trực tuyến",
+      en: "Specialized online license-plate auction & marketplace",
     },
     desc: {
-      vi: "Khách cọc lúc 2h sáng, máy tự khớp VietQR trong 0.5s — bạn ngủ, máy bán. AI tư vấn phong thủy trả lời 24/7.",
-      en: "Customer deposits at 2am, system auto-matches VietQR in 0.5s — you sleep, it sells. Feng shui AI consults 24/7.",
+      vi: "Hệ thống tự động đối soát tiền cọc qua VietQR Webhook trong 0.5s kể cả ngoài giờ làm việc. Tích hợp trợ lý AI giải đáp thông tin và hỗ trợ khách hàng 24/7.",
+      en: "Automated deposit reconciliation via VietQR Webhook in 0.5s around the clock. Built-in AI assistant answers buyer questions 24/7.",
     },
     feats: [
       {
-        vi: "Khớp cọc tự động < 0.5s — 0đ phí cổng trung gian",
-        en: "Auto payment match <0.5s — 0đ gateway fees",
+        vi: "Đối soát & khớp cọc tự động qua VietQR Webhook — không tốn phí cổng trung gian",
+        en: "Automated deposit matching via VietQR Webhook — zero intermediary gateway fees",
       },
       {
-        vi: "Khóa chống bán trùng — 2 khách không bao giờ mua cùng 1 biển",
-        en: "Anti double-sell lock — two customers can never buy the same plate",
+        vi: "Khóa phân tán Redis (Distributed Lock) — ngăn ngừa xung đột đặt trùng đơn hàng",
+        en: "Redis Distributed Lock — prevents race conditions & duplicate orders",
       },
       {
-        vi: "AI tư vấn phong thủy theo 4 trụ — trả lời khách 24/7",
-        en: "Feng shui AI consulting by 4 pillars — answers 24/7",
+        vi: "Trợ lý AI phân tích phong thủy & giải đáp khách hàng 24/7",
+        en: "AI assistant for number analysis & user inquiries — available 24/7",
       },
     ],
     stats: [
-      { v: "61", l: { vi: "Bảng dữ liệu", en: "Data tables" } },
-      { v: "<8ms", l: { vi: "Truy vấn", en: "Queries" } },
-      { v: "<0.5s", l: { vi: "Khớp cọc", en: "Payment match" } },
+      { v: "61", l: { vi: "Bảng dữ liệu", en: "Database tables" } },
+      { v: "<8ms", l: { vi: "Độ trễ truy vấn", en: "Query latency" } },
+      { v: "<0.5s", l: { vi: "Khớp đối soát", en: "Deposit match" } },
     ],
     chips: [
       ".NET 8 Clean Arch",
@@ -267,118 +350,136 @@ export const SERVICES = [
   {
     num: "01",
     title: {
-      vi: "Website bán hàng & Marketplace",
-      en: "E-commerce Website & Marketplace",
+      vi: "Website bán hàng & Nền tảng TMĐT",
+      en: "E-commerce Website & Platforms",
     },
     sub: {
-      vi: "Bán online chuyên nghiệp — khách tự đặt, tự thanh toán, không cần nhân viên chốt đơn.",
-      en: "Sell online professionally — customers order and pay themselves, no salesperson needed.",
+      vi: "Giải pháp bán hàng trực tuyến bài bản — quy trình đặt hàng rõ ràng, thanh toán tự động, giảm bớt khâu xác nhận thủ công.",
+      en: "Structured online sales solutions — seamless ordering, automated payments, reducing manual follow-ups.",
     },
     chips: [
       {
-        vi: "Giỏ hàng, đơn hàng, tồn kho real-time",
-        en: "Cart, orders, real-time inventory",
+        vi: "Giỏ hàng, quản lý đơn hàng & tồn kho tức thời",
+        en: "Cart, order tracking & real-time inventory",
       },
       {
-        vi: "Thanh toán VietQR tự khớp + VNPay/MoMo",
-        en: "VietQR auto-match + VNPay/MoMo payments",
+        vi: "Tích hợp VietQR tự động đối soát + Cổng VNPay/MoMo",
+        en: "VietQR auto-reconciliation + VNPay/MoMo gateways",
       },
       {
-        vi: "Tự quản lý sản phẩm, giá, đơn dễ dàng",
-        en: "Easy self-manage products, prices, orders",
+        vi: "Trang quản trị (CMS Dashboard) tự cập nhật sản phẩm & giá",
+        en: "Admin CMS dashboard for managing products & pricing",
       },
-      { vi: "SSL, SEO, tải trang < 1s", en: "SSL, SEO, page load <1s" },
+      {
+        vi: "Tối ưu hóa SEO, bảo mật SSL & tốc độ tải trang nhanh",
+        en: "SEO-optimized, SSL security & fast page load times",
+      },
     ],
     tech: {
-      vi: "TECH — thanh toán tự khớp · dữ liệu an toàn · chịu tải cao",
-      en: "TECH — auto payment matching · secure data · high-load ready",
+      vi: "TECH — đối soát tự động · bảo mật dữ liệu · sẵn sàng mở rộng",
+      en: "TECH — auto reconciliation · data protection · scalable stack",
     },
     time: { vi: "4–8 tuần", en: "4–8 weeks" },
   },
   {
     num: "02",
-    title: { vi: "Tự động hóa vận hành", en: "Operations Automation" },
+    title: {
+      vi: "Tự động hóa quy trình vận hành",
+      en: "Workflow & Operations Automation",
+    },
     sub: {
-      vi: "Đơn hàng tự đối soát, thông báo < 30s, báo cáo không cần làm tay.",
-      en: "Orders auto-reconcile, notifications <30s, reports without manual work.",
+      vi: "Hệ thống tự đối soát đơn hàng, gửi thông báo tức thời, hỗ trợ xuất báo cáo định kỳ nhanh chóng.",
+      en: "Automated order matching, instant webhook alerts, and streamlined financial reporting.",
     },
     chips: [
       {
-        vi: "Thông báo Telegram/Zalo Webhook < 30s",
-        en: "Telegram/Zalo Webhook alerts <30s",
+        vi: "Thông báo tức thời qua Telegram / Zalo Webhook",
+        en: "Instant Telegram / Zalo Webhook notifications",
       },
       {
-        vi: "Đối soát VietQR tự động 0đ phí",
-        en: "VietQR auto-reconciliation, 0đ fees",
+        vi: "Đối soát thanh toán VietQR tự động, tiết kiệm chi phí cổng",
+        en: "Automated VietQR reconciliation, saving gateway fees",
       },
       {
-        vi: "Phễu lead tự phân luồng theo độ nóng",
-        en: "Lead funnel auto-routed by heat",
+        vi: "Phân loại và điều phối luồng khách hàng (Lead Routing)",
+        en: "Automated lead sorting & CRM pipeline routing",
       },
-      { vi: "Báo cáo doanh thu tự động", en: "Auto revenue reports" },
+      {
+        vi: "Báo cáo doanh thu & đơn hàng tự động",
+        en: "Automated revenue & sales reporting",
+      },
     ],
     tech: {
-      vi: "TECH — thông báo < 30s · tự đối soát · không mất dữ liệu",
-      en: "TECH — <30s alerts · auto-reconcile · no data loss",
+      vi: "TECH — thông báo webhook · tự động đối soát · đảm bảo toàn vẹn dữ liệu",
+      en: "TECH — webhook alerts · auto reconciliation · data integrity",
     },
     time: { vi: "3–6 tuần", en: "3–6 weeks" },
   },
   {
     num: "03",
-    title: { vi: "AI chăm sóc khách hàng 24/7", en: "24/7 AI Customer Care" },
+    title: {
+      vi: "Trợ lý AI chăm sóc khách hàng 24/7",
+      en: "24/7 AI Customer Support Assistant",
+    },
     sub: {
-      vi: "AI trả lời khách 24/7 theo dữ liệu riêng của bạn — đúng, không bịa, tiết kiệm 80% chi phí.",
-      en: "AI answers customers 24/7 from your own data — accurate, no hallucination, saves 80% of cost.",
+      vi: "Ứng dụng mô hình AI được tinh chỉnh theo tài liệu riêng của doanh nghiệp — trả lời chuẩn xác có dẫn nguồn, hạn chế tối đa ảo giác, tiết kiệm chi phí trực tổng đài.",
+      en: "AI assistants grounded in your internal knowledge base — accurate answers with source citations, minimizing hallucinations and staffing costs.",
     },
     chips: [
       {
-        vi: "Tư vấn sản phẩm tự động 24/7",
-        en: "Auto product consulting 24/7",
+        vi: "Hỗ trợ tư vấn thông tin sản phẩm tự động 24/7",
+        en: "24/7 automated product consultation",
       },
       {
-        vi: "Học tài liệu nội bộ — trả lời đúng, có nguồn",
-        en: "Learns internal docs — accurate, sourced answers",
+        vi: "Học từ tài liệu nội bộ — câu trả lời có dẫn nguồn kiểm chứng",
+        en: "Grounded in internal documents with verifiable citations",
       },
       {
-        vi: "Dữ liệu chạy riêng, không ra ngoài",
-        en: "Data runs privately, never leaves",
+        vi: "Tùy chọn triển khai Private AI / On-Premise bảo mật dữ liệu",
+        en: "Private AI / On-Premise options for data confidentiality",
       },
-      { vi: "API AI tốc độ cao", en: "High-speed AI API" },
+      {
+        vi: "Tích hợp API hiệu năng cao qua FastAPI",
+        en: "High-performance AI API integration (FastAPI)",
+      },
     ],
     tech: {
-      vi: "TECH — AI học dữ liệu riêng · trả lời đúng · chạy tại máy bạn",
-      en: "TECH — AI on your data · accurate answers · runs on your machine",
+      vi: "TECH — RAG trích dẫn nguồn · hạn chế ảo giác · bảo mật dữ liệu",
+      en: "TECH — Sourced RAG · reduced hallucination · private deployment",
     },
     time: { vi: "2–5 tuần", en: "2–5 weeks" },
   },
   {
     num: "04",
     title: {
-      vi: "Chuyển đổi số trọn gói",
-      en: "End-to-End Digital Transformation",
+      vi: "Phát triển phần mềm & Chuyển đổi số trọn gói",
+      en: "End-to-End Software Engineering & Delivery",
     },
     sub: {
-      vi: "Từ ý tưởng trên giấy đến sản phẩm ra mắt trong 30–60 ngày.",
-      en: "From idea on paper to product launch in 30–60 days.",
+      vi: "Đồng hành từ khâu phân tích yêu cầu, thiết kế kiến trúc đến triển khai sản phẩm hoàn chỉnh trong 30–60 ngày.",
+      en: "Partnering from requirements analysis and architecture to production launch in 30–60 days.",
     },
     chips: [
       {
-        vi: "Chốt rõ yêu cầu & thiết kế trước khi làm",
-        en: "Clear requirements & design before building",
-      },
-      { vi: "UI/UX chuẩn quốc tế", en: "International-standard UI/UX" },
-      {
-        vi: "Agile/Scrum — báo tiến độ từng task",
-        en: "Agile/Scrum — per-task progress",
+        vi: "Làm rõ đặc tả yêu cầu (PRD) & Thiết kế UI/UX bài bản",
+        en: "Clear PRD specifications & structured UI/UX design upfront",
       },
       {
-        vi: "Deploy production + bàn giao source & tài liệu",
-        en: "Production deploy + source & docs handover",
+        vi: "Giao diện hiện đại, tối ưu trải nghiệm người dùng",
+        en: "Modern UI/UX optimized for smooth user journeys",
+      },
+      {
+        vi: "Quy trình Agile/Scrum — minh bạch tiến độ từng giai đoạn",
+        en: "Agile/Scrum workflow with transparent milestone tracking",
+      },
+      {
+        vi: "Triển khai hạ tầng Cloud + Bàn giao toàn bộ mã nguồn & tài liệu",
+        en: "Cloud deployment + 100% source code and documentation handover",
       },
     ],
     tech: {
-      vi: "TECH — làm từ đầu tới cuối · báo tiến độ · bàn giao đầy đủ",
-      en: "TECH — end-to-end · progress tracking · full handover",
+      vi: "TECH — quy trình chuẩn chỉ · minh bạch tiến độ · bàn giao đầy đủ",
+      en: "TECH — structured engineering · milestone transparency · full handover",
     },
     time: { vi: "30–60 ngày", en: "30–60 days" },
   },
@@ -391,8 +492,8 @@ export const TEAM = [
     name: "Hà Văn Ân",
     role: "Full-Stack & AI Integrator",
     bio: {
-      vi: "Xây web nhanh + AI trả lời chính xác, không bịa.",
-      en: "Builds fast web apps + accurate AI answers, no hallucination.",
+      vi: "Phát triển ứng dụng Web hiệu năng cao + xây dựng pipeline AI RAG có kiểm chứng nguồn dữ liệu.",
+      en: "High-performance web applications + RAG AI pipelines with strict factual verification.",
     },
     skills: ["Next.js 16", "RAG", "Gemini API"],
   },
@@ -402,8 +503,8 @@ export const TEAM = [
     name: "Nguyễn Thành Lộc",
     role: "Backend Architect & AI Lead",
     bio: {
-      vi: "Kiến trúc sạch, nâng cấp hệ thống cũ, AI hiểu dữ liệu lớn.",
-      en: "Clean architecture, legacy system upgrades, AI that understands big data.",
+      vi: "Chuyên sâu kiến trúc Clean Architecture, di chuyển hệ thống sang microservices và phân tích dữ liệu với GraphRAG.",
+      en: "Specialist in Clean Architecture, microservices migration, and connected data analysis with GraphRAG.",
     },
     skills: [".NET 8", "Neo4j", "FastAPI"],
   },
@@ -413,8 +514,8 @@ export const TEAM = [
     name: "Lê Trí Trung",
     role: "Founder & Tech Lead",
     bio: {
-      vi: "Tổng đạo diễn kiến trúc hệ thống — tự tay thiết kế các sàn giao dịch lớn và EdTech hàng chục ngàn người dùng.",
-      en: "Chief system architect — personally designs large marketplaces and EdTech platforms serving tens of thousands of users.",
+      vi: "Định hướng kiến trúc hệ thống và chiến lược kỹ thuật. Từng thiết kế các sàn thương mại điện tử và nền tảng EdTech phục vụ hàng chục ngàn người dùng.",
+      en: "Leads system architecture and technical strategy. Experience architecting commerce marketplaces and EdTech platforms serving tens of thousands of users.",
     },
     skills: ["Java Spring Boot", ".NET 8", "System Design"],
   },
@@ -424,8 +525,8 @@ export const TEAM = [
     name: "Nguyễn Chơn Phước",
     role: "Java Core & Cloud DevOps",
     bio: {
-      vi: "Hạ tầng chịu tải, Docker, vận hành 24/7 độ trễ tối thiểu.",
-      en: "High-load infrastructure, Docker, 24/7 ops with minimal latency.",
+      vi: "Phụ trách hạ tầng chịu tải phân tán, Docker containerization, tối ưu chỉ mục CSDL và đảm bảo tính sẵn sàng cao.",
+      en: "Distributed infrastructure, Docker containerization, database index optimization, and high system availability.",
     },
     skills: ["Java 21", "Docker", "Nginx"],
   },
@@ -435,8 +536,8 @@ export const TEAM = [
     name: "Nguyễn Minh Tuấn",
     role: "Enterprise .NET Backend",
     bio: {
-      vi: "Giải pháp chuẩn Microsoft, tích hợp dịch vụ công, tự động hóa kiểm duyệt.",
-      en: "Microsoft-standard solutions, government service integration, review automation.",
+      vi: "Giải pháp backend .NET chuẩn Microsoft, tích hợp cổng dịch vụ công và tự động hóa quy trình nghiệp vụ.",
+      en: "Microsoft-standard .NET backend solutions, public service portal integrations, and business workflow automation.",
     },
     skills: [".NET 8", "SQL Server", "Gov APIs"],
   },
@@ -467,8 +568,8 @@ export const FAQ = [
   {
     q: { vi: "Sau này muốn nâng cấp được không?", en: "Can I upgrade later?" },
     a: {
-      vi: "Được. Có lộ trình nâng cấp từ MVP lên sàn lớn (phụ phí +20% Live Upgrade) — không phải làm lại từ đầu.",
-      en: "Yes. There's a clear path from MVP to large marketplace (+20% Live Upgrade fee) — no rebuild from scratch.",
+      vi: "Hoàn toàn được. Hệ thống được thiết kế theo kiến trúc module mở rộng (Clean Architecture), cho phép nâng cấp tính năng và mở rộng quy mô linh hoạt mà không cần xây dựng lại từ đầu.",
+      en: "Absolutely. Systems are engineered with modular scalability (Clean Architecture), enabling smooth feature expansions and scale-ups without rebuilding from scratch.",
     },
   },
 ];

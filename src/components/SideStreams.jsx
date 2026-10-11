@@ -36,19 +36,19 @@ const rightServices = [
     id: 'starter_mvp', tag: '1 DEV', badge: { vi: 'Tiết kiệm', en: 'Budget' }, img: '/stream/pkg-mvp.jpg',
     title: { vi: 'Gói MVP Khởi Nghiệp', en: 'Startup MVP' },
     line: { vi: 'Web bán hàng chuẩn mobile, SEO, bảo hành 6 tháng', en: 'Mobile-ready store, SEO, 6-month warranty' },
-    price: '11.500.000₫',
+    time: { vi: '3–4 tuần', en: '3–4 weeks' },
   },
   {
     id: 'fast_mvp', tag: '2 DEVS', badge: { vi: 'Đề xuất', en: 'Popular' }, img: '/stream/pkg-fast.jpg',
     title: { vi: 'Gói Tốc Hành', en: 'Fast Track' },
     line: { vi: 'Thanh toán VietQR tự khớp, báo đơn Telegram < 30s', en: 'VietQR auto-match, Telegram order alerts < 30s' },
-    price: '18.500.000₫',
+    time: { vi: '4–6 tuần', en: '4–6 weeks' },
   },
   {
     id: 'enterprise_full', tag: '5 DEVS', badge: { vi: 'Toàn diện', en: 'Full power' }, img: '/stream/pkg-enterprise.jpg',
     title: { vi: 'Gói Enterprise', en: 'Enterprise' },
     line: { vi: 'Sàn TMĐT lớn, trợ lý AI, bàn giao source', en: 'Large marketplace, AI assistant, full source handover' },
-    price: '33.000.000₫',
+    time: { vi: '6–8 tuần', en: '6–8 weeks' },
   },
 ];
 
@@ -129,7 +129,7 @@ export default function SideStreams({ lang = 'vi' }) {
             </span>
           </div>
           <span className="text-[9px] font-mono text-[#6E5F52] bg-[#F4EFE4] px-1.5 py-0.5 rounded-[2px] font-bold">
-            PRICING
+            SERVICES
           </span>
         </div>
 
@@ -141,7 +141,7 @@ export default function SideStreams({ lang = 'vi' }) {
             {x4(rightServices).map((it, idx) => (
               <Card key={idx} href="#contact" img={it.img} alt={p(it.title)} tag={it.tag} badge={p(it.badge)}
                 title={p(it.title)} line={p(it.line)}
-                foot={<span className="flex justify-between"><span className="text-[#6E5F52] font-normal">{lang === 'en' ? 'Price' : 'Chi phí'}</span><span className="text-[#FF5500]">{it.price}</span></span>} />
+                foot={<span className="flex justify-between"><span className="text-[#6E5F52] font-normal">{lang === 'en' ? 'Timeline' : 'Tiến độ'}</span><span className="text-[#FF5500]">{p(it.time)}</span></span>} />
             ))}
           </div>
         </div>
