@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumb from './Breadcrumb';
 import { pick, t, ALL_PRODUCTS, ZALO_URL } from '../data/i18n';
 
 export default function ProductDetail({ id, lang, setLang }) {
@@ -28,6 +29,13 @@ export default function ProductDetail({ id, lang, setLang }) {
 
       <section className="gridbg pp-sec">
         <div className="wrap" key={p.id}>
+          <Breadcrumb
+            items={[
+              { label: t(lang, 'nav_home'), href: '#/' },
+              { label: t(lang, 'nav_products'), href: '#/san-pham' },
+              { label: p.title },
+            ]}
+          />
           <div className="sec-label cv-label">
             <span className="sq"></span>
             <span className="mono">// PRODUCT — {pad(i + 1)}/{pad(ALL_PRODUCTS.length)}</span>
@@ -49,16 +57,47 @@ export default function ProductDetail({ id, lang, setLang }) {
             </div>
           </div>
 
-          {(p.feats || p.stats.length > 0) && (
+          {p.problem && (
+            <div className="pd-section">
+              <h2 className="cv-h">{t(lang, 'pd_problem')}</h2>
+              <div className="case-feats">
+                {(Array.isArray(p.problem) ? p.problem : [p.problem]).map((prob, k) => (
+                  <div key={k}>
+                    <span className="sq" style={{ background: 'var(--orange-deep)' }}></span>
+                    <span>{tx(prob)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {p.solution && (
+            <div className="pd-section">
+              <h2 className="cv-h">{t(lang, 'pd_solution')}</h2>
+              <div className="case-feats">
+                {(Array.isArray(p.solution) ? p.solution : [p.solution]).map((sol, k) => (
+                  <div key={k}>
+                    <span className="sq"></span>
+                    <span>{tx(sol)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {(p.feats || (p.stats && p.stats.length > 0)) && (
             <div className="pd-info">
               {p.feats && (
-                <div className="case-feats">
-                  {p.feats.map((f, k) => (
-                    <div key={k}><span className="sq"></span><span>{tx(f)}</span></div>
-                  ))}
+                <div>
+                  <h2 className="cv-h" style={{ marginTop: 0 }}>{t(lang, 'pd_feats_title')}</h2>
+                  <div className="case-feats" style={{ marginTop: 14 }}>
+                    {p.feats.map((f, k) => (
+                      <div key={k}><span className="sq"></span><span>{tx(f)}</span></div>
+                    ))}
+                  </div>
                 </div>
               )}
-              {p.stats.length > 0 && (
+              {p.stats && p.stats.length > 0 && (
                 <div className="case-stats">
                   {p.stats.map((s, k) => (
                     <div key={k}><div className="v">{s.v}</div><div className="l">{tx(s.l)}</div></div>

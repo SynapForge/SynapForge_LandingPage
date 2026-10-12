@@ -75,18 +75,21 @@ const COLLAGE = [
     title: "BrandHub",
     meta: "SaaS · AI MarTech",
     cls: "c1",
+    href: "#/san-pham/brandhub",
   },
   {
     src: "/stream/pkg-mvp.jpg",
     title: "E-commerce",
     meta: "Web · Mobile",
     cls: "c2",
+    href: "#/san-pham",
   },
   {
     src: "/stream/pkg-fast.jpg",
     title: "BienSoVip",
     meta: "Admin · Dashboard",
     cls: "c3",
+    href: "#/san-pham/biensovip",
   },
 ];
 
@@ -94,23 +97,33 @@ const COLLAGE = [
 function HeroCollage() {
   return (
     <div className="collage">
-      <figure className="fig main" style={{ margin: 0 }}>
+      <a
+        href="#/san-pham/biensovip"
+        className="fig main"
+        style={{ margin: 0 }}
+        aria-label="Xem dự án BienSoVip Marketplace"
+      >
         <span className="tk">+</span>
         <span className="tk2">+</span>
         <img src="/products/hero-marketplace.jpg" alt="BienSoVip marketplace" />
         <figcaption className="figcap">
           <span>FIG. 01 — BienSoVip Marketplace</span>
-          <span>Production</span>
+          <span>Production →</span>
         </figcaption>
-      </figure>
+      </a>
       {COLLAGE.map((c) => (
-        <figure className={`pol ${c.cls}`} key={c.cls}>
+        <a
+          href={c.href}
+          className={`pol ${c.cls}`}
+          key={c.cls}
+          aria-label={`Xem dự án ${c.title}`}
+        >
           <img src={c.src} alt={c.title} />
           <figcaption>
             <b>{c.title}</b>
             <span>{c.meta}</span>
           </figcaption>
-        </figure>
+        </a>
       ))}
     </div>
   );
@@ -120,22 +133,22 @@ function HeroCollage() {
 export function useReveal(selector) {
   useEffect(() => {
     const els = document.querySelectorAll(selector);
+    if (!els.length) return;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((en) => {
           if (en.isIntersecting) {
             en.target.classList.add("is-in");
           } else {
-            // Re-trigger animation when scrolled back into view from above or below
+            // Re-trigger animation when scrolled back up above the element
             const rect = en.boundingClientRect;
-            // Only remove if scrolled sufficiently out of view to avoid flickering
-            if (rect.top > window.innerHeight * 0.95 || rect.bottom < 0) {
+            if (rect.top > window.innerHeight) {
               en.target.classList.remove("is-in");
             }
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
@@ -227,7 +240,7 @@ export default function MockupBView({ lang, setLang }) {
   }, []);
 
   useReveal(
-    ".case, .sec-head, .svc-row, .member, .faq-item, .process-step, .pkg, .hero-stat, .contact-grid, .fig, .pol, .ph, .flywheel-card, .flywheel-loop",
+    ".case, .sec-head, .svc-row, .member, .faq-item, .contact-grid, .flywheel-card, .flywheel-loop, .ety-grid > div",
   );
 
   return (
@@ -713,7 +726,9 @@ export default function MockupBView({ lang, setLang }) {
             <div className="contact-info">
               <div className="row">
                 <span className="k">Email</span>
-                <span className="v">contact@synapforge.dev</span>
+                <a className="v" href="mailto:solutions@synapforge.id.vn">
+                  solutions@synapforge.id.vn
+                </a>
               </div>
               <div className="row">
                 <span className="k">{t(lang, "contact_phone")}</span>
