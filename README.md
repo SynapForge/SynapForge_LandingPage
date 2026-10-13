@@ -73,7 +73,7 @@ Hệ sinh thái sản phẩm do đội ngũ kỹ sư SynapForge tự tay kiến 
 
 | Kỹ sư | Chức danh | Nền tảng học vấn & Bằng cấp | Dự án & Thế mạnh công nghệ |
 | :--- | :--- | :--- | :--- |
-| **Lê Trí Trung** | Founder & System Architect | • GPA 3.3/4.0 (8.2/10.0) FPTU<br>• Học bổng Quốc tế Kuala Lumpur<br>• IELTS 6.0 (IDP) | • Quán quân Hackathon Computer Vision 2026<br>• Đồng tác giả bài báo quốc tế ICTA 2026<br>• Solo Architect BienSoVip (61 bảng CSDL, <8ms)<br>• CEO The MC Hub (.NET 8, Java 21, Clean Arch) |
+| **Lê Trí Trung** | Founder, Tech Lead & Engineering Manager | • GPA 3.3/4.0 (8.2/10.0) FPTU<br>• Học bổng Quốc tế Kuala Lumpur<br>• IELTS 6.0 (IDP) | • Điều hành 5 kỹ sư SynapForge & quản trị WBS/Agile<br>• Quán quân Hackathon Computer Vision 2026<br>• Solo Architect BienSoVip (61 bảng CSDL, <8ms)<br>• CEO & Tech Lead The MC Hub (team 6 kỹ sư, 87 MCs) |
 | **Hà Văn Ân** | Full-Stack & AI Solutions Lead | • GPA 3.0/4.0 FPTU<br>• 7 tháng thực tập FPT Software | • Đồng tác giả nghiên cứu AI ICTA 2026 (ThreadLearn)<br>• Lead Dev STEMGO.net (34 mini-games, Gemini AI Tutor)<br>• Next.js 16 App Router, FastAPI, RAG Pipelines |
 | **Nguyễn Thành Lộc** | Backend Architect & AI Lead | • GPA xuất sắc 3.5/4.0 FPTU<br>• TOEIC 650<br>• 3 Chứng chỉ Coursera AI & PM | • AI Team Lead BrandHub (FastAPI, GraphRAG Neo4j & ChromaDB)<br>• Team Lead UniNest (.NET 8 Clean Arch)<br>• Backend .NET Intern FPT Software |
 | **Nguyễn Chơn Phước** | Cloud DevOps & Infrastructure | • GPA 3.2/4.0 FPTU<br>• IELTS 5.5 | • Chung kết Toàn quốc InnoCodeCamp FPT 2024<br>• Acronic Solutions Intern (Vận hành thiết bị Anti-DDoS 24/7 qua Socket.IO & IPC)<br>• Backend Java Spring Boot 3 & PostgreSQL Index Tuning |

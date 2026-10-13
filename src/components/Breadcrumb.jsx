@@ -1,4 +1,5 @@
 import React from "react";
+import { Home, ChevronRight } from "lucide-react";
 
 export default function Breadcrumb({ items = [] }) {
   if (!items || items.length === 0) return null;
@@ -14,23 +15,22 @@ export default function Breadcrumb({ items = [] }) {
               className={`sf-breadcrumb-item ${isLast ? "is-active" : ""}`}
             >
               {index > 0 && (
-                <span className="sf-breadcrumb-sep" aria-hidden="true">
-                  /
-                </span>
+                <ChevronRight
+                  className="w-3 h-3 text-[#A0988E] mx-1 inline-block shrink-0"
+                  aria-hidden="true"
+                />
               )}
               {isLast || !item.href ? (
                 <span className="sf-breadcrumb-current" aria-current="page">
                   {item.label}
                 </span>
               ) : (
-                <a href={item.href} className="sf-breadcrumb-link">
+                <a href={item.href} className="sf-breadcrumb-link flex items-center gap-1.5">
                   {index === 0 && (
-                    <span
-                      className="sf-breadcrumb-home-icon"
+                    <Home
+                      className="w-3.5 h-3.5 text-[#FF5500] shrink-0"
                       aria-hidden="true"
-                    >
-                      ⌂
-                    </span>
+                    />
                   )}
                   <span>{item.label}</span>
                 </a>

@@ -1,4 +1,15 @@
 import React from 'react';
+import {
+  ArrowLeft,
+  ExternalLink,
+  MessageCircle,
+  ChevronLeft,
+  ChevronRight,
+  CheckCircle2,
+  AlertCircle,
+  Lightbulb,
+  Cog,
+} from 'lucide-react';
 import Breadcrumb from './Breadcrumb';
 import { pick, t, ALL_PRODUCTS, ZALO_URL } from '../data/i18n';
 
@@ -14,15 +25,41 @@ export default function ProductDetail({ id, lang, setLang }) {
     <div className="font-space bg-white text-[#1D1510] min-h-screen relative antialiased selection:bg-[#FF5500] selection:text-white">
       <header className="topbar">
         <div className="wrap topbar-in">
-          <a href="#/" className="brand">
+          <a href="#top" className="brand" title="SynapForge Home">
             <img src="/brand/logo_primary.jpg" alt="SynapForge" className="brand-logo" />
           </a>
+
+          <nav className="top-nav">
+            <a href="#model">{t(lang, "nav_model")}</a>
+            <a href="#/san-pham" style={{ color: "var(--orange-deep)", fontWeight: 700 }}>
+              {t(lang, "nav_ventures")}
+            </a>
+            <a href="#services">{t(lang, "nav_services")}</a>
+            <a href="#team">{t(lang, "nav_team")}</a>
+            <a href="#/bai-viet">{lang === "vi" ? "Kiến thức" : "Insights"}</a>
+            <a href="#contact">{t(lang, "nav_contact")}</a>
+          </nav>
+
           <div className="flex items-center gap-3">
-            <a className="pp-back" href="#/san-pham">{t(lang, 'pd_back')}</a>
-            <div className="lang-pill" onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')}>
-              <span className={lang === 'vi' ? 'on' : ''}>VI</span>
-              <span className={lang === 'en' ? 'on' : ''}>EN</span>
+            <div
+              className="lang-pill"
+              role="button"
+              tabIndex={0}
+              aria-label={lang === "vi" ? "Chuyển sang tiếng Anh (EN)" : "Switch to Vietnamese (VI)"}
+              onClick={() => setLang(lang === "vi" ? "en" : "vi")}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setLang(lang === "vi" ? "en" : "vi");
+                }
+              }}
+            >
+              <span className={lang === "vi" ? "on" : ""}>VI</span>
+              <span className={lang === "en" ? "on" : ""}>EN</span>
             </div>
+            <a className="top-cta" href="#contact">
+              {t(lang, "nav_cta")}
+            </a>
           </div>
         </div>
       </header>
@@ -31,7 +68,7 @@ export default function ProductDetail({ id, lang, setLang }) {
         <div className="wrap" key={p.id}>
           <Breadcrumb
             items={[
-              { label: t(lang, 'nav_home'), href: '#/' },
+              { label: t(lang, 'nav_home'), href: '#top' },
               { label: t(lang, 'nav_products'), href: '#/san-pham' },
               { label: p.title },
             ]}
@@ -50,20 +87,29 @@ export default function ProductDetail({ id, lang, setLang }) {
 
             <div className="hero-ctas">
               {p.url ? (
-                <a className="btn-spec btn-solid" href={p.url} target="_blank" rel="noopener noreferrer">{t(lang, 'pd_visit')}</a>
+                <a className="btn-spec btn-solid flex items-center gap-1.5" href={p.url} target="_blank" rel="noopener noreferrer">
+                  <span>{t(lang, 'pd_visit')}</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               ) : (
-                <a className="btn-spec btn-solid" href={ZALO_URL} target="_blank" rel="noopener noreferrer">{t(lang, 'pd_demo')}</a>
+                <a className="btn-spec btn-solid flex items-center gap-1.5" href={ZALO_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-4 h-4" />
+                  <span>{t(lang, 'pd_demo')}</span>
+                </a>
               )}
             </div>
           </div>
 
           {p.problem && (
             <div className="pd-section">
-              <h2 className="cv-h">{t(lang, 'pd_problem')}</h2>
+              <h2 className="cv-h flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-[#FF5500] shrink-0" />
+                <span>{t(lang, 'pd_problem')}</span>
+              </h2>
               <div className="case-feats">
                 {(Array.isArray(p.problem) ? p.problem : [p.problem]).map((prob, k) => (
-                  <div key={k}>
-                    <span className="sq" style={{ background: 'var(--orange-deep)' }}></span>
+                  <div key={k} className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                     <span>{tx(prob)}</span>
                   </div>
                 ))}
@@ -73,11 +119,14 @@ export default function ProductDetail({ id, lang, setLang }) {
 
           {p.solution && (
             <div className="pd-section">
-              <h2 className="cv-h">{t(lang, 'pd_solution')}</h2>
+              <h2 className="cv-h flex items-center gap-2">
+                <Lightbulb className="w-4 h-4 text-[#FF5500] shrink-0" />
+                <span>{t(lang, 'pd_solution')}</span>
+              </h2>
               <div className="case-feats">
                 {(Array.isArray(p.solution) ? p.solution : [p.solution]).map((sol, k) => (
-                  <div key={k}>
-                    <span className="sq"></span>
+                  <div key={k} className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                     <span>{tx(sol)}</span>
                   </div>
                 ))}
@@ -89,10 +138,16 @@ export default function ProductDetail({ id, lang, setLang }) {
             <div className="pd-info">
               {p.feats && (
                 <div>
-                  <h2 className="cv-h" style={{ marginTop: 0 }}>{t(lang, 'pd_feats_title')}</h2>
+                  <h2 className="cv-h flex items-center gap-2" style={{ marginTop: 0 }}>
+                    <Cog className="w-4 h-4 text-[#FF5500] shrink-0" />
+                    <span>{t(lang, 'pd_feats_title')}</span>
+                  </h2>
                   <div className="case-feats" style={{ marginTop: 14 }}>
                     {p.feats.map((f, k) => (
-                      <div key={k}><span className="sq"></span><span>{tx(f)}</span></div>
+                      <div key={k} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
+                        <span>{tx(f)}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -119,7 +174,12 @@ export default function ProductDetail({ id, lang, setLang }) {
                   <figure className="fig" style={{ margin: 0 }} key={src}>
                     <span className="tk">+</span>
                     <span className="tk2">+</span>
-                    <img src={src} alt={`${p.title} ${k + 1}`} loading="lazy" />
+                    <img
+                      src={src}
+                      alt={`${p.title} ${k + 1}`}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <figcaption className="figcap">
                       <span>FIG. {pad(k + 1)} — {p.title}</span>
                     </figcaption>
@@ -130,11 +190,13 @@ export default function ProductDetail({ id, lang, setLang }) {
           )}
 
           <nav className="cv-nav">
-            <a className="btn-spec btn-ghost" href={`#/san-pham/${prev.id}`}>
-              {t(lang, 'cv_prev')} <span className="cv-nav-name">{prev.title}</span>
+            <a className="btn-spec btn-ghost flex items-center gap-1.5" href={`#/san-pham/${prev.id}`}>
+              <ChevronLeft className="w-4 h-4 shrink-0" />
+              <span>{t(lang, 'cv_prev')}</span> <span className="cv-nav-name">{prev.title}</span>
             </a>
-            <a className="btn-spec btn-solid" href={`#/san-pham/${next.id}`}>
-              <span className="cv-nav-name">{next.title}</span> {t(lang, 'cv_next')}
+            <a className="btn-spec btn-solid flex items-center gap-1.5" href={`#/san-pham/${next.id}`}>
+              <span className="cv-nav-name">{next.title}</span> <span>{t(lang, 'cv_next')}</span>
+              <ChevronRight className="w-4 h-4 shrink-0" />
             </a>
           </nav>
         </div>
