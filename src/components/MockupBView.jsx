@@ -1,4 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  ExternalLink,
+  Mail,
+  Phone,
+  MapPin,
+  MessageCircle,
+  CheckCircle2,
+} from "lucide-react";
 import SynapseCanvas from "./SynapseCanvas";
 import SideStreams from "./SideStreams";
 import Lenis from "lenis";
@@ -13,6 +23,7 @@ import {
   FAQ,
   ZALO_URL,
 } from "../data/i18n";
+import { ARTICLES } from "../data/articlesData";
 // Random-glyph reveal; replays whenever the mouse enters the text
 function Scramble({ text }) {
   const [out, setOut] = useState(" ".repeat(text.length));
@@ -105,10 +116,18 @@ function HeroCollage() {
       >
         <span className="tk">+</span>
         <span className="tk2">+</span>
-        <img src="/products/hero-marketplace.jpg" alt="BienSoVip marketplace" />
+        <img
+          src="/products/hero-marketplace.jpg"
+          alt="BienSoVip marketplace"
+          fetchPriority="high"
+          decoding="async"
+        />
         <figcaption className="figcap">
           <span>FIG. 01 — BienSoVip Marketplace</span>
-          <span>Production →</span>
+          <span className="flex items-center gap-1">
+            <span>Production</span>
+            <ArrowRight className="w-3 h-3 inline-block" />
+          </span>
         </figcaption>
       </a>
       {COLLAGE.map((c) => (
@@ -118,7 +137,7 @@ function HeroCollage() {
           key={c.cls}
           aria-label={`Xem dự án ${c.title}`}
         >
-          <img src={c.src} alt={c.title} />
+          <img src={c.src} alt={c.title} loading="lazy" decoding="async" />
           <figcaption>
             <b>{c.title}</b>
             <span>{c.meta}</span>
@@ -264,6 +283,7 @@ export default function MockupBView({ lang, setLang }) {
             <a href="#ventures">{t(lang, "nav_ventures")}</a>
             <a href="#services">{t(lang, "nav_services")}</a>
             <a href="#team">{t(lang, "nav_team")}</a>
+            <a href="#/bai-viet">{lang === "vi" ? "Kiến thức" : "Insights"}</a>
             <a href="#contact">{t(lang, "nav_contact")}</a>
           </nav>
 
@@ -357,8 +377,9 @@ export default function MockupBView({ lang, setLang }) {
                 <a className="btn-spec btn-solid" href="#ventures">
                   {t(lang, "cta_ventures")}
                 </a>
-                <a className="btn-spec btn-ghost" href="#contact">
-                  {t(lang, "cta_contact")}
+                <a className="btn-spec btn-ghost flex items-center gap-1.5" href="#contact">
+                  <span>{t(lang, "cta_contact")}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
               <div className="hero-dual">
@@ -463,16 +484,16 @@ export default function MockupBView({ lang, setLang }) {
               </div>
 
               <div className="flywheel-list">
-                <div className="flywheel-item">
-                  <span className="sq"></span>
+                <div className="flywheel-item flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                   <span>{t(lang, "engine1_item1")}</span>
                 </div>
-                <div className="flywheel-item">
-                  <span className="sq"></span>
+                <div className="flywheel-item flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                   <span>{t(lang, "engine1_item2")}</span>
                 </div>
-                <div className="flywheel-item">
-                  <span className="sq"></span>
+                <div className="flywheel-item flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                   <span>{t(lang, "engine1_item3")}</span>
                 </div>
               </div>
@@ -492,16 +513,16 @@ export default function MockupBView({ lang, setLang }) {
               </div>
 
               <div className="flywheel-list">
-                <div className="flywheel-item">
-                  <span className="sq"></span>
+                <div className="flywheel-item flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                   <span>{t(lang, "engine2_item1")}</span>
                 </div>
-                <div className="flywheel-item">
-                  <span className="sq"></span>
+                <div className="flywheel-item flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                   <span>{t(lang, "engine2_item2")}</span>
                 </div>
-                <div className="flywheel-item">
-                  <span className="sq"></span>
+                <div className="flywheel-item flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                   <span>{t(lang, "engine2_item3")}</span>
                 </div>
               </div>
@@ -555,8 +576,8 @@ export default function MockupBView({ lang, setLang }) {
                 <p className="case-desc">{pick(lang, c.desc.vi, c.desc.en)}</p>
                 <div className="case-feats">
                   {c.feats.map((f, i) => (
-                    <div key={i}>
-                      <span className="sq"></span>
+                    <div key={i} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                       <span>{pick(lang, f.vi, f.en)}</span>
                     </div>
                   ))}
@@ -576,27 +597,66 @@ export default function MockupBView({ lang, setLang }) {
                     </span>
                   ))}
                 </div>
-                <a className="pd-more" href={`#/san-pham/${c.id}`}>
-                  {t(lang, "pd_detail")}
-                </a>
+                <div className="case-actions">
+                  <a className="pd-more flex items-center gap-1.5" href={`#/san-pham/${c.id}`}>
+                    <span>{t(lang, "pd_detail")}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  {c.url && (
+                    <a
+                      className="pd-live-btn flex items-center gap-1.5"
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Truy cập website ${c.title}`}
+                    >
+                      <span className="live-pulse"></span>
+                      <span>Website: {c.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
+                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                    </a>
+                  )}
+                </div>
               </div>
               <div className="case-img">
-                <figure className="fig" style={{ margin: 0 }}>
-                  <span className="tk">+</span>
-                  <span className="tk2">+</span>
-                  <img src={c.img} alt={c.alt} />
-                  <figcaption className="figcap">
-                    <span>{c.fig[0]}</span>
-                    <span>{c.fig[1]}</span>
-                  </figcaption>
-                </figure>
+                <a
+                  href={c.url || `#/san-pham/${c.id}`}
+                  target={c.url ? "_blank" : undefined}
+                  rel={c.url ? "noopener noreferrer" : undefined}
+                  className="fig-link"
+                  aria-label={`Xem dự án ${c.title}`}
+                >
+                  <figure className="fig" style={{ margin: 0 }}>
+                    <span className="tk">+</span>
+                    <span className="tk2">+</span>
+                    <img
+                      src={c.img}
+                      alt={c.alt}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption className="figcap">
+                      <span>{c.fig[0]}</span>
+                      <span className="flex items-center gap-1">
+                        {c.url ? (
+                          <>
+                            <span>{c.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
+                            <ExternalLink className="w-3 h-3 inline-block" />
+                          </>
+                        ) : (
+                          c.fig[1]
+                        )}
+                      </span>
+                    </figcaption>
+                  </figure>
+                </a>
               </div>
             </div>
           ))}
 
           <div className="ven-more">
-            <a className="btn-spec btn-ghost" href="#/san-pham">
-              {t(lang, "ven_more")}
+            <a className="btn-spec btn-ghost flex items-center gap-1.5" href="#/san-pham">
+              <span>{t(lang, "ven_more")}</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
@@ -666,8 +726,12 @@ export default function MockupBView({ lang, setLang }) {
                     src={m.photo}
                     alt={m.name}
                     loading="lazy"
+                    decoding="async"
                   />
-                  <span className="ph-cta">{t(lang, "cv_open")} →</span>
+                  <span className="ph-cta flex items-center justify-center gap-1">
+                    <span>{t(lang, "cv_open")}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
                 </a>
                 <div className="name">{m.name}</div>
                 <div className="role">{m.role}</div>
@@ -708,13 +772,69 @@ export default function MockupBView({ lang, setLang }) {
         </div>
       </section>
 
-      {/* ===== CONTACT F/06 ===== */}
+      {/* ===== INSIGHTS & CASE STUDIES F/06 ===== */}
+      <section className="section sec-paper" id="insights">
+        <div className="wrap">
+          <div className="sec-head">
+            <div className="sec-label">
+              <span className="sq"></span>
+              <span className="mono">// F/06 — INSIGHTS &amp; CASE STUDIES</span>
+            </div>
+            <h2>
+              <Scramble text={lang === "vi" ? "Góc Nhìn Kỹ Thuật & Case Studies" : "Engineering Insights & Case Studies"} />
+            </h2>
+            <div className="sec-note">
+              {lang === "vi"
+                ? "Kinh nghiệm thực chiến về .NET 8 Clean Architecture, thanh toán VietQR và AI RAG từ các dự án chạy thật"
+                : "Real-world production case studies on .NET 8 Clean Architecture, automated payments, and AI RAG"}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {ARTICLES.slice(0, 3).map((art) => (
+              <a
+                key={art.slug}
+                href={`#/bai-viet/${art.slug}`}
+                className="rounded-2xl border border-[#E4DAC6] bg-white p-6 hover:border-[#FF5500] hover:shadow-md transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <span className="text-[10px] font-mono font-bold text-[#FF5500] uppercase block mb-2">
+                    {pick(lang, art.category, art.categoryEn)}
+                  </span>
+                  <h3 className="text-base font-bold text-[#1D1510] group-hover:text-[#FF5500] transition-colors leading-snug mb-3">
+                    {pick(lang, art.title.vi, art.title.en)}
+                  </h3>
+                  <p className="text-xs text-gray-600 line-clamp-3 mb-4 leading-relaxed">
+                    {pick(lang, art.excerpt.vi, art.excerpt.en)}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-[#F0E8DC] flex items-center justify-between text-[11px] font-mono text-gray-500">
+                  <span>{art.publishedDate}</span>
+                  <span className="text-[#FF5500] font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span>{lang === "vi" ? "Xem chi tiết" : "Read"}</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="ven-more">
+            <a className="btn-spec btn-ghost flex items-center gap-1.5" href="#/bai-viet">
+              <span>{lang === "vi" ? "Xem toàn bộ bài viết & case studies" : "Browse all insights & case studies"}</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CONTACT G/07 ===== */}
       <section className="contact-spec gridbg" id="contact">
         <div className="wrap">
           <div className="sec-head">
             <div className="sec-label">
               <span className="sq"></span>
-              <span className="mono">// F/06 — CONTACT</span>
+              <span className="mono">// G/07 — CONTACT</span>
             </div>
             <h2>
               <Scramble text={t(lang, "contact_title")} />
@@ -725,30 +845,40 @@ export default function MockupBView({ lang, setLang }) {
           <div className="contact-grid">
             <div className="contact-info">
               <div className="row">
-                <span className="k">Email</span>
+                <span className="k flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5 text-[#FF5500] shrink-0" />
+                  <span>Email</span>
+                </span>
                 <a className="v" href="mailto:solutions@synapforge.id.vn">
                   solutions@synapforge.id.vn
                 </a>
               </div>
               <div className="row">
-                <span className="k">{t(lang, "contact_phone")}</span>
+                <span className="k flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5 text-[#FF5500] shrink-0" />
+                  <span>{t(lang, "contact_phone")}</span>
+                </span>
                 <a className="v" href="tel:+84912158715">
                   (+84) 912 158 715
                 </a>
               </div>
               <div className="row">
-                <span className="k">{t(lang, "contact_hq")}</span>
+                <span className="k flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#FF5500] shrink-0" />
+                  <span>{t(lang, "contact_hq")}</span>
+                </span>
                 <span className="v">{t(lang, "contact_addr")}</span>
               </div>
             </div>
 
             <a
-              className="btn-spec btn-solid"
+              className="btn-spec btn-solid flex items-center justify-center gap-2"
               href={ZALO_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t(lang, "contact_cta")}
+              <MessageCircle className="w-4 h-4 shrink-0" />
+              <span>{t(lang, "contact_cta")}</span>
             </a>
           </div>
         </div>
@@ -757,11 +887,20 @@ export default function MockupBView({ lang, setLang }) {
       {/* ===== FOOTER ===== */}
       <footer className="footer-spec">
         <div className="wrap foot-in">
-          <span className="brand-name">
-            Synap<em style={{ color: "var(--orange)" }}>Forge</em>
-          </span>
-          <span>© 2026 — Venture Studio &amp; Software Factory</span>
-          <span>{t(lang, "footer_addr")}</span>
+          <div className="flex flex-wrap items-center justify-between gap-4 w-full">
+            <div className="flex items-center gap-3">
+              <span className="brand-name">
+                Synap<em style={{ color: "var(--orange)" }}>Forge</em>
+              </span>
+              <span>© 2026 — Venture Studio &amp; Software Factory</span>
+            </div>
+            <div className="flex items-center gap-4 text-xs font-mono">
+              <a href="#/san-pham" className="hover:text-[#FF5500] transition-colors">{t(lang, "nav_ventures")}</a>
+              <a href="#/bai-viet" className="hover:text-[#FF5500] transition-colors">{lang === "vi" ? "Kiến thức & Case Studies" : "Insights"}</a>
+              <a href="#top" className="hover:text-[#FF5500] transition-colors">↑ Top</a>
+            </div>
+            <span>{t(lang, "footer_addr")}</span>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Homepage -->
+  <url>
+    <loc>https://synapforge.id.vn</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Products Hub -->
+  <url>
+    <loc>https://synapforge.id.vn/#/san-pham</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Product Detail: BienSoVip -->
+  <url>
+    <loc>https://synapforge.id.vn/#/san-pham/biensovip</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Product Detail: BrandHub AI -->
+  <url>
+    <loc>https://synapforge.id.vn/#/san-pham/brandhub</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Product Detail: STEMGO -->
+  <url>
+    <loc>https://synapforge.id.vn/#/san-pham/stemgo</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Team CV: Le Tri Trung (Founder & Tech Lead) -->
+  <url>
+    <loc>https://synapforge.id.vn/#/doi-ngu/le-tri-trung</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Team CV: Ha Van An -->
+  <url>
+    <loc>https://synapforge.id.vn/#/doi-ngu/ha-van-an</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Team CV: Nguyen Thanh Loc -->
+  <url>
+    <loc>https://synapforge.id.vn/#/doi-ngu/nguyen-thanh-loc</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Team CV: Nguyen Chon Phuoc -->
+  <url>
+    <loc>https://synapforge.id.vn/#/doi-ngu/nguyen-chon-phuoc</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Team CV: Nguyen Minh Tuan -->
+  <url>
+    <loc>https://synapforge.id.vn/#/doi-ngu/nguyen-minh-tuan</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Insights & SEO Articles Hub -->
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 20 Chuẩn SEO Articles: Công nghệ, AI, Khởi nghiệp, Chuyển đổi số -->
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/case-study-biensovip-kien-truc-he-thong</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/kien-truc-microservices-rabbitmq-event-driven</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/toi-uu-postgresql-redis-caching-duoi-10ms</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/kien-truc-signalr-realtime-websockets-dau-gia</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/clean-architecture-vs-monolith-truyen-thong</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/ung-dung-ai-rag-cham-soc-khach-hang-tu-dong</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/case-study-brandhub-ai-martech-microservices</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/vector-database-va-ky-thuat-embedding-search</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/ai-agents-tu-dong-hoa-quy-trinh-nghiep-vu-doanh-nghiep</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/tam-nhin-ai-2026-mo-hinh-ngon-ngu-hat-nhan-doanh-nghiep</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/quy-trinh-phat-trien-mvp-14-ngay</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/venture-studio-la-gi-so-sanh-incubator-va-outsourcing</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/cam-nang-cong-nghe-cho-non-tech-founders</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/tu-y-tuong-den-product-market-fit-pmf</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/doi-moi-sang-tao-tai-da-nang-co-hoi-cho-startup</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/bang-gia-thiet-ke-website-ban-hang-da-nang</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/tu-dong-hoa-thanh-toan-vietqr-napas247-tang-chuyen-doi</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/toi-uu-core-web-vitals-inp-lcp-cls-chuan-2026</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/bao-mat-ung-dung-web-doanh-nghiep-owasp-rbac</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://synapforge.id.vn/#/bai-viet/lo-trinh-chuyen-doi-so-thuc-chien-cho-sme</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+</urlset>

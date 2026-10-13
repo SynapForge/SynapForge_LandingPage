@@ -130,7 +130,7 @@ export const T = {
     en: "End-to-end solutions for SMEs — streamlining operations and saving technology costs.",
   },
   cta_ventures: { vi: "Xem dự án thật", en: "See real projects" },
-  cta_contact: { vi: "Báo giá trong 24h →", en: "Quote in 24h →" },
+  cta_contact: { vi: "Báo giá trong 24h", en: "Quote in 24h" },
   dual_label: { vi: "02 định hướng:", en: "02 engines:" },
   dual_1: {
     vi: "■ Sản phẩm tự phát triển — BrandHub, BienSoVip",
@@ -155,9 +155,9 @@ export const T = {
   },
 
   ven_title: { vi: "Sản phẩm", en: "Products" },
-  ven_more: { vi: "Xem thêm sản phẩm →", en: "See all products →" },
+  ven_more: { vi: "Xem thêm sản phẩm", en: "See all products" },
 
-  pp_back: { vi: "← Trang chủ", en: "← Home" },
+  pp_back: { vi: "Trang chủ", en: "Home" },
   pp_title: { vi: "Toàn bộ sản phẩm", en: "All products" },
   pp_note: { vi: "Đã xây & sắp ra mắt", en: "Built & upcoming" },
   pp_built: { vi: "Đã xây", en: "Built" },
@@ -166,10 +166,10 @@ export const T = {
     vi: "Lộ trình sản phẩm mới đang được cập nhật.",
     en: "New product roadmap is being updated.",
   },
-  pd_back: { vi: "← Sản phẩm", en: "← Products" },
-  pd_detail: { vi: "Xem chi tiết →", en: "View details →" },
-  pd_visit: { vi: "Truy cập sản phẩm ↗", en: "Visit product ↗" },
-  pd_demo: { vi: "Xin demo qua Zalo →", en: "Request a demo on Zalo →" },
+  pd_back: { vi: "Sản phẩm", en: "Products" },
+  pd_detail: { vi: "Xem chi tiết", en: "View details" },
+  pd_visit: { vi: "Truy cập sản phẩm", en: "Visit product" },
+  pd_demo: { vi: "Xin demo qua Zalo", en: "Request a demo on Zalo" },
   pd_problem: {
     vi: "Bài toán & Nỗi đau của khách hàng",
     en: "Customer Pain Points & Challenges",
@@ -184,8 +184,8 @@ export const T = {
   },
   pd_gallery: { vi: "Hình ảnh sản phẩm", en: "Screenshots" },
   pp_cta: {
-    vi: "Bạn có ý tưởng sản phẩm? Làm cùng chúng tôi →",
-    en: "Have a product idea? Build it with us →",
+    vi: "Bạn có ý tưởng sản phẩm? Làm cùng chúng tôi",
+    en: "Have a product idea? Build it with us",
   },
   svc_title: {
     vi: "Dịch vụ chuyển đổi số",
@@ -193,7 +193,7 @@ export const T = {
   },
   svc_note: { vi: "Cho doanh nghiệp vừa & nhỏ", en: "For SMEs" },
   team_title: { vi: "Đội ngũ kỹ sư", en: "Engineering Team" },
-  cv_back: { vi: "← Về trang đội ngũ", en: "← Back to team" },
+  cv_back: { vi: "Về trang đội ngũ", en: "Back to team" },
   cv_about: { vi: "Định vị & Giới thiệu chuyên môn", en: "Professional Profile" },
   cv_edu: { vi: "Học vấn & Đào tạo", en: "Education & Background" },
   cv_certs: { vi: "Chứng chỉ quốc tế & Ngoại ngữ", en: "Certifications & Languages" },
@@ -202,7 +202,7 @@ export const T = {
   cv_exp: { vi: "Kinh nghiệm làm việc & Nghiên cứu", en: "Professional Experience" },
   cv_skills: { vi: "Năng lực công nghệ cốt lõi", en: "Core Technical Skills" },
   cv_links: { vi: "Hồ sơ năng lực & Liên hệ", en: "Profiles & Contact" },
-  cv_prev: { vi: "← Kỹ sư trước:", en: "← Previous:" },
+  cv_prev: { vi: "Kỹ sư trước:", en: "Previous:" },
   cv_next: { vi: "Kỹ sư kế tiếp:", en: "Next engineer:" },
   cv_open: { vi: "Xem hồ sơ chi tiết", en: "View profile" },
   team_note: { vi: "05 kỹ sư phần mềm FPT / FSoft", en: "05 FPT / FSoft software engineers" },
@@ -217,8 +217,8 @@ export const T = {
     en: "Hai Chau, Da Nang, Vietnam",
   },
   contact_cta: {
-    vi: "Gửi mô tả dự án qua Zalo →",
-    en: "Send your project brief via Zalo →",
+    vi: "Gửi mô tả dự án qua Zalo",
+    en: "Send your project brief via Zalo",
   },
   footer_addr: { vi: "Đà Nẵng, Việt Nam", en: "Da Nang, Vietnam" },
 };
@@ -571,17 +571,6 @@ export const SERVICES = [
 
 export const TEAM = [
   {
-    id: "le-tri-trung",
-    photo: "/team/trunglc-white-polo-glasses.png",
-    name: "Lê Trí Trung",
-    role: "Founder & System Architect",
-    bio: {
-      vi: "Quán quân Hackathon CV 2026. Solo architect sàn BienSoVip (61 bảng CSDL, lọc <8ms) và CEO The MC Hub. Chuyên sâu Clean Architecture .NET & Java phân tán.",
-      en: "Champion, Hackathon CV 2026. Solo architected BienSoVip (61-table schema, <8ms query) & CEO The MC Hub. Specialist in .NET & distributed Java Clean Architecture.",
-    },
-    skills: [".NET 8 Clean Arch", "Java Spring Boot", "System Design", "PostgreSQL", "FastAPI"],
-  },
-  {
     id: "ha-van-an",
     photo: "/team/anhv-white-polo.png",
     name: "Hà Văn Ân",
@@ -602,6 +591,17 @@ export const TEAM = [
       en: "Outstanding GPA 3.5/4.0. AI Lead for BrandHub (FastAPI, GraphRAG Neo4j & ChromaDB). Team Lead for UniNest (.NET 8).",
     },
     skills: [".NET 8", "Neo4j GraphRAG", "ChromaDB", "Clean Architecture", "FastAPI"],
+  },
+  {
+    id: "le-tri-trung",
+    photo: "/team/trunglc-white-polo-glasses.png",
+    name: "Lê Trí Trung",
+    role: "Founder, Tech Lead & Engineering Manager",
+    bio: {
+      vi: "Founder & Tech Lead điều hành đội ngũ 5 kỹ sư SynapForge. Quản trị sản phẩm & phân rã WBS/Agile, từng dẫn dắt team 6 dev tại The MC Hub và solo architect sàn BienSoVip (61 bảng CSDL, lọc <8ms). Quán quân Hackathon CV 2026.",
+      en: "Founder & Tech Lead directing SynapForge's 5-engineer team. Excels in Product Management & Agile/WBS delivery. Led a 6-dev team at The MC Hub and solo architected BienSoVip (61-table DB, <8ms filter). CV Hackathon 2026 Winner.",
+    },
+    skills: ["Engineering Leadership", "Agile & WBS Delivery", "System Architecture & DDD", ".NET 8 Clean Arch", "Product Strategy"],
   },
   {
     id: "nguyen-chon-phuoc",
@@ -815,18 +815,18 @@ export const ZALO_URL = "https://zalo.me/0912158715";
 // Member CV pages (#/doi-ngu/<id>) — comprehensive profiles verified from CVs & PROFILES
 export const TEAM_CV = {
   "le-tri-trung": {
-    title: "Tech Lead & Enterprise System Architect",
+    title: "Founder, Tech Lead & Engineering Manager",
     about: {
-      vi: "Founder và Tech Lead tại SynapForge. Chuyên sâu về System Architecture, Clean Architecture, Domain-Driven Design (DDD) và hệ thống phân tán chịu tải cao. Có năng lực thiết kế trọn gói từ kiến trúc cơ sở dữ liệu (PostgreSQL/SQL Server), tầng nghiệp vụ backend (.NET 8, Java Spring Boot, FastAPI) đến triển khai hạ tầng máy chủ Linux và bảo mật đa tầng.",
-      en: "Founder and Tech Lead at SynapForge. Specializes in System Architecture, Clean Architecture, Domain-Driven Design (DDD), and high-concurrency distributed systems. Hands-on end-to-end expertise spanning database schema design (PostgreSQL/SQL Server), backend business logic (.NET 8, Java Spring Boot, FastAPI) to Linux cloud infrastructure and multi-tier security.",
+      vi: "Founder & Trưởng nhóm Kỹ nghệ tại SynapForge. Kết hợp vững chắc giữa Năng lực Quản trị Kỹ thuật (Engineering Leadership) và Kiến trúc Hệ thống chuyên sâu (Enterprise System Architecture). Có kinh nghiệm quản lý và dẫn dắt đội ngũ kỹ sư đa chuyên ngành (.NET, Java, AI, DevOps), chuyển hóa bài toán kinh doanh phức tạp thành cấu trúc phân rã công việc (WBS) và quy trình Sprint Agile minh bạch. Chịu trách nhiệm toàn diện từ hoạch định lộ trình công nghệ (Technology Roadmap), kiểm duyệt chất lượng mã nguồn (Code Review), bảo đảm cam kết tiến độ SLA bàn giao, đến thiết kế kiến trúc lõi Domain-Driven Design (DDD) chịu tải cao.",
+      en: "Founder & Head of Engineering at SynapForge. Bridges robust Technical Project Management & Engineering Leadership with in-depth Enterprise System Architecture. Proven track record leading multidisciplinary engineering teams (.NET, Java, AI, DevOps), translating complex business requirements into Work Breakdown Structures (WBS) and agile sprint deliverables. Fully accountable for technology roadmaps, code quality assurance, strict SLA fulfillment, and high-concurrency Domain-Driven Design (DDD) architectures.",
     },
     edu: {
       vi: "Kỹ thuật Phần mềm — Đại học FPT Đà Nẵng (GPA 3.3/4.0 – 8.2/10.0) • Học bổng Trao đổi Sinh viên Quốc tế tại Technology Kuala Lumpur, Malaysia (12/2023) • Cựu học sinh Chuyên Phan Châu Trinh, Đà Nẵng (GPA tốt nghiệp 9.0/10.0)",
       en: "Software Engineering — FPT University Da Nang (GPA 3.3/4.0 – 8.2/10.0) • International Student Exchange Scholarship at Technology Kuala Lumpur, Malaysia (12/2023) • Phan Chau Trinh High School for the Gifted, Da Nang (Graduation GPA 9.0/10.0)",
     },
     certs: {
-      vi: "IELTS 6.0 (IDP Education cấp 04/2026) — Tiếng Anh kỹ thuật chuyên sâu",
-      en: "IELTS 6.0 (IDP Education, issued 04/2026) — Professional technical English",
+      vi: "IELTS 6.0 (IDP Education cấp 04/2026) — Tiếng Anh kỹ thuật & đàm phán hợp đồng chuyên sâu",
+      en: "IELTS 6.0 (IDP Education, issued 04/2026) — Professional technical & contract negotiation English",
     },
     awards: [
       {
@@ -838,7 +838,7 @@ export const TEAM_CV = {
         en: "📄 Co-author, International Research Paper at ICTA 2026: Published research on LLM Fine-tuning pipeline to detect and repair concurrency bugs in Node.js.",
       },
       {
-        vi: "🎖️ Chung kết Toàn quốc (Final Round) — InnoCodeCamp 2025: Cuộc thi lập trình đổi mới sáng tạo quy mô đại học toàn quốc (Team Leader).",
+        vi: "🎖️ Chung kết Toàn quốc (Final Round) — InnoCodeCamp 2025: Cuộc thi lập trình đổi mới sáng tạo quy mô đại học toàn quốc (Team Leader dẫn dắt nhóm).",
         en: "🎖️ National Finalist — InnoCodeCamp 2025: National university-level innovation and software development championship (Team Leader).",
       },
       {
@@ -848,59 +848,61 @@ export const TEAM_CV = {
     ],
     projects: [
       {
-        name: "Biensovip.com",
-        role: { vi: "Solo Software Architect", en: "Solo Software Architect" },
-        time: "05/2026 – Hiện tại",
-        tech: [".NET 8 Clean Architecture", "PostgreSQL ACID", "Redis Lock", "React 19", "DeepSeek AI"],
+        name: "The MC Hub Academy",
+        role: { vi: "CEO & Tech Lead (Điều hành nhóm 6 kỹ sư)", en: "CEO & Tech Lead (Led team of 6 engineers)" },
+        time: "01/2026 – 07/2026",
+        tech: ["Product Management", "FastAPI + Whisper AI", "Java Spring Boot 3", "React 19", "MongoDB", "Redis", "Docker CI/CD"],
         desc: {
-          vi: "Tự tay thiết kế và lập trình trọn gói toàn bộ sàn đấu giá biển số xe định danh từ con số 0. Xây dựng 61 bảng thực thể CSDL (PostgreSQL ACID, tối ưu GIN/BTREE index cho truy vấn lọc đa tiêu chí <8ms); xác thực bảo mật kép JWT + HttpOnly Cookie; tích hợp DeepSeek AI Chatbot 24/7; tự cấu hình và vận hành VPS Linux độc lập. Đã ghi nhận 150+ giao dịch thành công.",
-          en: "Personally designed and implemented the entire license plate marketplace from scratch. Built a 61-entity schema (PostgreSQL ACID, GIN/BTREE indexes for <8ms multi-criteria filtering); dual JWT + HttpOnly Cookie authentication; 24/7 DeepSeek AI assistant; independently deployed and managed on Linux VPS. Processed 150+ successful transactions.",
+          vi: "Đảm nhiệm kép vai trò Quản trị Sản phẩm (Product Management) và Lãnh đạo Kỹ thuật (Tech Lead), dẫn dắt 6 kỹ sư đưa sản phẩm từ ý tưởng ra thị trường thành công trong 6 tháng. Hoạch định Product Roadmap, phân bổ task theo Sprint, kiểm soát tiến độ và chất lượng bàn giao. Onboard 87 MC chuyên nghiệp ngay tháng đầu; phát triển microservice AI phân tích giọng nói (FastAPI + Whisper) đánh giá phát âm, ngữ điệu, tốc độ; 101 bài thực hành và 4 khóa học phân cấp; tạo dòng tiền thực tế với hơn 20 gói cước đăng ký.",
+          en: "Held dual responsibility as Product Manager & Tech Lead, leading a team of 6 engineers launching the platform in 6 months. Planned product roadmap, managed sprint task allocation, and ensured quality delivery. Onboarded 87 professional MCs in month one; developed AI voice analysis microservice (FastAPI + OpenAI Whisper) evaluating pronunciation and cadence; 101 exercises and 4 tiered courses; generated real subscription cash flow.",
         },
       },
       {
-        name: "The MC Hub Academy",
-        role: { vi: "CEO & Tech Lead (Nhóm 6 kỹ sư)", en: "CEO & Tech Lead (Team of 6 engineers)" },
-        time: "01/2026 – 07/2026",
-        tech: ["Python FastAPI", "Whisper AI", "Java Spring Boot 3", "React 19", "MongoDB", "Redis", "Docker"],
+        name: "Biensovip.com",
+        role: { vi: "Product Owner & Solo Software Architect", en: "Product Owner & Solo Software Architect" },
+        time: "05/2026 – Hiện tại",
+        tech: [".NET 8 Clean Architecture", "PostgreSQL ACID", "Redis Distributed Lock", "React 19", "DeepSeek AI", "Linux VPS Ops"],
         desc: {
-          vi: "Dẫn dắt 6 kỹ sư đưa sản phẩm từ bản thiết kế ra thị trường trong 6 tháng. Onboard 87 MC chuyên nghiệp ngay tháng đầu; xây dựng microservice AI phân tích giọng nói (FastAPI + OpenAI Whisper) đánh giá phát âm, ngữ điệu, tốc độ; 101 bài thực hành và 4 khóa học phân cấp; tạo dòng tiền thực tế với hơn 20 gói cước đăng ký.",
-          en: "Led a team of 6 engineers launching the platform in 6 months. Onboarded 87 professional MCs in month one; developed AI voice analysis microservice (FastAPI + OpenAI Whisper) evaluating pronunciation, intonation, speech rate; 101 exercises and 4 tiered courses; generated real subscription cash flow.",
+          vi: "Định hình chiến lược sản phẩm và tự tay thiết kế trọn gói toàn bộ sàn đấu giá biển số định danh từ con số 0. Quản trị rủi ro hệ thống: thiết kế CSDL 61 bảng thực thể (PostgreSQL ACID, tối ưu GIN/BTREE index cho truy vấn đa tiêu chí <8ms); loại trừ rủi ro chứng chỉ thanh toán tự động bằng quy trình đối soát an toàn; khóa phân tán Redis chống bán trùng; xác thực bảo mật kép JWT + HttpOnly Cookie; tích hợp DeepSeek AI 24/7; tự cấu hình và tối ưu chi phí vận hành trên VPS Linux. Đã vận hành ổn định và ghi nhận 150+ giao dịch thành công.",
+          en: "Defined product strategy and personally engineered the entire license plate marketplace from scratch. Managed technical risks: 61-entity schema (PostgreSQL ACID, GIN/BTREE indexes for <8ms filtering); mitigated automated payment liabilities via safe reconciliation; Redis distributed locks preventing race conditions; dual JWT + HttpOnly authentication; 24/7 DeepSeek AI assistant; independently deployed and managed on Linux VPS. Processed 150+ successful transactions.",
         },
       },
     ],
     exp: [
       {
-        vi: "SynapForge Venture Studio (2026–nay) — Founder & Head of Technology: Điều hành kiến trúc kỹ thuật toàn bộ sản phẩm in-house và giải pháp chuyển đổi số B2B cho khách hàng.",
-        en: "SynapForge Venture Studio (2026–present) — Founder & Head of Technology: Oversees architecture for all in-house ventures and client B2B software solutions.",
+        vi: "SynapForge Venture Studio (2026–nay) — Founder & Head of Technology: Điều hành và quản lý đội ngũ 5 kỹ sư cốt lõi. Trực tiếp phân rã bài toán kinh doanh của khách hàng thành bảng WBS chi tiết, hoạch định tiến độ Sprint, tổ chức Code Review hàng tuần và cam kết bàn giao đúng hạn SLA (100% source code, tài liệu hướng dẫn và bảo hành 60–90 ngày).",
+        en: "SynapForge Venture Studio (2026–present) — Founder & Head of Technology: Directs and manages the core team of 5 engineers. Directly translates client business requirements into detailed WBS, orchestrates Sprint schedules, runs weekly Code Reviews, and ensures strict SLA delivery (100% source code handover, admin docs, and 60-90 days warranty).",
       },
       {
-        vi: "Biensovip.com (05/2026–nay) — Solo Software Architect: Toàn quyền thiết kế kiến trúc .NET 8, CSDL 61 bảng, DevOps và tích hợp AI.",
-        en: "Biensovip.com (05/2026–present) — Solo Software Architect: End-to-end design of .NET 8 architecture, 61-table database, DevOps, and AI integration.",
+        vi: "The MC Hub (01/2026–07/2026) — CEO & Tech Lead: Quản trị sản phẩm và điều hành đội ngũ 6 kỹ sư, phân bổ tài nguyên kỹ thuật, kiểm soát tiến độ bàn giao và triển khai microservice AI giọng nói ra thị trường.",
+        en: "The MC Hub (01/2026–07/2026) — CEO & Tech Lead: Product management and engineering leadership for a 6-dev team, allocating technical resources, controlling delivery milestones, and rolling out voice AI microservices.",
       },
       {
-        vi: "The MC Hub (01/2026–07/2026) — CEO & Tech Lead: Quản trị sản phẩm, dẫn dắt đội ngũ kỹ thuật, thiết kế microservice AI phân tích giọng nói.",
-        en: "The MC Hub (01/2026–07/2026) — CEO & Tech Lead: Product management, engineering leadership, speech-analysis AI microservice design.",
+        vi: "Biensovip.com (05/2026–nay) — Product Owner & System Architect: Toàn quyền hoạch định sản phẩm, thiết kế kiến trúc .NET 8 Clean Architecture, CSDL 61 bảng, quản trị rủi ro và vận hành hạ tầng máy chủ.",
+        en: "Biensovip.com (05/2026–present) — Product Owner & System Architect: End-to-end product roadmapping, .NET 8 Clean Architecture, 61-table database design, risk management, and cloud server ops.",
       },
       {
-        vi: "FPT Software (08/2025–12/2025) — Kỹ sư Thực tập Doanh nghiệp: Lập trình Reactive Web, debug, tối ưu hiệu năng và refactor mã nguồn theo quy trình chuẩn Agile/Scrum.",
-        en: "FPT Software (08/2025–12/2025) — Software Engineering Intern: Reactive Web development, debugging, performance tuning, and refactoring under Agile/Scrum standards.",
+        vi: "FPT Software (08/2025–12/2025) — Kỹ sư Thực tập Doanh nghiệp: Tiếp thu và thực hành quy trình chuẩn Agile/Scrum của tập đoàn lớn; lập trình Reactive Web, tối ưu hiệu năng, debug và refactor mã nguồn theo quy chuẩn kiểm thử nghiêm ngặt.",
+        en: "FPT Software (08/2025–12/2025) — Software Engineering Intern: Applied enterprise Agile/Scrum processes at scale; engineered Reactive Web apps, performance tuning, debugging, and refactoring under rigorous QA standards.",
       },
       {
-        vi: "Quỹ Thiện nguyện The Dreamers (06/2024–nay) — Founder & Chủ tịch: Điều hành quỹ cộng đồng 30+ thành viên; MC chuyên nghiệp cho 50+ sự kiện lớn và hội thảo công nghệ.",
-        en: "The Dreamers Charity Foundation (06/2024–present) — Founder & President: Manages 30+ volunteer members; professional MC for 50+ major events and tech symposiums.",
+        vi: "Quỹ Thiện nguyện The Dreamers (06/2024–nay) — Founder & Chủ tịch: Lãnh đạo và điều hành tổ chức cộng đồng gồm hơn 30 thành viên; quản lý nguồn lực tài chính thiện nguyện; MC và diễn giả truyền cảm hứng cho 50+ sự kiện lớn và hội thảo công nghệ.",
+        en: "The Dreamers Charity Foundation (06/2024–present) — Founder & President: Leads and directs a 30+ member community organization; manages charity resources; professional MC and public speaker for 50+ major events and tech symposiums.",
       },
     ],
     skills: [
-      "System Design & DDD",
+      "Engineering Leadership",
+      "Agile / Scrum & WBS Delivery",
+      "Product Strategy & Roadmap",
+      "System Architecture & DDD",
+      "Team Mentoring & Code Review",
       ".NET 8 / ASP.NET Core",
       "Clean Architecture",
       "Java 21 / Spring Boot 3",
       "Python FastAPI",
-      "React 19 / Next.js",
       "PostgreSQL (Index Tuning)",
-      "Redis Cache & Distributed Lock",
+      "Redis Distributed Lock",
       "Docker & Linux Server",
-      "JWT Security & RBAC",
     ],
     links: {
       email: "solutions@synapforge.id.vn",

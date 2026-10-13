@@ -70,16 +70,6 @@ export const COMPANY_INFO = {
 
 export const CORE_TEAM = [
   {
-    id: "le-tri-trung",
-    name: "Lê Trí Trung",
-    role: "Founder & Head of Technology",
-    title: "Tech Lead & Enterprise System Architect",
-    education: "Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.3/4.0 – 8.2/10), Học bổng Trao đổi Sinh viên Quốc tế tại Malaysia",
-    experience: "Solo Architect Biensovip.com (61 bảng CSDL, <8ms), CEO The MC Hub (87 MCs), FPT Software Intern, Quán quân Hackathon CV 2026, Đồng tác giả nghiên cứu AI ICTA 2026",
-    skills: ["System Design & DDD", ".NET 8 Clean Arch", "Java 21 Spring Boot 3", "Python FastAPI", "React 19", "PostgreSQL (Index Tuning)", "Redis Lock", "Docker & Linux Ops"],
-    bio: "Phụ trách thiết kế kiến trúc hệ thống và chiến lược công nghệ. Kinh nghiệm solo architect các nền tảng thương mại điện tử phức tạp và quản trị hệ sinh thái phần mềm phục vụ hàng chục ngàn người dùng."
-  },
-  {
     id: "ha-van-an",
     name: "Hà Văn Ân",
     role: "Senior Full-Stack & AI Solutions Lead",
@@ -98,6 +88,16 @@ export const CORE_TEAM = [
     experience: "AI Team Lead BrandHub Platform (FastAPI, GraphRAG Neo4j & ChromaDB), Team Lead UniNest (.NET 8), Backend .NET Intern FPT Software (C# Legacy Migration sang Clean Arch)",
     skills: [".NET 8 / ASP.NET Core", "C# Clean Architecture", "Python FastAPI", "Neo4j GraphRAG", "ChromaDB Vector Store", "PostgreSQL / SQL Server", "Entity Framework Core", "Agile / WBS"],
     bio: "GPA xuất sắc 3.5/4.0. Chuyên sâu về nguyên lý .NET Clean Architecture, chuyển đổi monolithic sang microservices và phân tích mạng dữ liệu phức tạp với GraphRAG."
+  },
+  {
+    id: "le-tri-trung",
+    name: "Lê Trí Trung",
+    role: "Founder & Head of Technology",
+    title: "Founder, Tech Lead & Engineering Manager",
+    education: "Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.3/4.0 – 8.2/10), Học bổng Trao đổi Sinh viên Quốc tế tại Malaysia",
+    experience: "Điều hành đội ngũ 5 kỹ sư SynapForge, CEO & Tech Lead The MC Hub (team 6 kỹ sư, 87 MCs), Solo Architect Biensovip.com (61 bảng CSDL, <8ms), Quán quân Hackathon CV 2026, Team Leader Chung kết InnoCodeCamp 2025",
+    skills: ["Engineering Leadership", "Agile & WBS Delivery", "System Architecture & DDD", ".NET 8 Clean Arch", "Java 21 Spring Boot 3", "PostgreSQL (Index Tuning)", "Team Mentoring & Code Review"],
+    bio: "Điều hành chiến lược công nghệ và quản trị đội ngũ kỹ nghệ tại SynapForge. Chuyên sâu phân rã bài toán kinh doanh thành WBS kỹ thuật, kiểm soát chất lượng mã nguồn, cam kết tiến độ SLA và thiết kế kiến trúc hệ thống chịu tải cao."
   },
   {
     id: "nguyen-chon-phuoc",

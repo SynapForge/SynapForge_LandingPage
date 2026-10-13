@@ -1,0 +1,58 @@
+# SynapForge — Venture Studio & Software Factory
+
+> SynapForge là Venture Studio & Software Factory công nghệ tại Đà Nẵng, chuyên thiết kế website bán hàng cao cấp, sàn giao dịch trực tuyến, hệ thống backend chịu tải cao, tích hợp AI chatbot và tự động hóa thanh toán VietQR cho doanh nghiệp và startup.
+
+## Thông tin cốt lõi (Entity Information & NAP)
+- **Tên tổ chức:** SynapForge Venture Studio & Software Factory
+- **Website chính thức:** https://synapforge.id.vn
+- **Địa bàn hoạt động:** Hải Châu, Đà Nẵng, Việt Nam (Phục vụ khách hàng toàn quốc & quốc tế)
+- **Hotline / Zalo:** (+84) 912 158 715
+- **Email:** solutions@synapforge.id.vn
+- **Nhà sáng lập (Founder & Tech Lead):** Lê Trí Trung (https://www.letritrung.id.vn, Đại học FPT Đà Nẵng)
+
+## Năng lực cốt lõi & Dịch vụ (Core Capabilities)
+1. **Thiết kế Website Bán Hàng & Sàn Thương Mại Điện Tử:** Giao diện UX/UI chuẩn conversion-rate, tốc độ tải trang dưới 1.2s, tích hợp cổng thanh toán VietQR và quản lý đơn hàng thông minh.
+2. **Phát triển MVP Nhanh (14-30 ngày):** Xây dựng sản phẩm khả thi tối thiểu cho Startup với kiến trúc chuẩn, bàn giao 100% mã nguồn (Clean Architecture), sẵn sàng mở rộng quy mô.
+3. **Tích hợp Trí Tuệ Nhân Tạo (AI & Automation):** Trợ lý ảo tư vấn bán hàng 24/7, RAG (Retrieval-Augmented Generation) tra cứu dữ liệu nội bộ, tự động hóa quy trình nghiệp vụ (Workflow Automation).
+4. **Hệ thống Backend Hiệu năng cao:** Chuyên sâu .NET 8 Clean Architecture, Java Spring Boot, RabbitMQ, Redis Caching, PostgreSQL.
+
+## Dự án tiêu biểu & Sản phẩm Flagship (Proof of Work)
+- **BienSoVip (https://biensovip.com):** Sàn giao dịch & tra cứu biển số xe định danh tốc độ cao. CSDL 61 bảng, tìm kiếm đa tiêu chí < 8ms, tích hợp thanh toán VietQR tự động.
+- **BrandHub AI:** Nền tảng AI MarTech tự động hóa sáng tạo và phân phối nội dung đa kênh, kiến trúc microservices và GraphRAG.
+- **STEMGO:** Nền tảng giáo dục STEM kết nối phần cứng I/O thông minh.
+
+## Cam kết kỹ thuật & Chuẩn mực bàn giao
+- Bàn giao 100% mã nguồn (Source Code Ownership), tài liệu API Swagger chuẩn chỉ.
+- Kiến trúc Clean Architecture tách biệt Domain, Application, Infrastructure.
+- Hỗ trợ triển khai Docker, CI/CD, Cloud (AWS, VPS, DigitalOcean).
+- Bảo hành kỹ thuật và hỗ trợ bảo trì dài hạn.
+
+## 20 Bài viết Kỹ thuật, Tầm nhìn AI & Khởi nghiệp Đổi mới sáng tạo (Knowledge Base)
+
+### Trụ cột 1: Công nghệ & Kiến trúc Hệ thống
+1. [Case Study Sàn BienSoVip: Kiến trúc .NET 8 Clean Architecture & VietQR](https://synapforge.id.vn/#/bai-viet/case-study-biensovip-kien-truc-he-thong)
+2. [Xây dựng Microservices với RabbitMQ & Event-Driven Architecture](https://synapforge.id.vn/#/bai-viet/kien-truc-microservices-rabbitmq-event-driven)
+3. [Tối ưu PostgreSQL & Redis Caching: Truy vấn dưới 10ms](https://synapforge.id.vn/#/bai-viet/toi-uu-postgresql-redis-caching-duoi-10ms)
+4. [Kiến trúc SignalR Realtime & WebSockets trong sàn đấu giá](https://synapforge.id.vn/#/bai-viet/kien-truc-signalr-realtime-websockets-dau-gia)
+5. [Clean Architecture vs Monolith Truyền thống: Đầu tư từ đầu](https://synapforge.id.vn/#/bai-viet/clean-architecture-vs-monolith-truyen-thong)
+
+### Trụ cột 2: Trí tuệ Nhân tạo & Tự động hóa
+6. [Ứng dụng AI Chatbot & GraphRAG chăm sóc khách hàng 24/7 không ảo giác](https://synapforge.id.vn/#/bai-viet/ung-dung-ai-rag-cham-soc-khach-hang-tu-dong)
+7. [Case Study BrandHub AI: Nền tảng MarTech 7 Microservices](https://synapforge.id.vn/#/bai-viet/case-study-brandhub-ai-martech-microservices)
+8. [Tìm hiểu Vector Database & Kỹ thuật Embedding Search](https://synapforge.id.vn/#/bai-viet/vector-database-va-ky-thuat-embedding-search)
+9. [AI Agents tự động hóa quy trình nghiệp vụ & đối soát hóa đơn](https://synapforge.id.vn/#/bai-viet/ai-agents-tu-dong-hoa-quy-trinh-nghiep-vu-doanh-nghiep)
+10. [Tầm nhìn AI 2026: Mô hình ngôn ngữ lớn làm hạt nhân doanh nghiệp](https://synapforge.id.vn/#/bai-viet/tam-nhin-ai-2026-mo-hinh-ngon-ngu-hat-nhan-doanh-nghiep)
+
+### Trụ cột 3: Khởi nghiệp Đổi mới Sáng tạo & Venture Studio
+11. [Quy trình phát triển MVP 14 ngày bàn giao 100% mã nguồn](https://synapforge.id.vn/#/bai-viet/quy-trinh-phat-trien-mvp-14-ngay)
+12. [Mô hình Venture Studio: Tại sao thành công hơn 30% vườn ươm](https://synapforge.id.vn/#/bai-viet/venture-studio-la-gi-so-sanh-incubator-va-outsourcing)
+13. [Cẩm nang công nghệ cho Non-Tech Founders tránh bẫy gia công](https://synapforge.id.vn/#/bai-viet/cam-nang-cong-nghe-cho-non-tech-founders)
+14. [Từ ý tưởng đến Product-Market Fit (PMF) tinh gọn](https://synapforge.id.vn/#/bai-viet/tu-y-tuong-den-product-market-fit-pmf)
+15. [Hệ sinh thái khởi nghiệp đổi mới sáng tạo Đà Nẵng](https://synapforge.id.vn/#/bai-viet/doi-moi-sang-tao-tai-da-nang-co-hoi-cho-startup)
+
+### Trụ cột 4: Chuyển đổi số & Thiết kế Web Doanh nghiệp
+16. [Bảng giá thiết kế website bán hàng tại Đà Nẵng: 5 tiêu chí sống còn](https://synapforge.id.vn/#/bai-viet/bang-gia-thiet-ke-website-ban-hang-da-nang)
+17. [Tự động hóa thanh toán VietQR Napas247 tăng 35% chuyển đổi](https://synapforge.id.vn/#/bai-viet/tu-dong-hoa-thanh-toan-vietqr-napas247-tang-chuyen-doi)
+18. [Tối ưu Core Web Vitals 2026 (INP < 200ms, LCP < 2.5s, CLS < 0.1)](https://synapforge.id.vn/#/bai-viet/toi-uu-core-web-vitals-inp-lcp-cls-chuan-2026)
+19. [Bảo mật ứng dụng web doanh nghiệp: OWASP & RBAC](https://synapforge.id.vn/#/bai-viet/bao-mat-ung-dung-web-doanh-nghiep-owasp-rbac)
+20. [Lộ trình chuyển đổi số thực chiến 3 giai đoạn cho SME](https://synapforge.id.vn/#/bai-viet/lo-trinh-chuyen-doi-so-thuc-chien-cho-sme)
