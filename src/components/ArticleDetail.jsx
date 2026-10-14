@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import { ArrowLeft, Calendar, Clock, Share2, Sparkles, UserCheck, CheckCircle2, ArrowRight, Bookmark } from "lucide-react";
 import { marked } from "marked";
 import Breadcrumb from "./Breadcrumb";
+import HeaderNav from "./HeaderNav";
 import { ARTICLES } from "../data/articlesData";
 import { t, pick } from "../data/i18n";
 
@@ -80,50 +81,7 @@ export default function ArticleDetail({ slug, lang, setLang }) {
   return (
     <div className="font-space bg-white text-[#1D1510] min-h-screen relative antialiased selection:bg-[#FF5500] selection:text-white">
       {/* Top Header */}
-      <header className="topbar">
-        <div className="wrap topbar-in">
-          <a href="#top" className="brand" title="SynapForge Home">
-            <img
-              src="/brand/logo_primary.jpg"
-              alt="SynapForge"
-              className="brand-logo"
-            />
-          </a>
-
-          <nav className="top-nav">
-            <a href="#model">{t(lang, "nav_model")}</a>
-            <a href="#ventures">{t(lang, "nav_ventures")}</a>
-            <a href="#services">{t(lang, "nav_services")}</a>
-            <a href="#team">{t(lang, "nav_team")}</a>
-            <a href="#/bai-viet" style={{ color: "var(--orange-deep)", fontWeight: 700 }}>
-              {lang === "vi" ? "Kiến thức" : "Insights"}
-            </a>
-            <a href="#contact">{t(lang, "nav_contact")}</a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <div
-              className="lang-pill"
-              role="button"
-              tabIndex={0}
-              aria-label={lang === "vi" ? "Chuyển sang tiếng Anh (EN)" : "Switch to Vietnamese (VI)"}
-              onClick={() => setLang(lang === "vi" ? "en" : "vi")}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  setLang(lang === "vi" ? "en" : "vi");
-                }
-              }}
-            >
-              <span className={lang === "vi" ? "on" : ""}>VI</span>
-              <span className={lang === "en" ? "on" : ""}>EN</span>
-            </div>
-            <a className="top-cta" href="#contact">
-              {t(lang, "nav_cta")}
-            </a>
-          </div>
-        </div>
-      </header>
+      <HeaderNav lang={lang} setLang={setLang} activeRoute="articles" />
 
       {/* Main Container */}
       <main className="gridbg pp-sec">

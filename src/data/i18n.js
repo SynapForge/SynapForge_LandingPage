@@ -728,6 +728,8 @@ export const MORE_PRODUCTS = [
       "MongoDB",
       "Docker",
     ],
+    img: "/products/themchub/01.jpg",
+    gallery: ["/products/themchub/01.jpg"],
   },
   {
     id: "threadlearn",
