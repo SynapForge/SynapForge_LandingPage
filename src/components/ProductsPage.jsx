@@ -16,7 +16,7 @@ export default function ProductsPage({ lang, setLang }) {
       <HeaderNav lang={lang} setLang={setLang} activeRoute="products" />
 
       <section className="section gridbg pp-sec">
-        <div className="wrap">
+        <div className="pp-wide">
           <Breadcrumb
             items={[
               { label: t(lang, 'nav_home'), href: '#top' },
@@ -89,7 +89,7 @@ export default function ProductsPage({ lang, setLang }) {
       </section>
 
       <footer className="footer-spec">
-        <div className="wrap foot-in">
+        <div className="pp-wide foot-in">
           <span className="brand-name">
             Synap<em style={{ color: 'var(--orange)' }}>Forge</em>
           </span>

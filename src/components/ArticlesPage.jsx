@@ -35,7 +35,7 @@ export default function ArticlesPage({ lang, setLang }) {
 
       {/* Main Content */}
       <section className="gridbg pp-sec">
-        <div className="wrap">
+        <div className="pp-wide">
           <Breadcrumb
             items={[
               { label: lang === "vi" ? "Trang chủ" : "Home", href: "#top" },
@@ -110,7 +110,7 @@ export default function ArticlesPage({ lang, setLang }) {
               </p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {filteredArticles.map((art) => {
                 const title = pick(lang, art.title.vi, art.title.en);
                 const excerpt = pick(lang, art.excerpt.vi, art.excerpt.en);
@@ -237,7 +237,7 @@ export default function ArticlesPage({ lang, setLang }) {
 
       {/* Footer */}
       <footer className="footer-spec">
-        <div className="wrap foot-in">
+        <div className="pp-wide foot-in">
           <span className="brand-name">
             Synap<em style={{ color: "var(--orange)" }}>Forge</em>
           </span>
