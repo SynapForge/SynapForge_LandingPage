@@ -662,74 +662,99 @@ export const FAQ = [
 export const MORE_PRODUCTS = [
   {
     id: "the-mc-hub",
-    kicker: "EDTECH & AI VOICE",
-    title: "The MC Hub Academy",
+    kicker: "EDTECH & AI VOICE COACHING",
+    title: "The MC Hub",
     tag: {
-      vi: "Nền tảng đào tạo MC & Diễn thuyết tích hợp AI phân tích giọng nói",
-      en: "MC & public speaking training platform with AI speech analysis",
+      vi: "Hệ sinh thái đào tạo MC & Luyện giọng thông minh tích hợp AI chấm điểm thời gian thực",
+      en: "AI-powered speech training & MC coaching platform with real-time acoustic grading",
     },
     desc: {
-      vi: "Học viện trực tuyến chuẩn hóa quy trình luyện giọng và diễn thuyết. Microservice AI chấm phát âm, cao độ, tốc độ nói theo thời gian thực và trả phản hồi chi tiết sau 30 giây.",
-      en: "Online academy standardizing speech training and public speaking. Real-time AI microservice evaluates pronunciation, pitch, and cadence, delivering detailed feedback in 30 seconds.",
+      vi: "Nền tảng EdTech chuyên sâu cho MC và diễn giả với 10 modules, 138 tính năng: AI chấm điểm thời gian thực (phát âm, biểu cảm, tốc độ), karaoke tô sáng chữ theo giọng đọc, biểu đồ cao độ live pitch chart, kho 101 bài luyện theo 6 chuyên mục thực chiến, 4 khóa học cấp chứng chỉ và cổng thanh toán PayOS tự động.",
+      en: "Comprehensive EdTech platform for MCs and public speakers across 10 modules & 138 features: real-time AI speech grading (pronunciation, voice expressiveness, cadence), karaoke live word highlighting, live pitch-contour chart, 101 structured exercises across 6 industry tracks, 4 certificate courses, and automated PayOS checkout.",
     },
     problem: [
       {
-        vi: "Nghẽn cổ chai chấm bài phát âm: Mỗi ngày có hàng trăm clip thuyết trình gửi về; giảng viên không đủ thời gian nghe và sửa chi tiết từng câu, học viên phải chờ cả tuần mới có nhận xét.",
+        vi: "Nghẽn cổ chai chấm bài phát âm: Hàng trăm clip thuyết trình gửi về mỗi ngày; giảng viên không đủ thời gian nghe và sửa chi tiết từng câu, học viên phải chờ cả tuần mới có nhận xét.",
         en: "Speech grading bottleneck: Hundreds of student speaking clips submitted daily; mentors lacked bandwidth to provide timely sentence-by-sentence feedback.",
       },
       {
-        vi: "Chi phí đào tạo 1-kèm-1 đắt đỏ: Khách hàng muốn nâng cao kỹ năng diễn thuyết nhưng rào cản học phí kèm riêng và lịch học cố định quá cao.",
+        vi: "Chi phí kèm 1-1 đắt đỏ & rào cản lịch học: Khách hàng muốn làm chủ giọng nói nhưng rào cản học phí kèm riêng và lịch học cố định quá cao.",
         en: "Prohibitive 1-on-1 tutoring costs: Learners sought speech mastery but were priced out by expensive private tutoring and rigid class schedules.",
       },
       {
-        vi: "Thiếu thước đo định lượng khách quan: Các nhận xét trước đây phụ thuộc vào cảm tính người dạy, không có chỉ số cụ thể về tốc độ nói (WPM) hay tần suất từ đệm.",
-        en: "Lack of objective metrics: Feedback was historically subjective, lacking measurable data on cadence (WPM), pitch variance, or filler word frequency.",
+        vi: "Nhận xét cảm tính, thiếu thước đo định lượng: Phản hồi truyền thống phụ thuộc cảm tính, thiếu chỉ số chuẩn xác về tốc độ nói (WPM), cao độ âm sắc hay tần suất từ đệm.",
+        en: "Subjective feedback lacking quantitative metrics: Traditional feedback was anecdotal, lacking measurable data on cadence (WPM), pitch variance, or filler word frequency.",
       },
     ],
     solution: [
       {
-        vi: "Microservice AI phân tích giọng nói (FastAPI + Whisper): Tự động bóc băng, đo tốc độ nói, phát hiện từ đệm và chấm độ tròn vành rõ chữ chỉ sau 30 giây nộp bài.",
-        en: "AI Voice Analysis Microservice (FastAPI + Whisper): Instant audio transcription, cadence calculation, filler word detection, and pronunciation scoring within 30s.",
+        vi: "Kiến trúc Decoupled 3 tầng độc lập: Frontend React 19 + Tailwind, Backend Java Spring Boot 3 + MongoDB, và Microservice AI Python (Whisper + Acoustic Signal Processing) mở rộng độc lập.",
+        en: "Decoupled 3-Tier Architecture: React 19 + Tailwind frontend, Java Spring Boot 3 + MongoDB backend, and decoupled Python AI microservice (Whisper + Acoustic Signal Processing).",
       },
       {
-        vi: "Hệ thống hóa 101 bài thực hành & 4 khóa học phân cấp: Lộ trình học tự động từ cơ bản đến nâng cao trên React 19 và Node.js, tích hợp bảng xếp hạng động lực.",
-        en: "Structured 101 exercises & 4 tiered courses: Gamified self-paced curriculum from beginner to pro on React 19 & Node.js with automated leaderboards.",
+        vi: "Trải nghiệm luyện tập đột phá: Karaoke tô sáng chữ theo giọng đọc thật thời gian thực, biểu đồ cao độ giọng trực tiếp lúc thu âm, minigame luyện phản xạ đọc nhanh và cơ chế tự thích ứng độ khó theo dữ liệu học viên.",
+        en: "Breakthrough practice UX: Real-time karaoke voice-sync word highlighting, live pitch-contour chart during recording, speed-reading reflex minigames, and data-driven adaptive difficulty.",
       },
       {
-        vi: "Đưa sản phẩm ra thị trường trong 6 tháng: Nhóm 6 kỹ sư SynapForge hoàn thành từ bản vẽ đến production; onboard ngay 87 MC chuyên nghiệp trong tháng đầu tiên.",
-        en: "6-month end-to-end launch: Team of 6 SynapForge engineers launched the platform from design to scale, onboarding 87 professional MCs in month one.",
+        vi: "Sản phẩm thực tế có người dùng thật: Ra mắt thành công với 87 MC chuyên nghiệp & học viên onboard, 101 bài luyện tập thuộc 6 chuyên mục (Cưới, Talkshow, Doanh nghiệp, Sự kiện, Podcast, Thuyết trình) và 4 khóa học hoàn chỉnh.",
+        en: "Production-ready with real traction: Successfully launched with 87 professional MCs and learners onboard, 101 practice units across 6 industry tracks, and 4 comprehensive certificate courses.",
       },
     ],
     feats: [
       {
-        vi: "Chấm điểm giọng nói tự động bằng OpenAI Whisper kết hợp thuật toán phân tích âm sắc",
-        en: "Automated voice grading with OpenAI Whisper and acoustic feature extraction",
+        vi: "AI chấm điểm giọng nói 3 trục: Phát âm chuẩn xác, Biểu cảm giọng (Voice Expressiveness) và Tốc độ nói (WPM & Rhythm)",
+        en: "3-axis AI speech grading: Pronunciation accuracy, Voice Expressiveness, and Cadence / Pacing (WPM)",
       },
       {
-        vi: "101 bài luyện tập tương tác phân bổ theo từng chủ đề dẫn chương trình thực tế",
-        en: "101 interactive practice units categorized across real-world hosting scenarios",
+        vi: "Karaoke tô sáng chữ theo giọng đọc thời gian thực & Biểu đồ cao độ (Live Pitch-Contour Chart)",
+        en: "Real-time karaoke voice-sync word highlighting & live pitch-contour acoustic chart",
       },
       {
-        vi: "Cổng thanh toán tự động kích hoạt khóa học và cấp tài khoản tức thì",
-        en: "Automated payment workflow with instant course activation and LMS access",
+        vi: "Thư viện 101 bài luyện giọng theo 6 chuyên mục thực tế (Cưới, Talkshow, Doanh nghiệp, Sự kiện, Podcast, Thuyết trình)",
+        en: "Library of 101 structured speech exercises across 6 real-world MC domains",
+      },
+      {
+        vi: "4 khóa học toàn diện với hệ thống bài học, tài liệu đọc, câu hỏi trắc nghiệm và chứng chỉ hoàn thành",
+        en: "4 full-stack certificate courses complete with interactive lessons, reading guides, and quizzes",
+      },
+      {
+        vi: "Cơ chế tự điều chỉnh độ khó & mục tiêu WPM thích ứng theo dữ liệu luyện tập thực tế",
+        en: "Adaptive difficulty algorithm automatically tailoring target WPM and challenges based on user history",
+      },
+      {
+        vi: "Cổng thanh toán PayOS tự động hóa kích hoạt tức thì 5 gói dịch vụ linh hoạt (Free, Ngày, Basic, Full, Năm)",
+        en: "Automated PayOS payment gateway enabling instant provisioning across 5 flexible tiers",
       },
     ],
     stats: [
-      { v: "87", l: { vi: "MC chuyên nghiệp Onboard", en: "Professional MCs onboarded" } },
-      { v: "101", l: { vi: "Bài thực hành tương tác", en: "Interactive practice units" } },
-      { v: "<30s", l: { vi: "AI chấm & phản hồi", en: "AI feedback speed" } },
-      { v: "06", l: { vi: "Tháng từ thiết kế đến ra mắt", en: "Months to market launch" } },
+      { v: "87", l: { vi: "MC & Học viên Onboard", en: "Active MCs & learners onboarded" } },
+      { v: "101", l: { vi: "Bài luyện giọng tương tác", en: "Interactive practice exercises" } },
+      { v: "138", l: { vi: "Tính năng trên 10 phân hệ", en: "Features across 10 modules" } },
+      { v: "<30s", l: { vi: "AI chấm & phản hồi", en: "AI grading & feedback speed" } },
     ],
     chips: [
       "Python FastAPI",
       "OpenAI Whisper AI",
-      "Java Spring Boot",
+      "Java Spring Boot 3",
       "React 19",
       "MongoDB",
-      "Docker",
+      "PayOS Integration",
+      "Web Audio API",
+      "Docker Compose",
     ],
-    img: "/products/themchub/01.jpg",
-    gallery: ["/products/themchub/01.jpg"],
+    img: "/products/themchub/01-landing.png",
+    gallery: [
+      "/products/themchub/01-landing.png",
+      "/products/themchub/03-dashboard.png",
+      "/products/themchub/04-voice-library.png",
+      "/products/themchub/05-practice-screen.png",
+      "/products/themchub/04-practice-karaoke-on.png",
+      "/products/themchub/05-practice-teleprompter-on.png",
+      "/products/themchub/06-courses-list.png",
+      "/products/themchub/07-course-detail.png",
+      "/products/themchub/08-leaderboard.png",
+      "/products/themchub/12-payment-pricing.png",
+    ],
   },
   {
     id: "threadlearn",
@@ -850,7 +875,7 @@ export const TEAM_CV = {
     ],
     projects: [
       {
-        name: "The MC Hub Academy",
+        name: "The MC Hub",
         role: { vi: "CEO & Tech Lead (Điều hành nhóm 6 kỹ sư)", en: "CEO & Tech Lead (Led team of 6 engineers)" },
         time: "01/2026 – 07/2026",
         tech: ["Product Management", "FastAPI + Whisper AI", "Java Spring Boot 3", "React 19", "MongoDB", "Redis", "Docker CI/CD"],
