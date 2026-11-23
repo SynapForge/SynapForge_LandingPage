@@ -108,7 +108,7 @@ export default function SideStreams({ lang = 'vi' }) {
             style={{ animationDuration: '44s' }}
           >
             {x4(leftProjects).map((it, idx) => (
-              <Card key={idx} href={`#/san-pham/${it.id}`} img={it.img} alt={it.title} tag={it.tag}
+              <Card key={idx} href={`/san-pham/${it.id}`} img={it.img} alt={it.title} tag={it.tag}
                 title={it.title} line={p(it.line)} foot={<span className="text-[#E04B00]">{p(it.stat)}</span>} />
             ))}
           </div>

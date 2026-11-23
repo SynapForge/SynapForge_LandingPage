@@ -35,7 +35,7 @@ export default function ProductsPage({ lang, setLang }) {
           <h3 className="pp-sub">{t(lang, 'pp_built')} — {String(built.length).padStart(2, '0')}</h3>
           <div className="prod-grid">
             {built.map((p) => (
-              <a className="prod prod-link" href={`#/san-pham/${p.id}`} key={p.id}>
+              <a className="prod prod-link" href={`/san-pham/${p.id}`} key={p.id}>
                 {p.img && (
                   <figure className="fig" style={{ margin: 0 }}>
                     <span className="tk">+</span>

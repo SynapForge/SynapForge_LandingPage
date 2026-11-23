@@ -8,6 +8,18 @@ import ArticleDetail from "./components/ArticleDetail";
 import { t, pick, TEAM, TEAM_CV, ALL_PRODUCTS } from "./data/i18n";
 import { ARTICLES } from "./data/articlesData";
 
+const SITE = "https://synapforge.id.vn";
+
+// Old links used hash routes (/#/doi-ngu/x); move them to real paths.
+function currentPath() {
+  const { hash, pathname } = window.location;
+  if (hash.startsWith("#/")) {
+    window.history.replaceState(null, "", hash.slice(1));
+    return hash.slice(1).split(/[?#]/)[0];
+  }
+  return pathname.replace(/\/+$/, "") || "/";
+}
+
 function detectLang() {
   try {
     const saved = localStorage.getItem("sf-lang");
@@ -18,7 +30,7 @@ function detectLang() {
 
 export default function App() {
   const [lang, setLang] = useState(detectLang);
-  const [hash, setHash] = useState(() => window.location.hash);
+  const [path, setPath] = useState(currentPath);
 
   // Dynamic SEO: Persist lang + sync <html lang>, title, meta description & OG tags per route
   useEffect(() => {
@@ -30,9 +42,9 @@ export default function App() {
     let pageTitle = t(lang, "meta_title");
     let pageDesc = t(lang, "meta_desc");
 
-    const memberMatch = hash.match(/^#\/doi-ngu\/([\w-]+)/);
-    const prodMatch = hash.match(/^#\/san-pham\/([\w-]+)/);
-    const articleMatch = hash.match(/^#\/bai-viet\/([\w-]+)/);
+    const memberMatch = path.match(/^\/doi-ngu\/([\w-]+)/);
+    const prodMatch = path.match(/^\/san-pham\/([\w-]+)/);
+    const articleMatch = path.match(/^\/bai-viet\/([\w-]+)/);
 
     if (memberMatch) {
       const m = TEAM.find((item) => item.id === memberMatch[1]);
@@ -53,10 +65,10 @@ export default function App() {
         pageTitle = `${pick(lang, a.title.vi, a.title.en)} | SynapForge Insights`;
         pageDesc = pick(lang, a.excerpt.vi, a.excerpt.en);
       }
-    } else if (hash.startsWith("#/bai-viet")) {
+    } else if (path.startsWith("/bai-viet")) {
       pageTitle = lang === "vi" ? "Kiến Thức & Case Studies Thực Chiến | SynapForge Studio" : "Engineering Insights & Real-World Case Studies | SynapForge";
       pageDesc = lang === "vi" ? "Góc nhìn kỹ thuật chuyên sâu về .NET 8 Clean Architecture, tự động hóa VietQR, giải pháp AI RAG và bài học phát triển MVP từ SynapForge." : "Deep-dive engineering insights on .NET 8 Clean Architecture, automated payments, AI RAG, and startup MVP development by SynapForge.";
-    } else if (hash.startsWith("#/san-pham")) {
+    } else if (path.startsWith("/san-pham")) {
       pageTitle = lang === "vi" ? "Toàn Bộ Sản Phẩm & Giải Pháp Phần Mềm | SynapForge Studio" : "All Products & Software Ventures | SynapForge Studio";
       pageDesc = lang === "vi" ? "Danh mục các sản phẩm in-house và giải pháp chuyển đổi số của SynapForge: BienSoVip, BrandHub AI, STEMGO." : "Catalog of in-house ventures and digital transformation platforms built by SynapForge.";
     }
@@ -72,32 +84,53 @@ export default function App() {
     if (twTitle) twTitle.setAttribute("content", pageTitle);
     const twDesc = document.querySelector('meta[name="twitter:description"]');
     if (twDesc) twDesc.setAttribute("content", pageDesc);
-  }, [lang, hash]);
+    const url = path === "/" ? `${SITE}/` : `${SITE}${path}`;
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", url);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[name="twitter:url"]')?.setAttribute("content", url);
+  }, [lang, path]);
 
-  // Hash routes: #/san-pham, #/doi-ngu/<id>, #/bai-viet; anything else → landing (plain #id = section anchor)
+  // Path routes: /san-pham, /doi-ngu/<id>, /bai-viet; plain #id = section anchor on the landing.
   useEffect(() => {
-    const onHash = () => {
-      const h = window.location.hash;
-      if (h.startsWith("#/")) window.scrollTo(0, 0);
-      setHash(h);
+    const sync = () => setPath(currentPath());
+    const onClick = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target.closest("a[href]");
+      if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
+      const href = a.getAttribute("href");
+      const onLanding = window.location.pathname === "/";
+      let to;
+      if (href.startsWith("/") && !href.startsWith("//") && !/\.[a-z0-9]+($|[?#])/i.test(href)) to = href;
+      else if (href.startsWith("#") && href.length > 1 && !onLanding) to = "/" + href;
+      if (!to) return;
+      e.preventDefault();
+      window.history.pushState(null, "", to);
+      if (!to.includes("#")) window.scrollTo(0, 0);
+      sync();
     };
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    window.addEventListener("popstate", sync);
+    window.addEventListener("hashchange", sync);
+    document.addEventListener("click", onClick);
+    return () => {
+      window.removeEventListener("popstate", sync);
+      window.removeEventListener("hashchange", sync);
+      document.removeEventListener("click", onClick);
+    };
   }, []);
 
-  const article = hash.match(/^#\/bai-viet\/([\w-]+)/);
+  const article = path.match(/^\/bai-viet\/([\w-]+)/);
   if (article)
     return <ArticleDetail slug={article[1]} lang={lang} setLang={setLang} />;
-  if (hash.startsWith("#/bai-viet"))
+  if (path.startsWith("/bai-viet"))
     return <ArticlesPage lang={lang} setLang={setLang} />;
 
-  const member = hash.match(/^#\/doi-ngu\/([\w-]+)/);
+  const member = path.match(/^\/doi-ngu\/([\w-]+)/);
   if (member)
     return <MemberPage id={member[1]} lang={lang} setLang={setLang} />;
-  const product = hash.match(/^#\/san-pham\/([\w-]+)/);
+  const product = path.match(/^\/san-pham\/([\w-]+)/);
   if (product)
     return <ProductDetail id={product[1]} lang={lang} setLang={setLang} />;
-  if (hash.startsWith("#/san-pham"))
+  if (path.startsWith("/san-pham"))
     return <ProductsPage lang={lang} setLang={setLang} />;
   return <MockupBView lang={lang} setLang={setLang} />;
 }
