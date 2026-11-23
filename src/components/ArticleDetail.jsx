@@ -53,7 +53,7 @@ export default function ArticleDetail({ slug, lang, setLang }) {
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": `https://synapforge.id.vn/#/bai-viet/${article.slug}`
+        "@id": `https://synapforge.id.vn/bai-viet/${article.slug}`
       }
     };
 
@@ -90,7 +90,7 @@ export default function ArticleDetail({ slug, lang, setLang }) {
           <Breadcrumb
             items={[
               { label: lang === "vi" ? "Trang chủ" : "Home", href: "#top" },
-              { label: lang === "vi" ? "Kiến thức & Case Studies" : "Insights", href: "#/bai-viet" },
+              { label: lang === "vi" ? "Kiến thức & Case Studies" : "Insights", href: "/bai-viet" },
               { label: title }
             ]}
           />
@@ -310,7 +310,7 @@ export default function ArticleDetail({ slug, lang, setLang }) {
                 {relatedArticles.map((rel) => (
                   <a
                     key={rel.slug}
-                    href={`#/bai-viet/${rel.slug}`}
+                    href={`/bai-viet/${rel.slug}`}
                     className="p-5 rounded-2xl border border-[#E4DAC6] bg-white hover:border-[#FF5500] transition-colors block group"
                   >
                     <span className="text-[10px] font-mono text-[#FF5500] font-bold block mb-1">

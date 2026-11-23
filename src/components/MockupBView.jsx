@@ -87,21 +87,21 @@ const COLLAGE = [
     title: "BrandHub",
     meta: "SaaS · AI MarTech",
     cls: "c1",
-    href: "#/san-pham/brandhub",
+    href: "/san-pham/brandhub",
   },
   {
     src: "/stream/pkg-mvp.jpg",
     title: "E-commerce",
     meta: "Web · Mobile",
     cls: "c2",
-    href: "#/san-pham",
+    href: "/san-pham",
   },
   {
     src: "/stream/pkg-fast.jpg",
     title: "BienSoVip",
     meta: "Admin · Dashboard",
     cls: "c3",
-    href: "#/san-pham/biensovip",
+    href: "/san-pham/biensovip",
   },
 ];
 
@@ -110,7 +110,7 @@ function HeroCollage() {
   return (
     <div className="collage">
       <a
-        href="#/san-pham/biensovip"
+        href="/san-pham/biensovip"
         className="fig main"
         style={{ margin: 0 }}
         aria-label="Xem dự án BienSoVip Marketplace"
@@ -222,7 +222,7 @@ export default function MockupBView({ lang, setLang }) {
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
       const href = a.getAttribute("href");
-      if (!href || href === "#" || href.startsWith("#/")) return; // #/... = page route, let hashchange handle it
+      if (!href || href === "#" || href.startsWith("#/")) return;
       const el = document.querySelector(href);
       if (!el) return;
       e.preventDefault();
@@ -558,7 +558,7 @@ export default function MockupBView({ lang, setLang }) {
                   ))}
                 </div>
                 <div className="case-actions">
-                  <a className="pd-more flex items-center gap-1.5" href={`#/san-pham/${c.id}`}>
+                  <a className="pd-more flex items-center gap-1.5" href={`/san-pham/${c.id}`}>
                     <span>{t(lang, "pd_detail")}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
@@ -579,7 +579,7 @@ export default function MockupBView({ lang, setLang }) {
               </div>
               <div className="case-img">
                 <a
-                  href={c.url || `#/san-pham/${c.id}`}
+                  href={c.url || `/san-pham/${c.id}`}
                   target={c.url ? "_blank" : undefined}
                   rel={c.url ? "noopener noreferrer" : undefined}
                   className="fig-link"
@@ -614,7 +614,7 @@ export default function MockupBView({ lang, setLang }) {
           ))}
 
           <div className="ven-more">
-            <a className="btn-spec btn-ghost flex items-center gap-1.5" href="#/san-pham">
+            <a className="btn-spec btn-ghost flex items-center gap-1.5" href="/san-pham">
               <span>{t(lang, "ven_more")}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
@@ -678,7 +678,7 @@ export default function MockupBView({ lang, setLang }) {
               <div className="member" key={m.name}>
                 <a
                   className="ph-link"
-                  href={`#/doi-ngu/${m.id}`}
+                  href={`/doi-ngu/${m.id}`}
                   aria-label={`${t(lang, "cv_open")} — ${m.name}`}
                 >
                   <img
@@ -754,7 +754,7 @@ export default function MockupBView({ lang, setLang }) {
             {ARTICLES.slice(0, 3).map((art) => (
               <a
                 key={art.slug}
-                href={`#/bai-viet/${art.slug}`}
+                href={`/bai-viet/${art.slug}`}
                 className="rounded-2xl border border-[#E4DAC6] bg-white p-6 hover:border-[#FF5500] hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
@@ -780,7 +780,7 @@ export default function MockupBView({ lang, setLang }) {
           </div>
 
           <div className="ven-more">
-            <a className="btn-spec btn-ghost flex items-center gap-1.5" href="#/bai-viet">
+            <a className="btn-spec btn-ghost flex items-center gap-1.5" href="/bai-viet">
               <span>{lang === "vi" ? "Xem toàn bộ bài viết & case studies" : "Browse all insights & case studies"}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
@@ -855,8 +855,8 @@ export default function MockupBView({ lang, setLang }) {
               <span>© 2026 — Venture Studio &amp; Software Factory</span>
             </div>
             <div className="flex items-center gap-4 text-xs font-mono">
-              <a href="#/san-pham" className="hover:text-[#FF5500] transition-colors">{t(lang, "nav_ventures")}</a>
-              <a href="#/bai-viet" className="hover:text-[#FF5500] transition-colors">{lang === "vi" ? "Kiến thức & Case Studies" : "Insights"}</a>
+              <a href="/san-pham" className="hover:text-[#FF5500] transition-colors">{t(lang, "nav_ventures")}</a>
+              <a href="/bai-viet" className="hover:text-[#FF5500] transition-colors">{lang === "vi" ? "Kiến thức & Case Studies" : "Insights"}</a>
               <a href="#top" className="hover:text-[#FF5500] transition-colors">↑ Top</a>
             </div>
             <span>{t(lang, "footer_addr")}</span>

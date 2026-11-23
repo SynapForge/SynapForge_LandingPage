@@ -122,7 +122,7 @@ export default function ArticlesPage({ lang, setLang }) {
                     key={art.slug}
                     className="flex flex-col rounded-2xl border border-[#E4DAC6] bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-[#FF5500]/60 transition-all group"
                   >
-                    <a href={`#/bai-viet/${art.slug}`} className="block relative overflow-hidden aspect-[16/9] bg-[#F4ECE1]">
+                    <a href={`/bai-viet/${art.slug}`} className="block relative overflow-hidden aspect-[16/9] bg-[#F4ECE1]">
                       <img
                         src={art.coverImage}
                         alt={title}
@@ -155,7 +155,7 @@ export default function ArticlesPage({ lang, setLang }) {
                         </div>
 
                         <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-3 text-[#1D1510] group-hover:text-[#FF5500] transition-colors leading-snug">
-                          <a href={`#/bai-viet/${art.slug}`}>{title}</a>
+                          <a href={`/bai-viet/${art.slug}`}>{title}</a>
                         </h2>
 
                         <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">
@@ -193,7 +193,7 @@ export default function ArticlesPage({ lang, setLang }) {
                           </div>
 
                           <a
-                            href={`#/bai-viet/${art.slug}`}
+                            href={`/bai-viet/${art.slug}`}
                             className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#FF5500] hover:translate-x-0.5 transition-transform"
                           >
                             <span>{lang === "vi" ? "Đọc tiếp" : "Read more"}</span>
