@@ -32,12 +32,12 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
 
   const navLinks = [
     { label: t(lang, "nav_model"), href: "#model" },
-    { label: t(lang, "nav_ventures"), href: "#/san-pham", active: activeRoute === "products" },
+    { label: t(lang, "nav_ventures"), href: "/san-pham", active: activeRoute === "products" },
     { label: t(lang, "nav_services"), href: "#services" },
     { label: t(lang, "nav_team"), href: "#team" },
     {
       label: lang === "vi" ? "Kiến thức & Case Studies" : "Insights",
-      href: "#/bai-viet",
+      href: "/bai-viet",
       active: activeRoute === "articles",
     },
     { label: t(lang, "nav_contact"), href: "#contact" },
@@ -58,7 +58,7 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
         <nav className="top-nav">
           <a href="#model">{t(lang, "nav_model")}</a>
           <a
-            href="#/san-pham"
+            href="/san-pham"
             style={activeRoute === "products" ? { color: "var(--orange-deep)", fontWeight: 700 } : {}}
           >
             {t(lang, "nav_ventures")}
@@ -66,7 +66,7 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
           <a href="#services">{t(lang, "nav_services")}</a>
           <a href="#team">{t(lang, "nav_team")}</a>
           <a
-            href="#/bai-viet"
+            href="/bai-viet"
             style={activeRoute === "articles" ? { color: "var(--orange-deep)", fontWeight: 700 } : {}}
           >
             {lang === "vi" ? "Kiến thức" : "Insights"}

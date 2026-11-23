@@ -23,6 +23,10 @@ import {
 import Breadcrumb from "./Breadcrumb";
 import HeaderNav from "./HeaderNav";
 import { pick, t, TEAM, TEAM_CV } from "../data/i18n";
+import {
+  BRANDHUB_ARTICLES_BY_MEMBER,
+  BRANDHUB_ARTICLE_COUNT_BY_MEMBER,
+} from "../data/brandhubArticles";
 
 const tx = (lang, v) => (typeof v === "string" ? v : pick(lang, v.vi, v.en));
 
@@ -61,6 +65,8 @@ export default function MemberPage({ id, lang, setLang }) {
   const prev = TEAM[(i - 1 + TEAM.length) % TEAM.length];
   const next = TEAM[(i + 1) % TEAM.length];
   const pad = (n) => String(n).padStart(2, "0");
+  const articles = BRANDHUB_ARTICLES_BY_MEMBER[m.id] ?? [];
+  const articleCount = BRANDHUB_ARTICLE_COUNT_BY_MEMBER[m.id] ?? 0;
 
   return (
     <div className="font-space bg-white text-[#1D1510] min-h-screen relative antialiased selection:bg-[#FF5500] selection:text-white">
@@ -276,11 +282,49 @@ export default function MemberPage({ id, lang, setLang }) {
                   ))}
                 </div>
               </div>
+
+              {articles.length > 0 && (
+                <div className="cv-section-box">
+                  <h2 className="cv-h flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-[#FF5500] shrink-0" />
+                    <span>
+                      {pick(
+                        lang,
+                        `Bài viết trên BrandHub Blog (${articleCount})`,
+                        `Articles on the BrandHub Blog (${articleCount})`,
+                      )}
+                    </span>
+                  </h2>
+                  <ul className="space-y-2 text-sm">
+                    {articles.map((a) => (
+                      <li key={a.url}>
+                        <a
+                          href={a.url}
+                          target="_blank"
+                          rel="noopener"
+                          className="inline-flex items-start gap-1.5 hover:text-[#FF5500] hover:underline"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                          <span>{a.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="https://brandhub.id.vn/blog"
+                    target="_blank"
+                    rel="noopener"
+                    className="mt-3 inline-block text-sm font-semibold text-[#FF5500] hover:underline"
+                  >
+                    {pick(lang, "Xem toàn bộ Blog BrandHub", "Browse the BrandHub Blog")}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
           <nav className="cv-nav">
-            <a className="btn-spec btn-ghost flex items-center gap-1.5" href={`#/doi-ngu/${prev.id}`}>
+            <a className="btn-spec btn-ghost flex items-center gap-1.5" href={`/doi-ngu/${prev.id}`}>
               <ChevronLeft className="w-4 h-4 shrink-0" />
               <span>{t(lang, "cv_prev")}</span>{" "}
               <span className="cv-nav-name">{prev.name}</span>
@@ -288,7 +332,7 @@ export default function MemberPage({ id, lang, setLang }) {
             <div className="cv-nav-counter mono">
               {pad(i + 1)} / {pad(TEAM.length)}
             </div>
-            <a className="btn-spec btn-solid flex items-center gap-1.5" href={`#/doi-ngu/${next.id}`}>
+            <a className="btn-spec btn-solid flex items-center gap-1.5" href={`/doi-ngu/${next.id}`}>
               <span className="cv-nav-name">{next.name}</span>{" "}
               <span>{t(lang, "cv_next")}</span>
               <ChevronRight className="w-4 h-4 shrink-0" />

@@ -31,7 +31,7 @@ export default function ProductDetail({ id, lang, setLang }) {
           <Breadcrumb
             items={[
               { label: t(lang, 'nav_home'), href: '#top' },
-              { label: t(lang, 'nav_products'), href: '#/san-pham' },
+              { label: t(lang, 'nav_products'), href: '/san-pham' },
               { label: p.title },
             ]}
           />
@@ -152,11 +152,11 @@ export default function ProductDetail({ id, lang, setLang }) {
           )}
 
           <nav className="cv-nav">
-            <a className="btn-spec btn-ghost flex items-center gap-1.5" href={`#/san-pham/${prev.id}`}>
+            <a className="btn-spec btn-ghost flex items-center gap-1.5" href={`/san-pham/${prev.id}`}>
               <ChevronLeft className="w-4 h-4 shrink-0" />
               <span>{t(lang, 'cv_prev')}</span> <span className="cv-nav-name">{prev.title}</span>
             </a>
-            <a className="btn-spec btn-solid flex items-center gap-1.5" href={`#/san-pham/${next.id}`}>
+            <a className="btn-spec btn-solid flex items-center gap-1.5" href={`/san-pham/${next.id}`}>
               <span className="cv-nav-name">{next.title}</span> <span>{t(lang, 'cv_next')}</span>
               <ChevronRight className="w-4 h-4 shrink-0" />
             </a>
