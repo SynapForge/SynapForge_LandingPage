@@ -80,6 +80,14 @@ export default function FlagshipVenturesSection({ t }) {
                     Brand Voice và lập lịch đăng tự động lên Facebook, TikTok,
                     Instagram, Threads, Zalo với 0% tỷ lệ rớt tin nhắn.
                   </p>
+                  <a
+                    href="https://brandhub.id.vn/"
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-1.5 mb-6 text-sm font-semibold text-[#FF5500] hover:underline"
+                  >
+                    Truy cập nền tảng BrandHub — brandhub.id.vn
+                  </a>
 
                   {/* Microservices breakdown */}
                   <div className="space-y-3 mb-8">

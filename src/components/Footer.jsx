@@ -104,7 +104,7 @@ export default function Footer({ t }) {
             </div>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
               <li>
-                <a href="#ventures" className="hover:text-[#FF5500] transition-colors flex items-center justify-between group">
+                <a href="https://brandhub.id.vn/" target="_blank" rel="noopener" className="hover:text-[#FF5500] transition-colors flex items-center justify-between group">
                   <span>BrandHub (B2B SaaS MarTech)</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#FF5500]" />
                 </a>
