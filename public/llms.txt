@@ -17,9 +17,9 @@
 4. **Hệ thống Backend Hiệu năng cao:** Chuyên sâu .NET 8 Clean Architecture, Java Spring Boot, RabbitMQ, Redis Caching, PostgreSQL.
 
 ## Dự án tiêu biểu & Sản phẩm Flagship (Proof of Work)
-- **BienSoVip (https://biensovip.com):** Sàn giao dịch & tra cứu biển số xe định danh tốc độ cao. CSDL 61 bảng, tìm kiếm đa tiêu chí < 8ms, tích hợp thanh toán VietQR tự động.
-- **BrandHub AI:** Nền tảng AI MarTech tự động hóa sáng tạo và phân phối nội dung đa kênh, kiến trúc microservices và GraphRAG.
-- **STEMGO:** Nền tảng giáo dục STEM kết nối phần cứng I/O thông minh.
+- **BienSoVip (https://biensovip.com):** Sàn giao dịch biển số xe định danh cao cấp cho chuyên gia Duy Đinh (63 tỉnh thành). Kiến trúc .NET 8 Clean Architecture, 86 bảng PostgreSQL 16, 57 nhóm API, VPA Price Engine (UC49), tìm kiếm đa tiêu chí < 8ms, khóa cọc 15 phút VietQR Napas247 / ZaloPay & AI LiveChat.
+- **BrandHub (https://brandhub.id.vn):** Nền tảng B2B2C quản trị Agency đa Workspace & xuất bản đa kênh AI (7 microservices, 9 phân hệ, 141 chức năng SRS, 6 vai trò chuẩn: Guest, Owner, Manager, Creator, Client, Admin), Hybrid GraphRAG (Neo4j + ChromaDB), Social Trend Crawler, RabbitMQ DLQ xuất bản tự động lên Facebook, Instagram, TikTok, Threads & SePay VietQR.
+- **The MC Hub & ThreadLearn (ICTA 2026):** Hệ sinh thái EdTech luyện giọng AI (87 MCs, 101 bài luyện tập) và mô hình nghiên cứu sửa lỗi concurrency JavaScript (73.3% pass rate).
 
 ## Cam kết kỹ thuật & Chuẩn mực bàn giao
 - Bàn giao 100% mã nguồn (Source Code Ownership), tài liệu API Swagger chuẩn chỉ.

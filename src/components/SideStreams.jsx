@@ -14,14 +14,14 @@ import { pick } from '../data/i18n';
 // Left: flagship ventures (images verified against real screenshots)
 const leftProjects = [
   {
-    id: 'brandhub', tag: 'FLAGSHIP', title: 'BrandHub AI MarTech', img: '/stream/brandhub.jpg',
-    line: { vi: 'Tự viết & đăng bài lên 5 MXH', en: 'Auto-writes & posts to 5 social platforms' },
-    stat: { vi: '0% mất bài đăng', en: '0% lost posts' },
+    id: 'brandhub', tag: 'FLAGSHIP · 141 FRs', title: 'BrandHub AI MarTech', img: '/stream/brandhub.png',
+    line: { vi: 'Quản trị Agency, GraphRAG & tự đăng 4 MXH', en: 'Agency OS, GraphRAG & 4-channel auto-publish' },
+    stat: { vi: '6 vai trò · 0% rớt lịch', en: '6 roles · 0% drop rate' },
   },
   {
-    id: 'biensovip', tag: 'MARKETPLACE', title: 'BienSoVip', img: '/stream/biensovip.jpg',
-    line: { vi: 'Sàn biển số — khớp cọc VietQR 0.5s', en: 'Plate marketplace — VietQR match in 0.5s' },
-    stat: { vi: 'Truy vấn < 8ms', en: 'Queries < 8ms' },
+    id: 'biensovip', tag: 'MARKETPLACE · VPA', title: 'BienSoVip', img: '/stream/biensovip.png',
+    line: { vi: 'Sàn biển số & định giá VPA — giữ chỗ 15p', en: 'VIP plate vault & VPA engine — 15m lock' },
+    stat: { vi: '86 bảng DB · lọc < 8ms', en: '86 DB tables · < 8ms' },
   },
   {
     id: 'threadlearn', tag: 'RESEARCH', title: 'ThreadLearn', img: '/stream/threadlearn.jpg',
@@ -58,20 +58,20 @@ function Card({ href, img, alt, tag, badge, title, line, foot }) {
   return (
     <a
       href={href}
-      className="relative rounded-[2px] bg-white border border-[#E4DAC6] hover:border-[#FF5500] transition-colors duration-200 block group/card overflow-hidden"
+      className="relative rounded-[2px] bg-white border border-[#E4DAC6] hover:border-[#b83700] transition-colors duration-200 block group/card overflow-hidden"
     >
       <img src={img} alt={alt} loading="lazy" className="w-full aspect-[16/10] object-cover object-top border-b border-[#E4DAC6]" />
       <div className="p-3.5">
-        <div className="flex items-center justify-between mb-1.5">
-          <span className="text-[10px] font-mono text-[#FF5500] font-bold tracking-wider">{tag}</span>
+        <div className="flex items-center justify-between mb-1.5 gap-2">
+          <span className="text-[11.5px] font-mono text-[#b83700] font-bold tracking-wider">{tag}</span>
           {badge && (
-            <span className="text-[9.5px] font-mono bg-[#FF5500]/10 text-[#FF5500] px-1.5 py-0.5 rounded-[2px] font-bold">{badge}</span>
+            <span className="text-[11.5px] font-mono bg-[#f4efe4] text-[#b83700] px-1.5 py-0.5 rounded-[2px] font-bold">{badge}</span>
           )}
         </div>
-        <h4 className="text-[14px] font-bold text-[#1D1510] group-hover/card:text-[#FF5500] transition-colors mb-1 font-mono leading-snug">
+        <h4 className="text-[14px] font-bold text-[#1D1510] group-hover/card:text-[#b83700] transition-colors mb-1 font-mono leading-snug">
           {title}
         </h4>
-        <p className="text-[12px] text-[#6E5F52] leading-snug">{line}</p>
+        <p className="text-[12px] text-[#524336] leading-snug">{line}</p>
         <div className="mt-2.5 pt-2 border-t border-[#E4DAC6] text-[11.5px] font-mono font-bold text-[#1D1510]">{foot}</div>
       </div>
     </a>
@@ -92,26 +92,21 @@ export default function SideStreams({ lang = 'vi' }) {
       >
         <div className="px-3 py-2 rounded-[2px] bg-white border border-[#1D1510] flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#FF5500] animate-pulse"></span>
-            <span className="text-[10.5px] font-mono font-bold tracking-wider uppercase text-[#1D1510]">
+            <span className="w-2 h-2 rounded-full bg-[#16a34a]" aria-hidden="true"></span>
+            <span className="text-[11.5px] font-mono font-bold tracking-wider uppercase text-[#1D1510]">
               {lang === 'en' ? 'Shipped' : 'Thực chiến'}
             </span>
           </div>
-          <span className="text-[9px] font-mono text-[#FF5500] bg-[#FF5500]/10 px-1.5 py-0.5 rounded-[2px] border border-[#FF5500]/30 font-bold">
+          <span className="text-[11.5px] font-mono text-[#b83700] bg-[#f4efe4] px-1.5 py-0.5 rounded-[2px] border border-[#dfd4be] font-bold">
             VENTURES
           </span>
         </div>
 
-        <div className="relative h-[calc(100vh-150px)] overflow-hidden mask-gradient-y">
-          <div
-            className="flex flex-col gap-3 animate-marquee-y group-hover/stream:[animation-play-state:paused] will-change-transform"
-            style={{ animationDuration: '44s' }}
-          >
-            {x4(leftProjects).map((it, idx) => (
-              <Card key={idx} href={`/san-pham/${it.id}`} img={it.img} alt={it.title} tag={it.tag}
-                title={it.title} line={p(it.line)} foot={<span className="text-[#E04B00]">{p(it.stat)}</span>} />
-            ))}
-          </div>
+        <div className="relative max-h-[calc(100vh-150px)] overflow-y-auto flex flex-col gap-3 pr-1">
+          {leftProjects.map((it) => (
+            <Card key={it.id} href={`/san-pham/${it.id}`} img={it.img} alt={it.title} tag={it.tag}
+              title={it.title} line={p(it.line)} foot={<span className="text-[#b83700]">{p(it.stat)}</span>} />
+          ))}
         </div>
       </div>
 
@@ -123,34 +118,30 @@ export default function SideStreams({ lang = 'vi' }) {
       >
         <div className="px-3 py-2 rounded-[2px] bg-white border border-[#1D1510] flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Zap className="w-3 h-3 text-[#FF5500]" />
-            <span className="text-[10.5px] font-mono font-bold tracking-wider uppercase text-[#1D1510]">
+            <Zap className="w-3.5 h-3.5 text-[#c83e00]" />
+            <span className="text-[11.5px] font-mono font-bold tracking-wider uppercase text-[#1D1510]">
               {lang === 'en' ? 'Packages' : 'Gói dịch vụ'}
             </span>
           </div>
-          <span className="text-[9px] font-mono text-[#6E5F52] bg-[#F4EFE4] px-1.5 py-0.5 rounded-[2px] font-bold">
+          <span className="text-[11.5px] font-mono text-[#524336] bg-[#F4EFE4] px-1.5 py-0.5 rounded-[2px] font-bold">
             SERVICES
           </span>
         </div>
 
-        <div className="relative h-[calc(100vh-150px)] overflow-hidden mask-gradient-y">
-          <div
-            className="flex flex-col gap-3 animate-marquee-y group-hover/stream:[animation-play-state:paused] will-change-transform"
-            style={{ animationDuration: '50s' }}
-          >
-            {x4(rightServices).map((it, idx) => (
-              <Card key={idx} href="#contact" img={it.img} alt={p(it.title)} tag={it.tag} badge={p(it.badge)}
-                title={p(it.title)} line={p(it.line)}
-                foot={<span className="flex justify-between"><span className="text-[#6E5F52] font-normal">{lang === 'en' ? 'Timeline' : 'Tiến độ'}</span><span className="text-[#FF5500]">{p(it.time)}</span></span>} />
-            ))}
-          </div>
+        <div className="relative max-h-[calc(100vh-150px)] overflow-y-auto flex flex-col gap-3 pl-1">
+          {rightServices.map((it) => (
+            <Card key={it.id} href="#estimator" img={it.img} alt={p(it.title)} tag={it.tag} badge={p(it.badge)}
+              title={p(it.title)} line={p(it.line)}
+              foot={<span className="flex justify-between"><span className="text-[#524336] font-normal">{lang === 'en' ? 'Timeline' : 'Tiến độ'}</span><span className="text-[#b83700]">{p(it.time)}</span></span>} />
+          ))}
         </div>
       </div>
 
       {/* Docking toggle */}
       <button
+        type="button"
         onClick={() => setCollapsed(!collapsed)}
-        className="fixed bottom-6 right-6 z-40 p-2 rounded-[2px] bg-white text-[#1D1510] border border-[#1D1510] hover:bg-[#FF5500] hover:text-white transition-colors pointer-events-auto text-[10px] font-mono flex items-center gap-1"
+        className="fixed bottom-6 right-6 z-40 px-3 py-2 min-h-[36px] rounded-[2px] bg-white text-[#1D1510] border border-[#1D1510] hover:bg-[#c83e00] hover:text-white transition-colors pointer-events-auto text-[11.5px] font-mono font-bold flex items-center gap-1.5"
         title={collapsed ? 'Show streams' : 'Hide streams'}
       >
         <Layers className="w-3.5 h-3.5" />

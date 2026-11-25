@@ -16,7 +16,7 @@ export default function Breadcrumb({ items = [] }) {
             >
               {index > 0 && (
                 <ChevronRight
-                  className="w-3 h-3 text-[#A0988E] mx-1 inline-block shrink-0"
+                  className="w-3 h-3 text-[#524336] mx-1 inline-block shrink-0"
                   aria-hidden="true"
                 />
               )}
@@ -25,10 +25,13 @@ export default function Breadcrumb({ items = [] }) {
                   {item.label}
                 </span>
               ) : (
-                <a href={item.href} className="sf-breadcrumb-link flex items-center gap-1.5">
+                <a
+                  href={item.href === "#top" ? "/" : item.href}
+                  className="sf-breadcrumb-link flex items-center gap-1.5"
+                >
                   {index === 0 && (
                     <Home
-                      className="w-3.5 h-3.5 text-[#FF5500] shrink-0"
+                      className="w-3.5 h-3.5 text-[#c83e00] shrink-0"
                       aria-hidden="true"
                     />
                   )}

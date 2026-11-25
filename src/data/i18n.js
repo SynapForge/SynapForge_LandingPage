@@ -50,8 +50,8 @@ export const T = {
   engine1_badge: { vi: "50% IN-HOUSE · PRODUCE", en: "50% IN-HOUSE · PRODUCE" },
   engine1_title: { vi: "Động cơ 1: Sản phẩm nội bộ", en: "Engine 1: In-House Ventures" },
   engine1_sub: {
-    vi: "BrandHub, BienSoVip, AI Film Platform...",
-    en: "BrandHub, BienSoVip, AI Film Streaming...",
+    vi: "BrandHub OS (brandhub.id.vn), BienSoVip (biensovip.com), The MC Hub...",
+    en: "BrandHub OS (brandhub.id.vn), BienSoVip (biensovip.com), The MC Hub...",
   },
   engine1_desc: {
     vi: "Phát triển các nền tảng thương mại điện tử và công cụ AI phục vụ người dùng thực tế. Trực tiếp xử lý các bài toán kỹ thuật phức tạp: tự động đối soát giao dịch, khóa chống xung đột đơn hàng và bảo mật dữ liệu.",
@@ -129,16 +129,16 @@ export const T = {
     vi: "Giải pháp thực tế cho doanh nghiệp vừa & nhỏ — chuẩn hóa quy trình vận hành và tiết kiệm chi phí công nghệ.",
     en: "End-to-end solutions for SMEs — streamlining operations and saving technology costs.",
   },
-  cta_ventures: { vi: "Xem dự án thật", en: "See real projects" },
-  cta_contact: { vi: "Báo giá trong 24h", en: "Quote in 24h" },
+  cta_ventures: { vi: "Xem sản phẩm chạy thật", en: "See real projects" },
+  cta_contact: { vi: "Dự toán & Báo giá 24h", en: "Estimate & Quote in 24h" },
   dual_label: { vi: "02 định hướng:", en: "02 engines:" },
   dual_1: {
-    vi: "■ Sản phẩm tự phát triển — BrandHub, BienSoVip",
-    en: "■ In-house ventures — BrandHub, BienSoVip",
+    vi: "Sản phẩm tự phát triển — BrandHub & BienSoVip",
+    en: "In-house ventures — BrandHub & BienSoVip",
   },
   dual_2: {
-    vi: "■ Dịch vụ phát triển phần mềm cho doanh nghiệp",
-    en: "■ Enterprise client engineering",
+    vi: "Dịch vụ phát triển phần mềm cho doanh nghiệp",
+    en: "Enterprise client engineering",
   },
 
   ety_syn: {
@@ -208,6 +208,9 @@ export const T = {
   team_note: { vi: "05 kỹ sư phần mềm FPT / FSoft", en: "05 FPT / FSoft software engineers" },
   faq_title: { vi: "Câu hỏi thường gặp", en: "Frequently asked questions" },
   faq_note: { vi: "4 câu phổ biến nhất", en: "4 most common questions" },
+  est_kicker: { vi: "// D2 — BẢNG GIÁ & DỰ TOÁN PHẠM VI", en: "// D2 — PACKAGES & SCOPE ESTIMATOR" },
+  est_title: { vi: "Bảng giá minh bạch & Dự toán chi phí", en: "Transparent Packages & Live Scope Estimator" },
+  est_note: { vi: "Ký quỹ 40/60 · Bàn giao 100% Git Source Code", en: "40/60 Milestone Escrow · 100% Source Ownership" },
   contact_title: { vi: "Bắt đầu dự án", en: "Start a project" },
   contact_note: { vi: "Phản hồi trong 24h", en: "Response within 24h" },
   contact_phone: { vi: "Điện thoại", en: "Phone" },
@@ -264,168 +267,195 @@ export const CASES = [
   {
     id: "brandhub",
     rev: false,
-    kicker: "CASE 01 — AI MARTECH & PUBLISHER",
+    kicker: "CASE 01 — AGENCY OS & AI MARTECH",
     title: "BrandHub",
+    url: "https://brandhub.id.vn",
+    subLinks: [
+      {
+        label: { vi: "BrandHub Academy (32 Video)", en: "Video Academy (32 Lessons)" },
+        href: "https://brandhub.id.vn/academy",
+      },
+      {
+        label: { vi: "100 Bài Blog Chuyên Sâu", en: "100 Deep-Dive Articles" },
+        href: "https://brandhub.id.vn/blog",
+      },
+    ],
     tag: {
-      vi: "Hỗ trợ soạn thảo & lập lịch đăng nội dung lên 5 nền tảng mạng xã hội",
-      en: "Automated content drafts & multi-platform scheduling",
+      vi: "Nền tảng quản trị Agency đa Workspace, sáng tạo AI GraphRAG & xuất bản 4 mạng xã hội",
+      en: "Multi-workspace Agency OS, GraphRAG AI Studio & automated 4-channel publishing",
     },
     desc: {
-      vi: "Tự động phân tích phong cách thương hiệu từ bài viết cũ, hỗ trợ tạo nội dung và lên lịch xuất bản trên 5 mạng xã hội — giúp tối ưu chi phí vận hành cho phòng marketing.",
-      en: "Analyzes brand tone to generate content drafts and schedule posts across 5 platforms — significantly reducing manual overhead for marketing teams.",
+      vi: "Hệ điều hành B2B2C cho Agency truyền thông & Nhãn hàng gồm 9 phân hệ và 141 chức năng chuẩn SRS: từ đàm phán Gói truyền thông (Media Package), phê duyệt 2 cấp (Creator → Manager → Client), AI Studio Neo4j GraphRAG + Social Trend Crawler đến xuất bản tự động qua RabbitMQ DLQ lên Facebook, Instagram, TikTok, Threads và thanh toán SePay VietQR.",
+      en: "B2B2C operating system for Digital Agencies & Brands across 9 modules and 141 atomic SRS features: Media Package proposals, multi-tier dual approvals (Creator → Manager → Client), Neo4j GraphRAG + Social Trend Crawler, RabbitMQ DLQ publishing to Facebook, Instagram, TikTok & Threads, and automated SePay VietQR billing.",
     },
     problem: [
       {
-        vi: "Lệch tông thương hiệu (Brand Voice Drifting): Khi thuê nhiều copywriter hoặc CTV ngoài, nội dung thường thiếu đồng nhất về cá tính và dễ vi phạm từ cấm của thương hiệu.",
-        en: "Brand Voice Drifting: Outsourced copywriters often produce inconsistent copy that breaches brand identity and prohibited terms.",
+        vi: "Phân mảnh công cụ & rò rỉ dữ liệu đa nhãn hàng: Agency phải ghép 5–7 công cụ rời (Jira, Notion, Drive, Trello, Zalo, Buffer) dẫn đến thất lạc tài sản thương hiệu và nguy cơ lộ dữ liệu giữa các Client cùng ngành.",
+        en: "Fragmented toolchains & multi-brand data leakage: Agencies juggle 5–7 disconnected tools (Jira, Notion, Drive, chat, schedulers), causing lost brand assets and cross-client privacy risks.",
       },
       {
-        vi: "Rớt lịch & mất bài đăng khi xuất bản thủ công: Đăng bài đồng thời lên 5 nền tảng ngốn hàng trăm giờ làm việc; khi mạng lag hoặc API rate limit, bài viết bị mất mà không có cảnh báo.",
-        en: "Dropped posts & bottlenecked publishing: Manual multi-platform posting consumes hundreds of hours; API rate limits often silently drop scheduled posts.",
+        vi: "Lệch giọng thương hiệu & thiếu kiểm duyệt an toàn: Nội dung do nhiều Creator viết dễ sai Brand Guidelines, vi phạm từ cấm hoặc dính lỗi tiêu chuẩn cộng đồng khi đưa thẳng cho Client.",
+        en: "Brand voice drift & compliance gaps: Multi-creator copywriting deviates from brand tone guidelines and risks community policy violations before client sign-off.",
       },
       {
-        vi: "Chi phí API LLM thương mại quá đắt đỏ: Dùng trực tiếp API GPT-4 cho hàng ngàn bài viết đa kênh khiến chi phí vận hành phình to mất kiểm soát.",
-        en: "Excessive commercial LLM API costs: Running direct GPT-4 queries across thousands of multi-tenant posts creates unsustainable cloud expenses.",
+        vi: "Thất thoát lịch đăng giờ vàng & chi phí LLM cao: Xuất bản thủ công lên 4 mạng xã hội dễ lỡ nhịp chiến dịch khi API gián đoạn; gọi LLM thô không có đồ thị tri thức gây ảo giác và đội chi phí.",
+        en: "Missed peak schedules & high LLM burn: Manual 4-channel publishing drops posts during API hiccups, while raw LLM calls hallucinate product facts at high token costs.",
       },
     ],
     solution: [
       {
-        vi: "Kiến trúc 7 Microservices phân tán: Tách biệt hoàn toàn API Gateway (WebFlux), Business (Java 21), AI Service (FastAPI) và Publisher Worker chịu tải cao.",
-        en: "7 Distributed Microservices: Complete decoupling of WebFlux Gateway, Java 21 Business Core, FastAPI AI engine, and Async Publisher.",
+        vi: "Kiến trúc 07 Microservices + RBAC 6 vai trò chuẩn (Guest, Owner, Manager, Creator, Client, Admin): Cô lập dữ liệu chặt chẽ từng Agency & Workspace, quản lý công việc 4 chế độ (Danh sách, Lịch, Kanban, Gantt) và nhật ký Audit Log bất biến.",
+        en: "07 Decoupled Microservices + 6 Canonical RBAC Roles (Guest, Owner, Manager, Creator, Client, Admin): Strict multi-workspace isolation, 4-view task engine (List, Calendar, Kanban, Gantt), and immutable Audit Logs.",
       },
       {
-        vi: "Brand Voice RAG + GraphRAG Neo4j: ChromaDB lưu chuẩn giọng điệu thương hiệu; Neo4j kết nối Thực thể - Xu hướng - KOLs giúp bài viết sắc sảo, chống ảo giác.",
-        en: "Brand Voice RAG + Neo4j GraphRAG: Vector store ChromaDB preserves tone guidelines; Neo4j links Entities - Trends - KOLs for hallucination-free generation.",
+        vi: "Media Package → Media Campaign & Duyệt đa cấp + Content Locking: Đàm phán báo giá Proposal 2 chiều không cần đăng nhập, chuyển 1 chạm thành chiến dịch; khóa bản nháp chống sửa đè kèm Live Preview chuẩn 4 kênh và Check Compliance Content tự động.",
+        en: "Media Package → Media Campaign & Dual-Tier Approval + Content Locking: Interactive 2-way proposal negotiation converting in 1 click into tasks; locked draft revisions with 4-platform Live Preview and automated compliance checks.",
       },
       {
-        vi: "Hàng đợi tin cậy RabbitMQ DLQ: Tự động thử lại lũy thừa (Exponential Backoff sau 5s, 15s, 45s), cam kết 0% mất bài đăng khi mạng xã hội lỗi.",
-        en: "RabbitMQ Dead Letter Queue (DLQ): Automated Exponential Backoff retries (5s, 15s, 45s) guaranteeing 0% dropped posts even during third-party outages.",
+        vi: "AI Marketing Studio (Hybrid GraphRAG Neo4j + ChromaDB): Đọc hiểu Brand Guidelines PDF/DOCX, Social Trend Crawler cào TikTok Creative Center & Google Trends theo thời gian thực, tạo ảnh thương mại, video dọc 9:16 và đại sứ ảo LoRA.",
+        en: "AI Marketing Studio (Hybrid GraphRAG Neo4j + ChromaDB): Grounds copy in Brand Guidelines PDFs, real-time Social Trend Crawler (TikTok Creative Center & Google Trends), commercial image/9:16 short video gen, and LoRA brand ambassadors.",
       },
       {
-        vi: "Dual-LLM Engine tối ưu chi phí: Sinh bài siêu tốc bằng Groq Llama 3 và tự động fallback sang Claude 3.5 Sonnet cho phân tích chiến lược chuyên sâu.",
-        en: "Cost-optimized Dual-LLM: Ultra-fast generation with Groq Llama 3 and seamless fallback to Claude 3.5 Sonnet for strategic analysis.",
+        vi: "Xuất bản OAuth 2.0 AES-256 + RabbitMQ DLQ & SePay VietQR: Kết nối an toàn Facebook, Instagram, TikTok, Threads với retry lũy thừa 0% rớt lịch; nâng cấp gói (Starter/Pro/Enterprise) và nạp AI Credits tức thì qua SePay VietQR.",
+        en: "AES-256 OAuth Publishing + RabbitMQ DLQ & SePay VietQR: Securely dispatches to Facebook, Instagram, TikTok & Threads with exponential backoff (0% drop rate), paired with instant SePay VietQR plan upgrades & AI Credit top-ups.",
       },
     ],
     feats: [
       {
-        vi: "Tự học văn phong thương hiệu từ bài viết cũ — tạo nội dung bám sát định hướng doanh nghiệp",
-        en: "Learns Brand Voice from existing posts — diverse copy aligned with brand guidelines",
+        vi: "141 chức năng chuẩn SRS trên 9 phân hệ — quản trị đa Agency, đa Workspace & Media Package 2 chiều",
+        en: "141 atomic SRS features across 9 modules — multi-agency workspaces & 2-way Media Package negotiation",
       },
       {
-        vi: "Lập lịch đăng tự động lên Facebook, TikTok, Instagram, Threads, Zalo",
-        en: "Automated post scheduling to Facebook, TikTok, Instagram, Threads, Zalo",
+        vi: "AI Studio GraphRAG (Neo4j + ChromaDB) + Social Trend Crawler bắt sóng TikTok & Google Trends thời gian thực",
+        en: "GraphRAG AI Studio (Neo4j + ChromaDB) + real-time TikTok & Google Trends crawler",
       },
       {
-        vi: "Hàng đợi tin cậy (RabbitMQ) — tự động xử lý lại khi có lỗi mạng, đảm bảo không bỏ sót bài đăng",
-        en: "RabbitMQ Dead Letter Queue (DLQ) — automated retries to prevent dropped posts",
+        vi: "Duyệt bài Creator → Manager → Client, Check Compliance Content & tự đăng 4 kênh (FB, IG, TikTok, Threads) qua RabbitMQ DLQ",
+        en: "Multi-tier Creator → Manager → Client approvals, compliance guardrails & RabbitMQ DLQ auto-publishing to FB, IG, TikTok & Threads",
       },
     ],
     stats: [
-      { v: "07", l: { vi: "Microservices", en: "Microservices" } },
-      { v: "0%", l: { vi: "Tỷ lệ sót bài (DLQ)", en: "Post drop rate (DLQ)" } },
-      { v: "05", l: { vi: "Mạng xã hội tích hợp", en: "Integrated social platforms" } },
-      { v: "430+", l: { vi: "Tasks hoàn thành", en: "Tasks completed" } },
+      { v: "07", l: { vi: "Microservices độc lập", en: "Decoupled microservices" } },
+      { v: "141", l: { vi: "Chức năng chuẩn SRS", en: "Atomic SRS features" } },
+      { v: "04", l: { vi: "MXH OAuth AES-256", en: "OAuth social channels" } },
+      { v: "0%", l: { vi: "Tỷ lệ rớt lịch (DLQ)", en: "Dropped schedules (DLQ)" } },
     ],
     chips: [
-      "Java 21",
+      "Java 21 & Spring Boot 3",
       "Spring Cloud Gateway",
-      "RabbitMQ DLQ",
-      "Neo4j GraphRAG",
       "Python FastAPI",
-      "React 18",
+      "Neo4j GraphRAG",
+      "ChromaDB",
+      "RabbitMQ DLQ",
+      "React 19 + TS",
+      "SePay VietQR",
     ],
-    img: "/mockup/img/DA-D19-12.png",
-    alt: "BrandHub dashboard",
-    fig: ["FIG. 02 — BrandHub", "Dashboard"],
+    img: "/products/brandhub/01-publishing.png",
+    alt: "BrandHub publishing dashboard across 4 social channels",
+    fig: ["FIG. 02 — BrandHub OS", "brandhub.id.vn"],
     gallery: [
-      "/products/brandhub/01.jpg",
-      "/products/brandhub/02.jpg",
-      "/products/brandhub/03.jpg",
-      "/products/brandhub/04.jpg",
+      "/products/brandhub/01-publishing.png",
+      "/products/brandhub/02-graphrag-neo4j.png",
+      "/products/brandhub/03-ai-trend-crawler.png",
+      "/products/brandhub/04-kanban-workflow.png",
+      "/products/brandhub/05-workspace-rbac.png",
     ],
   },
   {
     id: "biensovip",
     rev: true,
-    kicker: "CASE 02 — LUXURY MARKETPLACE",
+    kicker: "CASE 02 — LUXURY MARKETPLACE & VPA ENGINE",
     title: "BienSoVip",
+    url: "https://biensovip.com",
+    subLinks: [
+      {
+        label: { vi: "Kho Biển Số & VPA", en: "Live Plate Vault" },
+        href: "https://biensovip.com/danh-sach",
+      },
+      {
+        label: { vi: "Luận Phong Thủy 5 Chiều", en: "5D Feng-Shui Engine" },
+        href: "https://biensovip.com/luan-bien-so",
+      },
+    ],
     tag: {
-      vi: "Sàn giao dịch & đấu giá biển số xe trực tuyến",
-      en: "Specialized online license-plate auction & marketplace",
+      vi: "Sàn giao dịch biển số đẹp, định giá VPA thực tế, phong thủy 5 chiều & giữ chỗ VietQR 15 phút",
+      en: "VIP license-plate marketplace, VPA price engine, 5D feng-shui & 15-min VietQR lock",
     },
     desc: {
-      vi: "Hệ thống tự động đối soát tiền cọc qua VietQR Webhook trong 0.5s kể cả ngoài giờ làm việc. Tích hợp trợ lý AI hỗ trợ giải đáp thông tin khách hàng 24/7.",
-      en: "Automated deposit reconciliation via VietQR Webhook in 0.5s around the clock. Built-in AI assistant answers buyer questions 24/7.",
+      vi: "Nền tảng thương mại điện tử và định giá biển số xe định danh của chuyên gia Duy Đinh (63 tỉnh thành). Vận hành trên kiến trúc .NET 8 Clean Architecture với 86 bảng PostgreSQL 16, lọc đa tiêu chí < 8ms, định giá đối chiếu VPA (UC49), khóa cọc VietQR/ZaloPay 15 phút và Trợ lý AI LiveChat + Livestream TikTok 9:16.",
+      en: "High-performance VIP license-plate marketplace for expert Duy Dinh across all 63 provinces. Engineered on .NET 8 Clean Architecture with 86 PostgreSQL 16 tables, sub-8ms multi-criteria filtering, VPA auction price benchmarking (UC49), 15-min Redis + VietQR/ZaloPay locks, and 24/7 AI LiveChat + 9:16 TikTok Live Assist.",
     },
     problem: [
       {
-        vi: "Độ trễ lọc quá lớn trên kho hàng chục ngàn biển số: Các tiêu chí tìm kiếm phức tạp (tỉnh thành, ngũ quý, tổng điểm phong thủy, không chứa 4 và 7) khiến query mất 3–5 giây, gây nghẽn máy chủ.",
-        en: "High query latency on large inventory: Complex search criteria (provinces, feng-shui sums, avoiding 4 & 7) cause 3–5s bottlenecks on standard databases.",
+        vi: "Nhiễu giá thị trường & thiếu căn cứ đấu giá VPA: Người mua khó kiểm chứng giá trị thực của biển Ngũ Quý, Tứ Quý, Lộc Phát giữa các hội nhóm môi giới thiếu minh bạch.",
+        en: "Opaque pricing & lack of VPA auction benchmarks: Buyers struggle to verify fair market value for VIP plates across fragmented broker groups.",
       },
       {
-        vi: "Nguy cơ bán trùng (Double-Booking): Biển số là tài sản độc bản duy nhất. Nếu hai khách hàng cùng lúc bấm cọc, việc bán trùng gây tranh chấp pháp lý và mất uy tín.",
-        en: "Double-Booking risks: Each license plate is uniquely singular. Simultaneous deposits risk severe legal disputes and reputational damage.",
+        vi: "Độ trễ tìm kiếm & xung đột giữ chỗ tài sản độc bản: Bộ lọc phức tạp theo 63 tỉnh, thế số, ngũ hành dễ gây nghẽn SQL; hai khách cùng đặt cọc một biển độc bản dẫn đến tranh chấp.",
+        en: "Search latency & double-booking risk: Multi-dimensional filters across 63 provinces and feng-shui rules bog down naive queries, while simultaneous deposits on unique plates cause disputes.",
       },
       {
-        vi: "Phí cổng trung gian đắt đỏ & rủi ro đối soát thủ công: Các cổng thanh toán thu 1.5–2.5% trên mỗi giao dịch cọc lớn; đối soát chậm trễ vào ban đêm hoặc ngày lễ.",
-        en: "Expensive gateway fees & manual reconciliation: 1.5–2.5% intermediary fees on high-value deposits, coupled with slow after-hours manual verification.",
+        vi: "Thất thoát tư vấn giờ cao điểm & chốt đơn trên Livestream: Khách hỏi biển theo năm sinh hoặc comment dồn dập trên TikTok Live khó tra cứu và đối soát cọc kịp thời.",
+        en: "Peak-hour consultation & Livestream bottlenecks: Rapid TikTok Live comments asking for birth-year compatibility overwhelm manual lookups and payment verification.",
       },
     ],
     solution: [
       {
-        vi: "Tối ưu chỉ mục PostgreSQL GIN Index: Chuẩn hóa biển số thành vector số học khi import, duy trì tốc độ phản hồi bộ lọc đa tiêu chí < 8ms tức thì.",
-        en: "PostgreSQL GIN Index optimization: Normalizes plate attributes into numerical vectors on ingest, keeping multi-criteria query latency strictly under 8ms.",
+        vi: ".NET 8 Clean Architecture (86 bảng PostgreSQL 16, 57 nhóm API, 82 Services, 12 Background Workers): Kết hợp CQRS Dapper + GIN/Partial Indexing duy trì truy vấn đa tiêu chí < 8ms trên 3 chế độ kho (Biển có sẵn, VPA tuần, VPA tháng).",
+        en: ".NET 8 Clean Architecture (86 PostgreSQL 16 tables, 57 API groups, 82 Services, 12 Workers): CQRS Dapper + GIN/Partial Indexes sustain < 8ms filtering across Ready Stock, Weekly VPA, and Monthly VPA catalogs.",
       },
       {
-        vi: "Khóa phân tán Redis Lock (15 phút): Hệ thống khóa mềm độc quyền trên Redis ngay khi khách bấm cọc, ngăn chặn 100% tình trạng hai khách đặt trùng.",
-        en: "15-minute Redis Distributed Lock: Locks the plate immediately upon deposit initiation, completely eliminating concurrency conflicts and duplicate bookings.",
+        vi: "VPA Crawler & Price Engine (UC49): Tự động thu thập hàng chục nghìn phiên đấu giá VPA thực tế, đối chiếu giá trúng cùng tỉnh/cùng đuôi kèm danh sách bằng chứng và luồng duyệt giá 2 bước.",
+        en: "VPA Crawler & Price Engine (UC49): Periodically ingests national VPA auction results, computing province-and-suffix benchmark prices with up to 50 verifiable auction citations and 2-step approval.",
       },
       {
-        vi: "Động cơ VietQR Webhook khớp lệnh < 0.5s: Tự động bắt giao dịch ngân hàng và khóa biển sang 'ĐÃ CỌC' trong nửa giây với 0đ phí cổng trung gian, 24/7.",
-        en: "Sub-0.5s VietQR Webhook engine: Instant bank transaction webhook matching that locks plate status to 'DEPOSITED' with zero third-party gateway fees.",
+        vi: "Khóa Redis 15 phút + VietQR Napas247 / ZaloPay & SignalR LiveChat: Tự động khớp cọc < 0.5s 24/7, bảo chứng sang tên theo Thông tư 24/2023 & 79/2024/TT-BCA, kèm Trợ lý AI DeepSeek 24/7 chuyển tiếp mượt sang nhân viên LiveChat.",
+        en: "15-min Redis Lock + VietQR Napas247 / ZaloPay & SignalR LiveChat: Sub-0.5s deposit matching 24/7, Circular 24/79 legal compliance, DeepSeek 24/7 AI with seamless human LiveChat handoff.",
       },
       {
-        vi: "Phong thủy Bát Tự Tứ Trụ & Ma trận so sánh 3 biển song song: Thuật toán ngũ hành tương sinh giúp khách hàng quyết định nhanh, tăng tỷ lệ chốt cọc lên 33.3%.",
-        en: "Four Pillars Feng-Shui & 3-Plate Decision Matrix: Automated astrological harmony scoring helps buyers decide quickly, lifting deposit conversions to 33.3%.",
+        vi: "Phong thủy Ngũ hành Hà Đồ 5 chiều, Cổng CTV & TikTok Live Assist 9:16: So sánh đa biển, cổng CTV bậc thang chống gian lận Risk Score, và màn hình 9:16 Safe-Zone tra cứu comment NLP < 30ms + phím tắt VFX/SFX.",
+        en: "5D Ha Do Feng-Shui, CTV Portal & 9:16 TikTok Live Assist: Side-by-side plate comparison, Risk-Scored affiliate commissions, and a 9:16 Safe-Zone live console with < 30ms NLP comment lookup & VFX/SFX hotkeys.",
       },
     ],
     feats: [
       {
-        vi: "Đối soát & khớp tiền cọc tự động qua VietQR Webhook — không tốn chi phí cổng trung gian",
-        en: "Automated deposit matching via VietQR Webhook — zero intermediary gateway fees",
+        vi: "86 bảng PostgreSQL 16 + CQRS Dapper & GIN Index — lọc đa tiêu chí < 8ms trên kho >3.240 biển & dữ liệu VPA",
+        en: "86 PostgreSQL 16 tables + CQRS Dapper & GIN Index — < 8ms filtering across >3,240 plates & VPA data",
       },
       {
-        vi: "Khóa giao dịch tự động (Redis Lock) — ngăn ngừa xung đột khi nhiều khách đặt cùng một sản phẩm",
-        en: "Redis Distributed Lock — prevents race conditions & duplicate orders",
+        vi: "VPA Price Engine (UC49) đối chiếu giá trúng thực tế + khóa giữ chỗ Redis 15 phút qua VietQR Napas247 / ZaloPay",
+        en: "VPA Price Engine (UC49) auction benchmarking + 15-min Redis Lock via VietQR Napas247 / ZaloPay",
       },
       {
-        vi: "Trợ lý AI hỗ trợ tư vấn và giải đáp thắc mắc khách hàng 24/7",
-        en: "AI assistant for number analysis & user inquiries — available 24/7",
+        vi: "Phong thủy Ngũ hành Hà Đồ 5 chiều, AI DeepSeek + LiveChat SignalR, Cổng CTV & Trợ lý TikTok Live 9:16",
+        en: "5D Ha Do Feng-Shui, DeepSeek AI + SignalR LiveChat, CTV Portal & 9:16 TikTok Live Assist",
       },
     ],
     stats: [
-      { v: "61", l: { vi: "Bảng dữ liệu CSDL", en: "Database tables" } },
-      { v: "<8ms", l: { vi: "Độ trễ truy vấn lọc", en: "Filter query latency" } },
-      { v: "<0.5s", l: { vi: "Khớp đối soát VietQR", en: "VietQR deposit match" } },
-      { v: "150+", l: { vi: "Biển giao dịch thành công", en: "Successful transactions" } },
+      { v: "86", l: { vi: "Bảng CSDL PostgreSQL", en: "PostgreSQL 16 tables" } },
+      { v: "<8ms", l: { vi: "Độ trễ lọc đa chiều", en: "Multi-filter latency" } },
+      { v: "57", l: { vi: "Nhóm API & VPA Engine", en: "API groups & VPA Engine" } },
+      { v: "15p", l: { vi: "Khóa cọc VietQR tự động", en: "Redis VietQR lock" } },
     ],
     chips: [
       ".NET 8 Clean Arch",
-      "PostgreSQL GIN",
-      "Redis Lock",
-      "React 19",
-      "VietQR Webhook",
+      "PostgreSQL 16 (86 Tables)",
+      "VPA Price Engine",
+      "Redis Lock 15m",
+      "SignalR LiveChat",
+      "VietQR & ZaloPay",
       "DeepSeek AI",
+      "React 19",
     ],
-    img: "/mockup/img/biensovip_real_dashboard.png",
-    alt: "BienSoVip dashboard",
-    fig: ["FIG. 03 — BienSoVip", "Admin"],
-    url: "https://biensovip.com",
+    img: "/products/biensovip/01-vpa-marketplace.png",
+    alt: "BienSoVip marketplace with VPA filters and feng-shui matching",
+    fig: ["FIG. 03 — BienSoVip Vault", "biensovip.com"],
     gallery: [
-      "/products/biensovip/01.jpg",
-      "/products/biensovip/02.jpg",
-      "/products/biensovip/03.jpg",
-      "/products/biensovip/04.jpg",
+      "/products/biensovip/01-vpa-marketplace.png",
+      "/products/biensovip/02-fengshui-5d.png",
+      "/products/biensovip/03-ai-livechat.png",
+      "/products/biensovip/04-ctv-portal.png",
+      "/mockup/img/biensovip_real_dashboard.png",
     ],
   },
 ];
@@ -598,8 +628,8 @@ export const TEAM = [
     name: "Lê Trí Trung",
     role: "Founder, Tech Lead & Engineering Manager",
     bio: {
-      vi: "Founder & Tech Lead điều hành đội ngũ 5 kỹ sư SynapForge. Quản trị sản phẩm & phân rã WBS/Agile, từng dẫn dắt team 6 dev tại The MC Hub và solo architect sàn BienSoVip (61 bảng CSDL, lọc <8ms). Quán quân Hackathon CV 2026.",
-      en: "Founder & Tech Lead directing SynapForge's 5-engineer team. Excels in Product Management & Agile/WBS delivery. Led a 6-dev team at The MC Hub and solo architected BienSoVip (61-table DB, <8ms filter). CV Hackathon 2026 Winner.",
+      vi: "Founder & Tech Lead điều hành đội ngũ 5 kỹ sư SynapForge. Quản trị sản phẩm & phân rã WBS/Agile, dẫn dắt The MC Hub (6 dev), kiến trúc BrandHub (141 FRs) và solo architect sàn BienSoVip (86 bảng PostgreSQL 16, lọc <8ms, VPA Engine). Quán quân Hackathon CV 2026.",
+      en: "Founder & Tech Lead directing SynapForge's 5-engineer squad. Excels in Agile/WBS delivery, led The MC Hub (6 devs), BrandHub (141 FRs), and solo architected BienSoVip (86 PostgreSQL 16 tables, <8ms filter, VPA Engine). CV Hackathon 2026 Winner.",
     },
     skills: ["Engineering Leadership", "Agile & WBS Delivery", "System Architecture & DDD", ".NET 8 Clean Arch", "Product Strategy"],
   },
@@ -857,20 +887,20 @@ export const TEAM_CV = {
     },
     awards: [
       {
-        vi: "🏆 Quán quân (Winner) — Hackathon Computer Vision 2026 (FPT Education tổ chức ngày 06/08/2026): Giải pháp xử lý hình ảnh & thị giác máy tính ứng dụng thực tiễn.",
-        en: "🏆 Winner — Hackathon Computer Vision 2026 (Hosted by FPT Education, 06/08/2026): Practical computer vision and image processing solution.",
+        vi: "Quán quân (Winner) — Hackathon Computer Vision 2026 (FPT Education tổ chức ngày 06/08/2026): Giải pháp xử lý hình ảnh & thị giác máy tính ứng dụng thực tiễn.",
+        en: "Winner — Hackathon Computer Vision 2026 (Hosted by FPT Education, 06/08/2026): Practical computer vision and image processing solution.",
       },
       {
-        vi: "📄 Đồng tác giả bài báo khoa học quốc tế ICTA 2026: Nghiên cứu công bố về mô hình AI Fine-tuning phát hiện và tự động sửa lỗi Race Condition trong mã nguồn Node.js.",
-        en: "📄 Co-author, International Research Paper at ICTA 2026: Published research on LLM Fine-tuning pipeline to detect and repair concurrency bugs in Node.js.",
+        vi: "Đồng tác giả bài báo khoa học quốc tế ICTA 2026: Nghiên cứu công bố về mô hình AI Fine-tuning phát hiện và tự động sửa lỗi Race Condition trong mã nguồn Node.js.",
+        en: "Co-author, International Research Paper at ICTA 2026: Published research on LLM Fine-tuning pipeline to detect and repair concurrency bugs in Node.js.",
       },
       {
-        vi: "🎖️ Chung kết Toàn quốc (Final Round) — InnoCodeCamp 2025: Cuộc thi lập trình đổi mới sáng tạo quy mô đại học toàn quốc (Team Leader dẫn dắt nhóm).",
-        en: "🎖️ National Finalist — InnoCodeCamp 2025: National university-level innovation and software development championship (Team Leader).",
+        vi: "Chung kết Toàn quốc (Final Round) — InnoCodeCamp 2025: Cuộc thi lập trình đổi mới sáng tạo quy mô đại học toàn quốc (Team Leader dẫn dắt nhóm).",
+        en: "National Finalist — InnoCodeCamp 2025: National university-level innovation and software development championship (Team Leader).",
       },
       {
-        vi: "🎖️ Chung kết Toàn quốc (Final Round) — Research Festival (ResFres 2024): Dự án nghiên cứu khoa học sinh viên xuất sắc.",
-        en: "🎖️ National Finalist — Research Festival (ResFres 2024): Outstanding student scientific research initiative.",
+        vi: "Chung kết Toàn quốc (Final Round) — Research Festival (ResFres 2024): Dự án nghiên cứu khoa học sinh viên xuất sắc.",
+        en: "National Finalist — Research Festival (ResFres 2024): Outstanding student scientific research initiative.",
       },
     ],
     projects: [
@@ -888,10 +918,10 @@ export const TEAM_CV = {
         name: "Biensovip.com",
         role: { vi: "Product Owner & Solo Software Architect", en: "Product Owner & Solo Software Architect" },
         time: "05/2026 – Hiện tại",
-        tech: [".NET 8 Clean Architecture", "PostgreSQL ACID", "Redis Distributed Lock", "React 19", "DeepSeek AI", "Linux VPS Ops"],
+        tech: [".NET 8 Clean Architecture", "PostgreSQL 16 (86 Tables)", "VPA Price Engine", "Redis Lock 15m", "SignalR LiveChat", "DeepSeek AI"],
         desc: {
-          vi: "Định hình chiến lược sản phẩm và tự tay thiết kế trọn gói toàn bộ sàn đấu giá biển số định danh từ con số 0. Quản trị rủi ro hệ thống: thiết kế CSDL 61 bảng thực thể (PostgreSQL ACID, tối ưu GIN/BTREE index cho truy vấn đa tiêu chí <8ms); loại trừ rủi ro chứng chỉ thanh toán tự động bằng quy trình đối soát an toàn; khóa phân tán Redis chống bán trùng; xác thực bảo mật kép JWT + HttpOnly Cookie; tích hợp DeepSeek AI 24/7; tự cấu hình và tối ưu chi phí vận hành trên VPS Linux. Đã vận hành ổn định và ghi nhận 150+ giao dịch thành công.",
-          en: "Defined product strategy and personally engineered the entire license plate marketplace from scratch. Managed technical risks: 61-entity schema (PostgreSQL ACID, GIN/BTREE indexes for <8ms filtering); mitigated automated payment liabilities via safe reconciliation; Redis distributed locks preventing race conditions; dual JWT + HttpOnly authentication; 24/7 DeepSeek AI assistant; independently deployed and managed on Linux VPS. Processed 150+ successful transactions.",
+          vi: "Định hình chiến lược sản phẩm và tự tay thiết kế trọn gói sàn giao dịch biển số định danh cho chuyên gia Duy Đinh. Kiến trúc .NET 8 Clean Architecture gồm 86 bảng PostgreSQL 16, 57 nhóm API Endpoints, 82 Services và 12 Workers; động cơ định giá VPA (UC49), khóa giữ chỗ Redis 15 phút qua VietQR Napas247 & ZaloPay, phong thủy Ngũ hành Hà Đồ 5 chiều, DeepSeek AI LiveChat SignalR và Trợ lý TikTok Live 9:16 Safe-Zone.",
+          en: "Defined product strategy and solo-architected the VIP license-plate marketplace for expert Duy Dinh. Built on .NET 8 Clean Architecture with 86 PostgreSQL 16 tables, 57 API groups, 82 Services, and 12 Workers; VPA Price Engine (UC49), 15-min Redis + VietQR/ZaloPay locks, 5D Ha Do Feng-Shui, DeepSeek AI LiveChat, and 9:16 TikTok Live Assist.",
         },
       },
     ],
@@ -905,8 +935,8 @@ export const TEAM_CV = {
         en: "The MC Hub (01/2026–07/2026) — CEO & Tech Lead: Product management and engineering leadership for a 6-dev team, allocating technical resources, controlling delivery milestones, and rolling out voice AI microservices.",
       },
       {
-        vi: "Biensovip.com (05/2026–nay) — Product Owner & System Architect: Toàn quyền hoạch định sản phẩm, thiết kế kiến trúc .NET 8 Clean Architecture, CSDL 61 bảng, quản trị rủi ro và vận hành hạ tầng máy chủ.",
-        en: "Biensovip.com (05/2026–present) — Product Owner & System Architect: End-to-end product roadmapping, .NET 8 Clean Architecture, 61-table database design, risk management, and cloud server ops.",
+        vi: "Biensovip.com (05/2026–nay) — Product Owner & System Architect: Toàn quyền hoạch định sản phẩm, thiết kế kiến trúc .NET 8 Clean Architecture, CSDL 86 bảng PostgreSQL 16, VPA Price Engine và vận hành hạ tầng Linux VPS.",
+        en: "Biensovip.com (05/2026–present) — Product Owner & System Architect: End-to-end product roadmapping, .NET 8 Clean Architecture, 86-table PostgreSQL 16 database, VPA Price Engine, and Linux VPS ops.",
       },
       {
         vi: "FPT Software (08/2025–12/2025) — Kỹ sư Thực tập Doanh nghiệp: Tiếp thu và thực hành quy trình chuẩn Agile/Scrum của tập đoàn lớn; lập trình Reactive Web, tối ưu hiệu năng, debug và refactor mã nguồn theo quy chuẩn kiểm thử nghiêm ngặt.",
@@ -949,8 +979,8 @@ export const TEAM_CV = {
     },
     awards: [
       {
-        vi: "📄 Đồng tác giả bài báo khoa học quốc tế ICTA 2026 (ThreadLearn): Ứng dụng mô hình LLM Fine-tuning (QLoRA trên Qwen2.5-Coder 1.5B) + RAG BM25 để tự động phát hiện và sửa lỗi Race Condition trong Node.js. Đạt tỷ lệ sửa lỗi 73.3% trên benchmark 30 lỗi npm thực tế, vượt trội so với GPT-3.5-turbo (41.0%).",
-        en: "📄 Co-author, International Research Paper at ICTA 2026 (ThreadLearn): LLM Fine-tuning (QLoRA on Qwen2.5-Coder 1.5B) + BM25 RAG to detect & fix Node.js concurrency bugs. Achieved 73.3% repair rate on a 30 real npm bugs benchmark, beating GPT-3.5-turbo (41.0%).",
+        vi: "Đồng tác giả bài báo khoa học quốc tế ICTA 2026 (ThreadLearn): Ứng dụng mô hình LLM Fine-tuning (QLoRA trên Qwen2.5-Coder 1.5B) + RAG BM25 để tự động phát hiện và sửa lỗi Race Condition trong Node.js. Đạt tỷ lệ sửa lỗi 73.3% trên benchmark 30 lỗi npm thực tế, vượt trội so với GPT-3.5-turbo (41.0%).",
+        en: "Co-author, International Research Paper at ICTA 2026 (ThreadLearn): LLM Fine-tuning (QLoRA on Qwen2.5-Coder 1.5B) + BM25 RAG to detect & fix Node.js concurrency bugs. Achieved 73.3% repair rate on a 30 real npm bugs benchmark, beating GPT-3.5-turbo (41.0%).",
       },
     ],
     projects: [
@@ -1035,10 +1065,10 @@ export const TEAM_CV = {
         name: "BrandHub Platform",
         role: { vi: "AI Team Lead", en: "AI Team Lead" },
         time: "06/2026 – Hiện tại",
-        tech: ["Python FastAPI", "Neo4j GraphRAG", "ChromaDB", "LangChain", "RabbitMQ", "PostgreSQL"],
+        tech: ["Python FastAPI", "Neo4j GraphRAG", "ChromaDB", "LangChain", "RabbitMQ DLQ", "PostgreSQL"],
         desc: {
-          vi: "Lãnh đạo nhóm kỹ sư AI phát triển cụm AI Microservices phục vụ nền tảng AI MarTech. Xây dựng RAG Pipeline học ngữ điệu thương hiệu (Brand Voice) với cơ chế đánh giá chống ảo giác (Hallucination Evaluation); kết hợp GraphRAG với Neo4j & ChromaDB để phân tích mạng lưới tương quan giữa xu hướng thị trường, nội dung và KOLs; xây dựng pipeline thu thập và chuẩn hóa dữ liệu tự động.",
-          en: "Led AI engineering team building AI Microservices cluster for omnichannel MarTech platform. Designed Brand Voice RAG Pipeline with hallucination evaluation gates; deployed GraphRAG with Neo4j & ChromaDB to analyze relationships between trends, content, and influencers; built automated data crawling pipelines.",
+          vi: "Lãnh đạo nhóm kỹ sư AI phát triển cụm AI Microservices cho nền tảng BrandHub (141 chức năng SRS, 6 vai trò chuẩn). Xây dựng Hybrid GraphRAG (Neo4j + ChromaDB) học Brand Guidelines chống ảo giác, Social Trend Crawler (TikTok Creative Center & Google Trends), Check Compliance Content tự động và tích hợp xuất bản đa kênh lên Facebook, Instagram, TikTok, Threads.",
+          en: "Led AI engineering for BrandHub (141 atomic SRS features, 6 canonical roles). Engineered Hybrid GraphRAG (Neo4j + ChromaDB) grounded in Brand Guidelines, real-time Social Trend Crawler (TikTok & Google Trends), automated Check Compliance Content, and 4-channel publishing to Facebook, Instagram, TikTok & Threads.",
         },
       },
       {
@@ -1064,8 +1094,8 @@ export const TEAM_CV = {
     ],
     exp: [
       {
-        vi: "BrandHub Platform (06/2026–nay) — AI Team Lead: Thiết kế cụm AI Microservices, GraphRAG Neo4j và pipeline phân tích dữ liệu đa kênh.",
-        en: "BrandHub Platform (06/2026–present) — AI Team Lead: Architecting AI Microservices cluster, Neo4j GraphRAG, and omnichannel ingestion pipelines.",
+        vi: "BrandHub Platform (06/2026–nay) — AI Team Lead: Thiết kế cụm AI Microservices, Hybrid GraphRAG Neo4j + ChromaDB, Social Trend Crawler và kiểm duyệt tuân thủ thương hiệu.",
+        en: "BrandHub Platform (06/2026–present) — AI Team Lead: Architecting AI Microservices cluster, Neo4j + ChromaDB GraphRAG, Social Trend Crawler, and brand compliance checks.",
       },
       {
         vi: "UniNest (02/2026–05/2026) — Team Lead: Dẫn dắt phát triển hệ thống backend ASP.NET Core và thuật toán ghép đôi dữ liệu người dùng.",
@@ -1104,8 +1134,8 @@ export const TEAM_CV = {
     },
     awards: [
       {
-        vi: "🎖️ Chung kết Toàn quốc (Finalist) — InnoCodeCamp FPT 2024: Cuộc thi đổi mới sáng tạo công nghệ quy mô sinh viên toàn quốc.",
-        en: "🎖️ National Finalist — InnoCodeCamp FPT 2024: Prestigious nationwide software innovation competition.",
+        vi: "Chung kết Toàn quốc (Finalist) — InnoCodeCamp FPT 2024: Cuộc thi đổi mới sáng tạo công nghệ quy mô sinh viên toàn quốc.",
+        en: "National Finalist — InnoCodeCamp FPT 2024: Prestigious nationwide software innovation competition.",
       },
     ],
     projects: [
@@ -1181,8 +1211,8 @@ export const TEAM_CV = {
       en: "Software Engineering — FPT University Da Nang (10/2022–10/2026, GPA: 7.8/10.0)",
     },
     certs: {
-      vi: "🏆 Microsoft Back-End Developer Professional Certificate (Chứng chỉ chuyên gia lập trình Backend cấp bởi Microsoft Corporation — 08/2026)",
-      en: "🏆 Microsoft Back-End Developer Professional Certificate (Issued by Microsoft Corporation — 08/2026)",
+      vi: "Microsoft Back-End Developer Professional Certificate (Chứng chỉ chuyên gia lập trình Backend cấp bởi Microsoft Corporation — 08/2026)",
+      en: "Microsoft Back-End Developer Professional Certificate (Issued by Microsoft Corporation — 08/2026)",
     },
     projects: [
       {
@@ -1239,8 +1269,111 @@ export const TEAM_CV = {
   },
 };
 
-// One card shape for products list + detail pages (#/san-pham, #/san-pham/<id>)
+// One card shape for products list + detail pages (/san-pham, /san-pham/<id>)
 export const ALL_PRODUCTS = [
   ...CASES.map(({ rev, fig, ...c }) => c),
   ...MORE_PRODUCTS.map((p) => ({ ...p, stats: p.stats || [] })),
+];
+
+export const PACKAGES_I18N = [
+  {
+    id: "starter_mvp",
+    squad: { vi: "01 KỸ SƯ CHUYÊN TRÁCH", en: "01 DEDICATED ENGINEER" },
+    title: { vi: "Gói Khởi Nghiệp MVP", en: "Starter MVP" },
+    priceNum: "11.500.000 ₫",
+    priceValue: 11500000,
+    days: 30,
+    timeline: { vi: "3–4 tuần bàn giao", en: "3–4 weeks delivery" },
+    warranty: { vi: "Bảo hành 06 tháng", en: "06-month warranty" },
+    desc: {
+      vi: "Phù hợp cho shop, chuyên gia hoặc startup cần ra mắt website bán hàng/dịch vụ chuẩn SEO để kiểm chứng thị trường nhanh.",
+      en: "Built for founders, retail stores, and specialists needing a fast, SEO-ready storefront to validate market demand.",
+    },
+    features: [
+      { vi: "Thiết kế giao diện riêng theo bộ nhận diện thương hiệu", en: "Bespoke UI aligned with your brand identity" },
+      { vi: "Tương thích di động 375px–1920px, chuẩn Core Web Vitals", en: "Responsive 375px–1920px, Core Web Vitals tuned" },
+      { vi: "Danh mục sản phẩm/dịch vụ, phễu thu thập lead & Zalo OA", en: "Product catalog, lead funnel & instant Zalo routing" },
+      { vi: "Cài đặt tên miền, Cloud VPS, SSL & bàn giao 100% mã nguồn", en: "Domain, Cloud VPS, SSL & 100% Git source handover" },
+    ],
+  },
+  {
+    id: "fast_mvp",
+    isFeatured: true,
+    squad: { vi: "02 KỸ SƯ SONG SONG · ĐỀ XUẤT", en: "02 PARALLEL ENGINEERS · RECOMMENDED" },
+    title: { vi: "Gói Tốc Hành & Tự Động Hóa", en: "Fast-Track & Automation" },
+    priceNum: "18.500.000 ₫",
+    priceValue: 18500000,
+    days: 45,
+    timeline: { vi: "4–6 tuần bàn giao", en: "4–6 weeks delivery" },
+    warranty: { vi: "Bảo hành 08 tháng", en: "08-month warranty" },
+    desc: {
+      vi: "Hai kỹ sư Frontend & Backend chạy song song — tích hợp sẵn thanh toán VietQR tự khớp đơn, báo đơn Telegram/Zalo và CMS quản trị.",
+      en: "Dedicated Frontend & Backend engineers working in parallel — includes VietQR auto-reconciliation, instant order alerts & Admin CMS.",
+    },
+    features: [
+      { vi: "Toàn bộ hạng mục Gói Khởi Nghiệp + Admin CMS hoàn chỉnh", en: "Everything in Starter MVP + full Admin CMS dashboard" },
+      { vi: "Tích hợp VietQR động (SePay/PayOS) khớp lệnh < 0.5s, 0đ phí cổng", en: "Dynamic VietQR (SePay/PayOS) sub-0.5s matching, 0% gateway fee" },
+      { vi: "Thông báo đơn hàng & lead tức thời qua Telegram / Zalo < 30s", en: "Real-time Telegram / Zalo order & lead alerts under 30s" },
+      { vi: "Tài liệu API Swagger, Docker Compose & bảo hành 08 tháng", en: "Swagger API docs, Docker Compose & 08-month SLA warranty" },
+    ],
+  },
+  {
+    id: "enterprise_full",
+    squad: { vi: "05 KỸ SƯ FULL-SQUAD", en: "05-ENGINEER FULL SQUAD" },
+    title: { vi: "Sàn TMĐT & Trợ Lý AI Toàn Diện", en: "Enterprise Marketplace & AI" },
+    priceNum: "33.000.000 ₫",
+    priceValue: 33000000,
+    days: 60,
+    timeline: { vi: "6–8 tuần bàn giao", en: "6–8 weeks delivery" },
+    warranty: { vi: "Bảo hành 12 tháng + Trực 24/7", en: "12-month priority + 24/7 SLA" },
+    desc: {
+      vi: "Dành cho doanh nghiệp xây sàn giao dịch chịu tải cao, hệ thống B2B SaaS, tích hợp AI RAG tra cứu nội bộ và khóa giao dịch phân tán.",
+      en: "Engineered for high-concurrency marketplaces, B2B SaaS platforms, grounded AI RAG assistants, and distributed transaction locking.",
+    },
+    features: [
+      { vi: "Kiến trúc .NET 8 Clean Architecture hoặc Java Microservices", en: ".NET 8 Clean Architecture or Java Microservices core" },
+      { vi: "Khóa giao dịch Redis Lock, hàng đợi RabbitMQ DLQ 0% rớt tin", en: "Redis concurrency lock & RabbitMQ DLQ 0% message loss" },
+      { vi: "Trợ lý AI RAG / DeepSeek 24/7 tra cứu tài liệu & sản phẩm thật", en: "24/7 Sourced AI RAG / DeepSeek grounded in real inventory" },
+      { vi: "Dashboard phân tích, phân quyền RBAC & bàn giao 100% Git Repo", en: "Executive analytics, RBAC permissions & 100% Git Repo handover" },
+    ],
+  },
+];
+
+export const ESTIMATOR_ADDONS_I18N = [
+  {
+    id: "vietqr",
+    name: { vi: "Đối soát VietQR Napas247 Tự động", en: "Dynamic VietQR Auto-Reconciliation" },
+    price: 2500000,
+    desc: { vi: "Webhook khớp cọc < 0.5s qua SePay/PayOS, 0đ phí trung gian", en: "Sub-0.5s webhook deposit matching via SePay/PayOS" },
+  },
+  {
+    id: "redis_lock",
+    name: { vi: "Khóa Giữ Chỗ Redis Lock 15 Phút", en: "15-Min Redis Concurrency Lock" },
+    price: 2000000,
+    desc: { vi: "Chống bán trùng tuyệt đối cho sản phẩm độc bản/đấu giá", en: "Eliminates double-booking on unique or auction inventory" },
+  },
+  {
+    id: "ai_bot",
+    name: { vi: "Trợ Lý AI RAG CSKH & Tư Vấn 24/7", en: "24/7 Grounded AI RAG Assistant" },
+    price: 3500000,
+    desc: { vi: "Trả lời theo tài liệu nội bộ & kho thật, chống ảo giác", en: "Hallucination-free answers grounded in docs & live stock" },
+  },
+  {
+    id: "crawler_engine",
+    name: { vi: "Crawler Dữ Liệu & Đối Chiếu Giá Thị Trường", en: "Market Data Crawler & Price Engine" },
+    price: 3000000,
+    desc: { vi: "Thu thập dữ liệu định kỳ & tự động đề xuất giá tham chiếu", en: "Scheduled ingestion & automated market price benchmarking" },
+  },
+  {
+    id: "ctv_portal",
+    name: { vi: "Cổng Cộng Tác Viên (CTV) & Ví Hoa Hồng", en: "Multi-Tier Affiliate & Commission Portal" },
+    price: 3000000,
+    desc: { vi: "Link giới thiệu định danh, tính hoa hồng tự động & đối soát", en: "Tracking links, automated tiered commissions & payout flow" },
+  },
+  {
+    id: "omnichannel",
+    name: { vi: "Xuất Bản Đa Kênh 4 MXH (RabbitMQ DLQ)", en: "4-Channel Social Auto-Publisher (DLQ)" },
+    price: 4500000,
+    desc: { vi: "Lập lịch đồng bộ Facebook, Instagram, TikTok, Threads 0% rớt", en: "OAuth 2.0 auto-scheduling for FB, IG, TikTok & Threads" },
+  },
 ];

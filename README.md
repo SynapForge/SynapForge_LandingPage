@@ -1,4 +1,4 @@
-# ⚡ SYNAPFORGE — OFFICIAL PORTAL & LANDING PAGE
+﻿# ⚡ SYNAPFORGE — OFFICIAL PORTAL & LANDING PAGE
 
 > **Master Slogan:** *Forging Intelligence. Engineering Scale.* (Tôi luyện Trí tuệ. Kiến tạo Quy mô.)  
 > **Action Tagline:** *ARCHITECT. CODE. FORGE. SCALE.*  
@@ -40,22 +40,21 @@ Hệ thống được phát triển với hiệu năng cao nhất, loại bỏ s
 
 Hệ sinh thái sản phẩm do đội ngũ kỹ sư SynapForge tự tay kiến trúc và vận hành thực tế:
 
-### 1. BrandHub — AI MarTech & Omnichannel Publisher
-- **Bản chất:** Nền tảng Trí tuệ Thương hiệu & Tự động xuất bản đa kênh phân tán phục vụ Agency và doanh nghiệp bán lẻ.
-- **Kiến trúc:** Cụm **07 Microservices độc lập** (Spring Cloud Gateway, Java 21 Business Core, Python FastAPI AI RAG, Spring Boot Publisher Worker, React Dashboard, Expo Mobile, Docker Infra).
+### 1. BrandHub — Agency OS & AI MarTech (`https://brandhub.id.vn`)
+- **Bản chất:** Nền tảng B2B2C quản trị Agency đa Workspace, lập kế hoạch Media Package / Media Campaign, sáng tạo nội dung AI GraphRAG và tự động xuất bản đa kênh.
+- **Kiến trúc:** Cụm **07 Microservices độc lập** (Spring Cloud Gateway `:8080`, Java 21 Business Core `:8081`, Python FastAPI AI Studio `:8082`, Publisher Worker `:8083`, React 19 Dashboard + Video Academy, Expo Mobile, Docker Infra) với **9 phân hệ & 141 chức năng chuẩn SRS**, **6 vai trò RBAC chuẩn** (`Guest`, `Owner`, `Manager`, `Creator`, `Client`, `Admin`).
 - **Điểm nhấn kỹ thuật:**
-  - **Brand Voice RAG & Neo4j GraphRAG:** Vector store ChromaDB lưu trữ chuẩn giọng điệu thương hiệu; đồ thị Neo4j liên kết Thực thể - Xu hướng - KOLs, triệt tiêu ảo giác (Hallucination).
-  - **RabbitMQ Dead Letter Queue (DLQ):** Thử lại lũy thừa (Exponential Backoff), cam kết **0% tỷ lệ sót bài** trên 5 mạng xã hội (Facebook, TikTok, Instagram, Threads, Zalo).
-  - **Dual-LLM Engine:** Sinh văn bản tốc độ cao với Groq Llama 3 và fallback sang Claude 3.5 Sonnet.
+  - **Hybrid GraphRAG (`Neo4j` + `ChromaDB`) & Social Trend Crawler:** Học Brand Guidelines PDF/DOCX chống ảo giác, bắt xu hướng TikTok Creative Center & Google Trends theo thời gian thực, kiểm duyệt an toàn cộng đồng (`Check Compliance Content`).
+  - **RabbitMQ Dead Letter Queue (DLQ) & OAuth 2.0 AES-256:** Thử lại lũy thừa (Exponential Backoff), cam kết **0% tỷ lệ rớt lịch** trên 4 mạng xã hội chính thức (**Facebook, Instagram, TikTok, Threads**).
+  - **SePay VietQR Automation:** Nâng cấp gói (`Starter` / `Pro` / `Enterprise`) và nạp AI Credits tự động trong 5 giây.
 
-### 2. BienSoVip.com — Luxury High-Performance Marketplace
-- **Bản chất:** Sàn thương mại điện tử, đấu giá và đối chiếu phong thủy biển số xe định danh độc bản tốc độ cao.
-- **Kiến trúc:** **.NET 8 Clean Architecture**, CSDL PostgreSQL ACID với **61 bảng thực thể quan hệ**.
+### 2. BienSoVip.com — Luxury Marketplace & VPA Engine (https://biensovip.com)
+- **Bản chất:** Sàn thương mại điện tử, định giá VPA và tư vấn phong thủy biển số xe định danh 63 tỉnh thành của chuyên gia Duy Đinh.
+- **Kiến trúc:** **.NET 8 Clean Architecture** (C# 12, CQRS Dapper + EF Core 8), CSDL PostgreSQL 16 với **86 bảng thực thể**, **57 nhóm API Endpoints**, **82 Infrastructure Services** và **12 Background Workers**.
 - **Điểm nhấn kỹ thuật:**
-  - **PostgreSQL GIN Indexing:** Tốc độ phản hồi bộ lọc đa tiêu chí luôn duy trì **< 8ms** trên kho hàng chục nghìn biển số.
-  - **Redis Distributed Lock (15 phút):** Khóa giao dịch phân tán chống bán trùng tuyệt đối (Double-Booking / Concurrency Lock).
-  - **VietQR Webhook Engine:** Tự động đối soát và khớp cọc trong **< 0.5 giây**, 0đ phí cổng trung gian, hoạt động 24/7/365.
-  - **Phong thủy Bát Tự Tứ Trụ:** Ma trận so sánh 3 biển song song, nâng tỷ lệ chốt cọc lên **33.3%** với 150+ giao dịch thành công.
+  - **PostgreSQL GIN / Partial Indexing:** Tốc độ phản hồi bộ lọc đa tiêu chí duy trì **< 8ms** trên 3 chế độ kho (*Biển có sẵn*, *VPA tuần*, *VPA tháng*).
+  - **VPA Price Engine (UC49) & Redis Distributed Lock (15 phút):** Thu thập lịch & kết quả đấu giá VPA thực tế đối chiếu cùng tỉnh/cùng đuôi; khóa giữ chỗ 15 phút chống bán trùng tuyệt đối.
+  - **VietQR Napas247 / ZaloPay & SignalR LiveChat:** Tự động khớp cọc trong **< 0.5 giây** (Thông tư 24/2023 & 79/2024/TT-BCA), kết hợp Trợ lý AI DeepSeek 24/7, cổng CTV chống gian lận Risk Score và **Trợ lý Livestream TikTok 9:16 Safe-Zone**.
 
 ### 3. The MC Hub Academy — EdTech & AI Speech Analysis
 - **Bản chất:** Nền tảng đào tạo kỹ năng nói, diễn thuyết và MC tích hợp gia sư AI phân tích giọng nói.
