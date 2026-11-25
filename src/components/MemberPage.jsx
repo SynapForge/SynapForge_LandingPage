@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "./Breadcrumb";
 import HeaderNav from "./HeaderNav";
+import Footer from "./Footer";
 import { pick, t, TEAM, TEAM_CV } from "../data/i18n";
 import {
   BRANDHUB_ARTICLES_BY_MEMBER,
@@ -76,8 +77,8 @@ export default function MemberPage({ id, lang, setLang }) {
         <div className="wrap">
           <Breadcrumb
             items={[
-              { label: t(lang, "nav_home"), href: "#top" },
-              { label: t(lang, "team_title"), href: "#team" },
+              { label: t(lang, "nav_home"), href: "/" },
+              { label: t(lang, "team_title"), href: "/#team" },
               { label: m.name },
             ]}
           />
@@ -302,7 +303,7 @@ export default function MemberPage({ id, lang, setLang }) {
                           href={a.url}
                           target="_blank"
                           rel="noopener"
-                          className="inline-flex items-start gap-1.5 hover:text-[#FF5500] hover:underline"
+                          className="inline-flex items-start gap-1.5 hover:text-[#b83700] hover:underline"
                         >
                           <ExternalLink className="w-3.5 h-3.5 mt-0.5 shrink-0" />
                           <span>{a.title}</span>
@@ -314,7 +315,7 @@ export default function MemberPage({ id, lang, setLang }) {
                     href="https://brandhub.id.vn/blog"
                     target="_blank"
                     rel="noopener"
-                    className="mt-3 inline-block text-sm font-semibold text-[#FF5500] hover:underline"
+                    className="mt-3 inline-block text-sm font-semibold text-[#b83700] hover:underline"
                   >
                     {pick(lang, "Xem toàn bộ Blog BrandHub", "Browse the BrandHub Blog")}
                   </a>
@@ -340,6 +341,8 @@ export default function MemberPage({ id, lang, setLang }) {
           </nav>
         </div>
       </section>
+
+      <Footer lang={lang} />
     </div>
   );
 }

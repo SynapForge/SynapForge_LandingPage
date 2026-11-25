@@ -125,20 +125,22 @@ export const IN_HOUSE_VENTURES = [
   {
     id: "brandhub",
     name: "BrandHub",
-    category: "AI MarTech & Omnichannel Publisher",
-    tagline: "Nền tảng trí tuệ thương hiệu & xuất bản nội dung tự động đa kênh",
-    stats: "07 Microservices • 0% Lost Rate • 5 Platforms",
-    techStack: ["Java 21", "Spring Boot 3", "Python FastAPI", "RabbitMQ DLQ", "Neo4j GraphRAG", "React 18"],
-    description: "Giải pháp B2B SaaS toàn diện giúp các Agencies và Nhãn hàng quản trị chiến dịch truyền thông, tự động sinh nội dung theo Brand Voice và lập lịch đăng tự động lên Facebook, TikTok, Instagram, Threads, Zalo với 0% tỷ lệ rớt tin nhắn."
+    url: "https://brandhub.id.vn",
+    category: "Agency OS & AI MarTech",
+    tagline: "Nền tảng quản trị Agency đa Workspace, AI GraphRAG & xuất bản 4 mạng xã hội",
+    stats: "07 Microservices • 141 FRs • 4 MXH (FB/IG/TikTok/Threads) • 0% Rớt lịch",
+    techStack: ["Java 21", "Spring Boot 3", "Python FastAPI", "RabbitMQ DLQ", "Neo4j GraphRAG", "ChromaDB", "React 19", "SePay VietQR"],
+    description: "Giải pháp B2B2C giúp Agency và Thương hiệu vận hành trọn vẹn vòng đời chiến dịch: 6 vai trò RBAC chuẩn, Media Package đàm phán 2 chiều, duyệt bài đa cấp kèm Content Locking, AI Studio GraphRAG + Trend Crawler, xuất bản tự động lên Facebook, Instagram, TikTok, Threads qua RabbitMQ DLQ và thanh toán SePay VietQR."
   },
   {
     id: "biensovip",
     name: "BienSoVip",
-    category: "Luxury Marketplace & High-Performance Web",
-    tagline: "Sàn giao dịch & đấu giá biển số xe định danh cao cấp tốc độ cao",
-    stats: "61 Entities • Truy vấn < 8ms • Khớp cọc VietQR < 0.5s",
-    techStack: [".NET 8 Clean Arch", "PostgreSQL GIN", "Redis Lock", "React 19", "VietQR Webhook", "DeepSeek AI"],
-    description: "Sàn thương mại điện tử chuyên biệt tốc độ cao sở hữu 61 bảng thực thể, tối ưu lọc đa tiêu chí dưới 8ms, tự động hóa khớp cọc VietQR dưới 0.5s với 0đ chi phí cổng, tích hợp khóa phân tán chống bán trùng và trợ lý AI 24/7."
+    url: "https://biensovip.com",
+    category: "Luxury Marketplace & VPA Engine",
+    tagline: "Sàn giao dịch biển số đẹp 63 tỉnh thành, VPA Price Engine & phong thủy 5 chiều",
+    stats: "86 Bảng PostgreSQL 16 • Lọc < 8ms • 57 API Groups • Khóa cọc 15p",
+    techStack: [".NET 8 Clean Arch", "PostgreSQL 16 GIN", "VPA Engine", "Redis Lock 15m", "SignalR LiveChat", "VietQR & ZaloPay", "DeepSeek AI", "React 19"],
+    description: "Sàn thương mại điện tử biển số đẹp cho chuyên gia Duy Đinh sở hữu 86 bảng thực thể PostgreSQL 16, 57 nhóm API, động cơ định giá VPA (UC49), lọc đa tiêu chí < 8ms, khóa giữ chỗ 15 phút VietQR Napas247 / ZaloPay, phong thủy Ngũ hành Hà Đồ 5 chiều, DeepSeek AI LiveChat và Trợ lý TikTok Live 9:16."
   }
 ];
 

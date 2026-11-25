@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight, MessageCircle, Phone, BookOpen, Layers, Users, Sparkles } from "lucide-react";
-import { t } from "../data/i18n";
-
-const ZALO_URL = "https://zalo.me/0912158715";
+import { Menu, X, ArrowUpRight, MessageCircle, Phone } from "lucide-react";
+import { t, ZALO_URL } from "../data/i18n";
 
 export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Close mobile menu on ESC key press
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") setMobileMenuOpen(false);
@@ -16,7 +13,6 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Prevent background scrolling when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -34,9 +30,10 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
     { label: t(lang, "nav_model"), href: "#model" },
     { label: t(lang, "nav_ventures"), href: "/san-pham", active: activeRoute === "products" },
     { label: t(lang, "nav_services"), href: "#services" },
+    { label: lang === "vi" ? "Bảng giá" : "Pricing", href: "#estimator" },
     { label: t(lang, "nav_team"), href: "#team" },
     {
-      label: lang === "vi" ? "Kiến thức & Case Studies" : "Insights",
+      label: lang === "vi" ? "Kiến thức" : "Insights",
       href: "/bai-viet",
       active: activeRoute === "articles",
     },
@@ -46,7 +43,13 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
   return (
     <header className="topbar">
       <div className="wrap topbar-in">
-        <a href="#top" className="brand" title="SynapForge Home" onClick={closeMenu}>
+        <a
+          href="/"
+          className="brand"
+          title="SynapForge Home"
+          onClick={closeMenu}
+          aria-label="SynapForge Home"
+        >
           <img
             src="/brand/logo_primary.jpg"
             alt="SynapForge"
@@ -55,19 +58,20 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="top-nav">
+        <nav className="top-nav" aria-label="Primary Navigation">
           <a href="#model">{t(lang, "nav_model")}</a>
           <a
             href="/san-pham"
-            style={activeRoute === "products" ? { color: "var(--orange-deep)", fontWeight: 700 } : {}}
+            style={activeRoute === "products" ? { color: "var(--orange-deep)", fontWeight: 700 } : undefined}
           >
             {t(lang, "nav_ventures")}
           </a>
           <a href="#services">{t(lang, "nav_services")}</a>
+          <a href="#estimator">{lang === "vi" ? "Bảng giá" : "Pricing"}</a>
           <a href="#team">{t(lang, "nav_team")}</a>
           <a
             href="/bai-viet"
-            style={activeRoute === "articles" ? { color: "var(--orange-deep)", fontWeight: 700 } : {}}
+            style={activeRoute === "articles" ? { color: "var(--orange-deep)", fontWeight: 700 } : undefined}
           >
             {lang === "vi" ? "Kiến thức" : "Insights"}
           </a>
@@ -107,7 +111,7 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
           {/* Mobile Hamburger Toggle */}
           <button
             type="button"
-            className="mobile-nav-toggle md:hidden flex items-center justify-center p-2 rounded border border-black bg-[#FAF7F2] text-[#1D1510] hover:bg-[#FF5500] hover:text-white transition-colors"
+            className="mobile-nav-toggle md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Đóng menu" : "Mở menu điều hướng"}
             aria-expanded={mobileMenuOpen}
@@ -120,7 +124,7 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
         <div
-          className="mobile-nav-backdrop fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden animate-fade-in"
+          className="mobile-nav-backdrop fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
           onClick={closeMenu}
           aria-hidden="true"
         />
@@ -128,15 +132,15 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
 
       {/* Mobile Drawer Content */}
       <div
-        className={`mobile-nav-drawer fixed top-[56px] left-0 right-0 z-50 bg-[#FFFDF9] border-b-2 border-black shadow-2xl md:hidden transition-all duration-300 ease-in-out transform ${
+        className={`mobile-nav-drawer fixed top-[64px] left-0 right-0 z-50 bg-[#FBF8F2] border-b-2 border-[#1D1510] shadow-2xl md:hidden transition-transform duration-200 ease-out ${
           mobileMenuOpen
-            ? "translate-y-0 opacity-100 pointer-events-auto max-h-[calc(100vh-56px)] overflow-y-auto"
+            ? "translate-y-0 opacity-100 pointer-events-auto max-h-[calc(100dvh-64px)] overflow-y-auto"
             : "-translate-y-4 opacity-0 pointer-events-none max-h-0 overflow-hidden"
         }`}
       >
-        <div className="p-5 flex flex-col gap-1">
-          <div className="text-[11px] font-mono text-[#7D7566] uppercase tracking-wider mb-2 pb-1 border-b border-[#E4DAC6]">
-            // ĐIỀU HƯỚNG CHÍNH
+        <div className="p-5 flex flex-col gap-1.5">
+          <div className="text-[11px] font-mono text-[#524336] uppercase tracking-wider mb-2 pb-1.5 border-b border-[#dfd4be]">
+            {lang === "vi" ? "// ĐIỀU HƯỚNG CHÍNH" : "// NAVIGATION"}
           </div>
 
           {navLinks.map((item, idx) => (
@@ -144,10 +148,10 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
               key={idx}
               href={item.href}
               onClick={closeMenu}
-              className={`flex items-center justify-between py-3 px-3.5 rounded-lg text-sm font-mono font-bold transition-all ${
+              className={`flex items-center justify-between min-h-[44px] py-2.5 px-3.5 rounded-[2px] text-sm font-mono font-bold transition-colors ${
                 item.active
-                  ? "bg-[#FF5500] text-white shadow-sm"
-                  : "text-[#1D1510] hover:bg-[#F4ECE1] hover:text-[#FF5500]"
+                  ? "bg-[#c83e00] text-white"
+                  : "text-[#1D1510] hover:bg-[#f4efe4] hover:text-[#b83700]"
               }`}
             >
               <span>{item.label}</span>
@@ -156,22 +160,22 @@ export default function HeaderNav({ lang, setLang, activeRoute = "" }) {
           ))}
 
           {/* Quick Contact & Zalo in Mobile Drawer */}
-          <div className="mt-4 pt-4 border-t border-[#E4DAC6] flex flex-col gap-2.5">
+          <div className="mt-4 pt-4 border-t border-[#dfd4be] flex flex-col gap-2.5">
             <a
               href={ZALO_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="btn-spec btn-solid flex items-center justify-center gap-2 py-3 w-full text-center font-mono font-bold text-xs"
+              className="btn-spec btn-solid w-full"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 shrink-0" />
               <span>{t(lang, "nav_cta")} (ZALO 24/7)</span>
             </a>
 
-            <div className="flex items-center justify-between px-3 py-2 bg-[#F4ECE1] rounded border border-[#E4DAC6] text-xs font-mono text-[#5A5040]">
-              <span className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-[#FF5500]" />
-                <span>0912 158 715</span>
+            <div className="flex items-center justify-between px-3 py-2.5 bg-[#f4efe4] rounded-[2px] border border-[#dfd4be] text-xs font-mono text-[#1D1510]">
+              <span className="flex items-center gap-1.5 tabular-nums">
+                <Phone className="w-3.5 h-3.5 text-[#c83e00]" />
+                <span>(+84) 912 158 715</span>
               </span>
               <span>Đà Nẵng, VN</span>
             </div>

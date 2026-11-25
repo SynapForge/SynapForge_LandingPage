@@ -9,15 +9,16 @@
 export const BRANDHUB_DATA = {
   id: "brandhub",
   name: "BrandHub",
-  tagline: "Nền tảng trí tuệ thương hiệu & xuất bản nội dung tự động đa kênh phân tán",
-  category: "AI MarTech & Distributed Omnichannel Publisher",
-  status: "R&D Production",
+  url: "https://brandhub.id.vn",
+  tagline: "Nền tảng quản trị Agency đa Workspace, AI GraphRAG & xuất bản tự động 4 kênh",
+  category: "Agency OS & AI MarTech",
+  status: "Live Production",
   metrics: [
     { value: "07", label: "Microservices & Modules", sub: "Độc lập phân tán" },
-    { value: "32", label: "Tuần phát triển", sub: "16 Sprints Agile FSoft" },
+    { value: "141", label: "Chức năng chuẩn SRS", sub: "9 phân hệ · 6 vai trò RBAC" },
     { value: "430+", label: "Tasks Jira hoàn thành", sub: "Spec → Plan → Code → Test" },
-    { value: "05", label: "Mạng xã hội tích hợp", sub: "FB, TikTok, Insta, Threads, Zalo" },
-    { value: "0%", label: "Tỷ lệ mất tin nhắn (DLQ)", sub: "RabbitMQ Retry lũy thừa" }
+    { value: "04", label: "Mạng xã hội tích hợp", sub: "Facebook, Instagram, TikTok, Threads" },
+    { value: "0%", label: "Tỷ lệ rớt lịch (DLQ)", sub: "RabbitMQ Retry lũy thừa" }
   ],
   microservices: [
     {
@@ -33,32 +34,32 @@ export const BRANDHUB_DATA = {
       name: "brandhub-business-service",
       port: 8081,
       tag: "Nghiệp Vụ Cốt Lõi Multi-Tenant",
-      tech: "Java 21 • Spring Boot 3.3.5 • PostgreSQL • MongoDB",
-      desc: "Quản trị nghiệp vụ đa người dùng Multi-tenancy, phân quyền chặt chẽ giữa Agency, Brand Owner và CTV viết bài, quy trình phê duyệt Kanban và thanh toán."
+      tech: "Java 21 • Spring Boot 3.3.5 • PostgreSQL • SePay VietQR",
+      desc: "Quản trị đa Agency & đa Workspace, phân quyền 6 vai trò chuẩn (Guest, Owner, Manager, Creator, Client, Admin), Media Package đàm phán 2 chiều, duyệt bài đa cấp + Content Locking và SePay VietQR."
     },
     {
       id: "ai",
       name: "brandhub-ai-service",
       port: 8082,
-      tag: "AI & GraphRAG Khắc Chế Ảo Giác",
-      tech: "Python FastAPI • ChromaDB • Neo4j • Groq Llama 3",
-      desc: "RAG học giọng điệu thương hiệu (Brand Voice) từ tài liệu mẫu, Neo4j GraphRAG phân tích mối tương quan giữa KOLs/Trends và sinh ảnh Stability AI SDXL."
+      tag: "AI Studio & Hybrid GraphRAG",
+      tech: "Python FastAPI • ChromaDB • Neo4j • Groq Llama 3 • Claude",
+      desc: "Hybrid GraphRAG học Brand Guidelines chống ảo giác, Check Compliance Content, Social Trend Crawler (TikTok Creative Center & Google Trends), tạo ảnh/video ngắn 9:16 và LoRA đại sứ ảo."
     },
     {
       id: "publisher",
       name: "brandhub-publisher-service",
       port: 8083,
-      tag: "Xuất Bản Đa Kênh Async 0% Rớt Tin",
-      tech: "Spring Boot 3 • RabbitMQ DLQ • Social Media APIs",
-      desc: "Tiêu thụ hàng đợi RabbitMQ, lập lịch tự động đăng bài lên 5 nền tảng mạng xã hội với cơ chế Dead Letter Queue (DLQ) và Exponential Backoff."
+      tag: "Xuất Bản 4 Kênh Async 0% Rớt",
+      tech: "Spring Boot 3 • RabbitMQ DLQ • OAuth 2.0 AES-256",
+      desc: "Tiêu thụ hàng đợi RabbitMQ, lập lịch tự động đăng bài lên Facebook, Instagram, TikTok và Threads với token mã hóa AES-256 và Dead Letter Queue (DLQ)."
     },
     {
       id: "web",
       name: "brandhub-web-dashboard",
       port: 3000,
-      tag: "Dashboard Điều Khiển Tập Trung",
-      tech: "React 18 • TypeScript • Vite • Tailwind CSS",
-      desc: "Portal quản trị trực quan, quản lý chiến dịch tiếp thị, bảng Kanban phê duyệt nội dung kéo-thả và lịch đăng bài trực quan."
+      tag: "Dashboard & Video Academy",
+      tech: "React 19 • TypeScript • Vite • Tailwind CSS v4",
+      desc: "Portal quản trị trực quan (Danh sách, Lịch, Kanban, Gantt), khung Live Preview 4 mạng xã hội, Video Academy 32 bài học 1080p và 100 bài blog chuyên sâu."
     },
     {
       id: "mobile",
@@ -66,15 +67,15 @@ export const BRANDHUB_DATA = {
       port: "App",
       tag: "Ứng Dụng Đồng Hành Di Động",
       tech: "React Native • Expo • Push Notifications",
-      desc: "Ứng dụng di động đồng bộ thời gian thực giúp ban giám đốc phê duyệt bài viết nhanh chóng và nhận thông báo tiến độ chiến dịch tức thời."
+      desc: "Ứng dụng di động đồng bộ thời gian thực giúp Manager và Client phê duyệt bài viết nhanh chóng và nhận thông báo tiến độ chiến dịch tức thời."
     },
     {
       id: "infra",
       name: "brandhub-infrastructure",
       port: "Cloud",
       tag: "Hạ Tầng Cụm Container & CI/CD",
-      tech: "Docker Compose • AWS EC2 • GitHub Actions • Nginx",
-      desc: "Toàn bộ cụm container điều phối qua Docker Compose, quy trình CI/CD tự động kiểm thử và deploy lên hạ tầng AWS EC2 ổn định 24/7."
+      tech: "Docker Compose • AWS • GitHub Actions • Nginx",
+      desc: "Toàn bộ cụm container điều phối qua Docker Compose, quy trình CI/CD tự động kiểm thử và deploy ổn định 24/7."
     }
   ]
 };
@@ -85,16 +86,16 @@ export const BRANDHUB_DATA = {
 export const BIENSOVIP_DATA = {
   id: "biensovip",
   name: "BienSoVip",
-  tagline: "Sàn giao dịch, đấu giá & phân tích biển số xe định danh cao cấp tốc độ cao",
-  category: "Luxury Marketplace & High-Performance Web",
+  tagline: "Sàn giao dịch biển số đẹp 63 tỉnh thành, VPA Price Engine & phong thủy 5 chiều",
+  category: "Luxury Marketplace & VPA Engine",
   status: "Live Production",
   url: "https://biensovip.com",
   metrics: [
-    { value: "61", label: "Bảng Thực Thể CSDL", sub: "Mô hình quan hệ Clean Architecture" },
-    { value: "< 8ms", label: "Thời Gian Lọc Đa Tiêu Chí", sub: "PostgreSQL GIN / BTREE Indexing" },
-    { value: "< 0.5s", label: "Khớp Lệnh Cọc VietQR", sub: "Webhook tự động, 0đ chi phí cổng" },
-    { value: "150+", label: "Biển Số Đã Giao Dịch", sub: "Tỷ lệ chốt cọc thực tế 33.3%" },
-    { value: "14", label: "Môi Giới / CTV Hoạt Động", sub: "Link UTM định danh & ví hoa hồng" }
+    { value: "86", label: "Bảng Thực Thể PostgreSQL 16", sub: "57 nhóm API · 82 Services" },
+    { value: "< 8ms", label: "Thời Gian Lọc Đa Tiêu Chí", sub: "PostgreSQL GIN / Partial Index" },
+    { value: "< 0.5s", label: "Khớp Lệnh Cọc VietQR / ZaloPay", sub: "Khóa giữ chỗ Redis 15 phút" },
+    { value: "3.240+", label: "Kho Biển Số & Dữ Liệu VPA", sub: "Biển có sẵn, VPA tuần & tháng" },
+    { value: "9:16", label: "TikTok Live Assist & AI Chat", sub: "DeepSeek AI + SignalR LiveChat" }
   ],
   specs: [
     {
