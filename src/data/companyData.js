@@ -49,7 +49,7 @@ export const COMPANY_INFO = {
   },
   establishedYear: "2026",
   headquarters: "Hải Châu, TP. Đà Nẵng, Việt Nam",
-  email: "contact@synapforge.dev",
+  email: "solutions@synapforge.id.vn",
   phone: "(+84) 912 158 715",
   website: "https://synapforge.dev",
   founder: {
@@ -61,7 +61,7 @@ export const COMPANY_INFO = {
     portfolio: "https://trungle2605.vercel.app"
   },
   metrics: [
-    { value: "05+", label: "Kỹ sư tinh hoa FPT / FSoft", sub: "100% chuyên sâu thực chiến" },
+    { value: "05+", label: "Kỹ sư phần mềm FPT / FSoft", sub: "Kinh nghiệm triển khai thực tế" },
     { value: "02", label: "Trụ cột Sản phẩm Lõi (Flagship)", sub: "BrandHub & BienSoVip" },
     { value: "0%", label: "Tỷ lệ mất tin nhắn (DLQ)", sub: "Bảo đảm tin cậy RabbitMQ" },
     { value: "30-60", label: "Ngày bàn giao MVP", sub: "Tốc độ đưa ý tưởng ra thị trường" }
@@ -70,54 +70,54 @@ export const COMPANY_INFO = {
 
 export const CORE_TEAM = [
   {
-    id: "le-tri-trung",
-    name: "Lê Trí Trung",
-    role: "Founder & Head of Technology",
-    title: "Tech Lead & System Architect",
-    education: "Kỹ thuật phần mềm - FPT University Đà Nẵng (GPA 3.3/4.0 - 8.2/10)",
-    experience: "FPT Software Intern, Solo Architect Biensovip.com, CEO The MC Hub, Quán quân Hackathon CV 2026, Đồng tác giả nghiên cứu ICTA 2026",
-    skills: ["Java Spring Boot", ".NET 8 Clean Arch", "Python FastAPI", "React 19", "PostgreSQL", "Docker", "System Design"],
-    bio: "Tổng đạo diễn kiến trúc hệ thống và chiến lược kỹ thuật. Tự tay thiết kế các sàn giao dịch thương mại lớn và hệ thống EdTech phục vụ hàng chục ngàn người dùng."
-  },
-  {
     id: "ha-van-an",
     name: "Hà Văn Ân",
-    role: "Senior Full-Stack & AI Integrator",
-    title: "AI Pipeline & Modern Web Lead",
-    education: "Kỹ thuật phần mềm - FPT University Đà Nẵng",
-    experience: "FPT Software Intern (Inventory System), Lead Dev STEMGO.net, Đồng tác giả nghiên cứu AI ThreadLearn (ICTA 2026)",
-    skills: ["Next.js 16", "React", "TypeScript", "Node.js", "FastAPI", "QLoRA", "RAG Pipelines", "Gemini API"],
-    bio: "Chuyên gia phát triển ứng dụng Next.js tốc độ cao và tích hợp các mô hình ngôn ngữ lớn (LLM), xây dựng RAG pipelines loại trừ hallucination."
+    role: "Senior Full-Stack & AI Solutions Lead",
+    title: "AI Pipeline & Modern Web Integrator",
+    education: "Kỹ thuật phần mềm — FPT University Đà Nẵng (2022–2026, GPA 3.0/4.0)",
+    experience: "7 tháng Full-stack Intern FPT Software (Inventory System), Lead Dev STEMGO.net (34 mini-games, Gemini AI Tutor), Đồng tác giả nghiên cứu AI ThreadLearn (ICTA 2026, 73.3% pass rate)",
+    skills: ["Next.js 16 (App Router)", "React / TypeScript", "Node.js (Express)", "Python FastAPI", "RAG Pipelines", "QLoRA Fine-tuning", "Google Gemini API", "MongoDB / MySQL", "Tailwind CSS"],
+    bio: "Kỹ sư Full-Stack giàu kinh nghiệm thực tập FPT Software và nghiên cứu AI quốc tế. Chuyên sâu Next.js 16, React, Node.js và xây dựng trợ lý AI RAG phản hồi chuẩn xác theo dữ liệu doanh nghiệp."
   },
   {
     id: "nguyen-thanh-loc",
     name: "Nguyễn Thành Lộc",
     role: "Backend Architect & AI Lead",
     title: "Microservices & GraphRAG Specialist",
-    education: "Kỹ thuật phần mềm - FPT University Đà Nẵng (GPA 3.5/4.0), TOEIC 650",
-    experience: "FPT Software Intern (C# Migration), Team Lead UniNest, AI Team Lead BrandHub Platform",
-    skills: [".NET 8", "ASP.NET Core", "FastAPI", "Neo4j GraphRAG", "ChromaDB", "Clean Architecture", "PostgreSQL"],
-    bio: "Chuyên sâu về kiến trúc sạch Clean Architecture, di chuyển hệ thống legacy sang microservices hiện đại và phân tích mạng dữ liệu phức tạp với GraphRAG."
+    education: "Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.5/4.0), TOEIC 650, Coursera AI Agents & RAG Certified (2026)",
+    experience: "AI Team Lead BrandHub Platform (FastAPI, GraphRAG Neo4j & ChromaDB), Team Lead UniNest (.NET 8), Backend .NET Intern FPT Software (C# Legacy Migration sang Clean Arch)",
+    skills: [".NET 8 / ASP.NET Core", "C# Clean Architecture", "Python FastAPI", "Neo4j GraphRAG", "ChromaDB Vector Store", "PostgreSQL / SQL Server", "Entity Framework Core", "Agile / WBS"],
+    bio: "GPA xuất sắc 3.5/4.0. Chuyên sâu về nguyên lý .NET Clean Architecture, chuyển đổi monolithic sang microservices và phân tích mạng dữ liệu phức tạp với GraphRAG."
+  },
+  {
+    id: "le-tri-trung",
+    name: "Lê Trí Trung",
+    role: "Founder & Head of Technology",
+    title: "Founder, Tech Lead & Engineering Manager",
+    education: "Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.3/4.0 – 8.2/10), Học bổng Trao đổi Sinh viên Quốc tế tại Malaysia",
+    experience: "Điều hành đội ngũ 5 kỹ sư SynapForge, CEO & Tech Lead The MC Hub (team 6 kỹ sư, 87 MCs), Solo Architect Biensovip.com (61 bảng CSDL, <8ms), Quán quân Hackathon CV 2026, Team Leader Chung kết InnoCodeCamp 2025",
+    skills: ["Engineering Leadership", "Agile & WBS Delivery", "System Architecture & DDD", ".NET 8 Clean Arch", "Java 21 Spring Boot 3", "PostgreSQL (Index Tuning)", "Team Mentoring & Code Review"],
+    bio: "Điều hành chiến lược công nghệ và quản trị đội ngũ kỹ nghệ tại SynapForge. Chuyên sâu phân rã bài toán kinh doanh thành WBS kỹ thuật, kiểm soát chất lượng mã nguồn, cam kết tiến độ SLA và thiết kế kiến trúc hệ thống chịu tải cao."
   },
   {
     id: "nguyen-chon-phuoc",
     name: "Nguyễn Chơn Phước",
-    role: "Java Core & Cloud DevOps",
+    role: "Cloud DevOps & Infrastructure",
     title: "Distributed Systems & Infra Engineer",
-    education: "Kỹ thuật phần mềm - FPT University Đà Nẵng (GPA 3.2/4.0), IELTS 5.5",
-    experience: "Acronic Solutions (Anti-DDoS Dashboard 24/7), Danatour Backend, V-Try 3D Web & Computer Vision",
-    skills: ["Java 21", "Spring Boot 3", "Docker", "Nginx", "Linux Ops", "Socket.IO", "Realtime IPC"],
-    bio: "Chịu trách nhiệm về hạ tầng chịu tải, container hóa Docker, tối ưu hóa database indexing và đảm bảo hệ thống vận hành 24/7 với độ trễ tối thiểu."
+    education: "Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 3.2/4.0), IELTS 5.5, Finalist InnoCodeCamp FPT 2024",
+    experience: "Acronic Solutions Intern (vận hành thiết bị Anti-DDoS 24/7 qua Socket.IO và UDS Socket IPC), Backend Danatour (Java Spring Boot & PostgreSQL Tuning), V-Try 3D Fitting (Google MediaPipe)",
+    skills: ["Java 21 / Spring Boot 3", "Docker & Compose", "Nginx Reverse Proxy", "Linux Server (Ubuntu)", "PostgreSQL (Query Indexing)", "Socket.IO & IPC", "Raspberry Pi IoT", "PM2"],
+    bio: "Phụ trách hạ tầng Cloud, Docker, Nginx và tối ưu hóa cơ sở dữ liệu. Kinh nghiệm thực tế vận hành hệ thống phần cứng giám sát mạng 24/7 với cơ chế tự phục hồi sự cố."
   },
   {
     id: "nguyen-minh-tuan",
     name: "Nguyễn Minh Tuấn",
-    role: "Enterprise .NET Backend Engineer",
+    role: "Enterprise .NET Developer",
     title: "Gov & Enterprise Integration Specialist",
-    education: "Kỹ thuật phần mềm - FPT University Đà Nẵng (GPA 7.8/10), Microsoft Certified Back-End Pro",
-    experience: "FPT Software Intern (C# & SQL Stored Procedures), Team Lead VivuCar (Thuê xe tự lái & API Bộ Công An)",
-    skills: [".NET 8", "C#", "Entity Framework Core", "SQL Server", "Gov Portal APIs", "Hive AI", "Docker"],
-    bio: "Chuyên gia về các giải pháp doanh nghiệp chuẩn mực Microsoft, tích hợp cổng thông tin dịch vụ công và tự động hóa quy trình kiểm duyệt."
+    education: "Kỹ thuật phần mềm — FPT University Đà Nẵng (GPA 7.8/10.0), Chứng chỉ Microsoft Back-End Developer Professional (08/2026)",
+    experience: "Team Leader VivuCar (ASP.NET Core 8, tích hợp API Dịch vụ công Bộ Công An, Hive AI Moderation), Fullstack .NET Intern FPT Software (C# Migration, tối ưu hóa SQL Stored Procedures nghìn dòng)",
+    skills: [".NET 8 / ASP.NET Core", "C# Clean Architecture", "Entity Framework Core", "SQL Server (Stored Procedures & Triggers)", "Gov Portal APIs", "Hive AI Integration", "ClosedXML / iTextSharp", "Docker"],
+    bio: "Sở hữu chứng chỉ chuyên nghiệp Microsoft. Chuyên sâu phát triển giải pháp doanh nghiệp trên .NET, tích hợp cổng dịch vụ công của cơ quan Nhà nước và tự động hóa báo cáo doanh nghiệp."
   }
 ];
 
@@ -125,20 +125,22 @@ export const IN_HOUSE_VENTURES = [
   {
     id: "brandhub",
     name: "BrandHub",
-    category: "AI MarTech & Omnichannel Publisher",
-    tagline: "Nền tảng trí tuệ thương hiệu & xuất bản nội dung tự động đa kênh",
-    stats: "07 Microservices • 0% Lost Rate • 5 Platforms",
-    techStack: ["Java 21", "Spring Boot 3", "Python FastAPI", "RabbitMQ DLQ", "Neo4j GraphRAG", "React 18"],
-    description: "Giải pháp B2B SaaS toàn diện giúp các Agencies và Nhãn hàng quản trị chiến dịch truyền thông, tự động sinh nội dung theo Brand Voice và lập lịch đăng tự động lên Facebook, TikTok, Instagram, Threads, Zalo với 0% tỷ lệ rớt tin nhắn."
+    url: "https://brandhub.id.vn",
+    category: "Agency OS & AI MarTech",
+    tagline: "Nền tảng quản trị Agency đa Workspace, AI GraphRAG & xuất bản 4 mạng xã hội",
+    stats: "07 Microservices • 141 FRs • 4 MXH (FB/IG/TikTok/Threads) • 0% Rớt lịch",
+    techStack: ["Java 21", "Spring Boot 3", "Python FastAPI", "RabbitMQ DLQ", "Neo4j GraphRAG", "ChromaDB", "React 19", "SePay VietQR"],
+    description: "Giải pháp B2B2C giúp Agency và Thương hiệu vận hành trọn vẹn vòng đời chiến dịch: 6 vai trò RBAC chuẩn, Media Package đàm phán 2 chiều, duyệt bài đa cấp kèm Content Locking, AI Studio GraphRAG + Trend Crawler, xuất bản tự động lên Facebook, Instagram, TikTok, Threads qua RabbitMQ DLQ và thanh toán SePay VietQR."
   },
   {
     id: "biensovip",
     name: "BienSoVip",
-    category: "Luxury Marketplace & High-Performance Web",
-    tagline: "Sàn giao dịch & đấu giá biển số xe định danh cao cấp tốc độ cao",
-    stats: "61 Entities • Truy vấn < 8ms • Khớp cọc VietQR < 0.5s",
-    techStack: [".NET 8 Clean Arch", "PostgreSQL GIN", "Redis Lock", "React 19", "VietQR Webhook", "DeepSeek AI"],
-    description: "Sàn thương mại điện tử chuyên biệt tốc độ cao sở hữu 61 bảng thực thể, tối ưu lọc đa tiêu chí dưới 8ms, tự động hóa khớp cọc VietQR dưới 0.5s với 0đ chi phí cổng, tích hợp khóa phân tán chống bán trùng và trợ lý AI 24/7."
+    url: "https://biensovip.com",
+    category: "Luxury Marketplace & VPA Engine",
+    tagline: "Sàn giao dịch biển số đẹp 63 tỉnh thành, VPA Price Engine & phong thủy 5 chiều",
+    stats: "86 Bảng PostgreSQL 16 • Lọc < 8ms • 57 API Groups • Khóa cọc 15p",
+    techStack: [".NET 8 Clean Arch", "PostgreSQL 16 GIN", "VPA Engine", "Redis Lock 15m", "SignalR LiveChat", "VietQR & ZaloPay", "DeepSeek AI", "React 19"],
+    description: "Sàn thương mại điện tử biển số đẹp cho chuyên gia Duy Đinh sở hữu 86 bảng thực thể PostgreSQL 16, 57 nhóm API, động cơ định giá VPA (UC49), lọc đa tiêu chí < 8ms, khóa giữ chỗ 15 phút VietQR Napas247 / ZaloPay, phong thủy Ngũ hành Hà Đồ 5 chiều, DeepSeek AI LiveChat và Trợ lý TikTok Live 9:16."
   }
 ];
 

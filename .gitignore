@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production & Build outputs
+/dist
+/dist_develop_bak
+build/
+
+# Local/temporary backups & patches
+*.bak
+*.patch
+*.develop_bak
+node_modules_develop_bak/
+backup_develop_diff.patch
+package-lock.json.develop_bak
+
+# Vite & Cache
+.vite/
+*.local
+
+# Editor & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

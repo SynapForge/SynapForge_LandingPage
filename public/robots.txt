@@ -1,0 +1,35 @@
+# SynapForge Robots.txt
+# Domain: https://synapforge.id.vn
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# AI Search Crawlers & GEO Optimization (Allow citation bots)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemap declaration
+Sitemap: https://synapforge.id.vn/sitemap.xml
